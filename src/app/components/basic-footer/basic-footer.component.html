@@ -1,0 +1,9 @@
+<div class="footer-buttons">
+  <div class="footer-buttons-group">
+    
+    <a href="javascript:void(0)" *ngFor="let nav of navigations" class="{{(activeNav == nav.tag ? 'active' : nav.tag)}}" ion-button (click)="routeTo(nav.route)">
+      <img [src]="nav.image"/>
+    </a>
+    
+  </div>
+</div>

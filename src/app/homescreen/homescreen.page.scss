@@ -1,0 +1,459 @@
+ .homescreen {
+    width               : 100%;
+    min-width           : 320px;
+    height              : 100vh;
+    min-height          : 1091px;
+    position            : relative;
+    overflow            : hidden;
+    margin              : 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color    : rgba(255, 255, 255, 1.0);
+    opacity             : 1.0;
+  }
+  .homescreen .welcome {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 44px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 18px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 18.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 21.0px;
+  }
+  .homescreen .recommendedforyou {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 212px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 17px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 18.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 21.0px;
+  }
+  .homescreen .rectangle {
+    background-color    : rgba(228, 138, 16, 0.12);
+    top                 : 77px;
+    height              : 108px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 18px;
+    border-radius       : 6px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .oval {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 98px;
+    height              : 57px;
+    width               : 57px;
+    position            : absolute;
+    margin              : 0;
+    left                : 228px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .boameprovidessuppo {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 89px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 32px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(121, 121, 121, 1.0);
+    text-align          : left;
+    line-height         : 21.0px;
+  }
+  .homescreen .info {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 116px;
+    height              : 21px;
+    width               : 10px;
+    position            : absolute;
+    margin              : 0;
+    left                : 251px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .info .path {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 18px;
+    height              : 3px;
+    width               : 2px;
+    position            : absolute;
+    margin              : 0;
+    left                : 5px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .info .path1 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 16px;
+    width               : 10px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 252px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 18px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2 .group {
+    background-color    : rgba(255, 144, 1, 0.12);
+    top                 : 0px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    overflow            : hidden;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2 .group .rectangle1 {
+    background-color    : rgba(255, 144, 1, 0.12);
+    top                 : 0px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2 .group .genderviolenceconceptillustration1143601972 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 26px;
+    height              : 135px;
+    width               : 138px;
+    position            : absolute;
+    margin              : 0;
+    left                : 151px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2 .group .genderviolenceconceptillustration1143601972 .layer0 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 135px;
+    width               : 138px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2 .reportacase {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 51px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 18.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 24.0px;
+  }
+  .homescreen .group2copy {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 411px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 18px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy .group {
+    background-color    : rgba(89, 112, 255, 0.12);
+    top                 : 0px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    overflow            : hidden;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy .group .rectangle1 {
+    background-color    : rgba(89, 112, 255, 0.12);
+    top                 : 0px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy .group .stopgenderviolenceconcept232148582544 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 39px;
+    height              : 131px;
+    width               : 112px;
+    position            : absolute;
+    margin              : 0;
+    left                : 166px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy .group .stopgenderviolenceconcept232148582544 .layer0 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 131px;
+    width               : 112px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy .becomeavolunteer {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 51px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 18.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 24.0px;
+  }
+  .homescreen .group2copy2 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 570px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 18px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy2 .group {
+    background-color    : rgba(159, 255, 89, 0.12);
+    top                 : 0px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    overflow            : hidden;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy2 .group .rectangle1 {
+    background-color    : rgba(159, 255, 89, 0.12);
+    top                 : 0px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy2 .group .a46512 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 41px;
+    height              : 151px;
+    width               : 139px;
+    position            : absolute;
+    margin              : 0;
+    left                : 150px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy2 .group .a46512 .layer0 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 151px;
+    width               : 139px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy2 .volunteers {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 62px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 18.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 24.0px;
+  }
+  .homescreen .group2copy3 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 730px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 18px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy3 .group {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy3 .knowledgecenter {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 51px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 18.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 24.0px;
+  }
+  .homescreen .group2copy4 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 888px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 18px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy4 .group {
+    background-color    : rgba(89, 255, 231, 0.12);
+    top                 : 0px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    overflow            : hidden;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy4 .group .rectangle1 {
+    background-color    : rgba(89, 255, 231, 0.12);
+    top                 : 0px;
+    height              : 140px;
+    width               : 283px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy4 .group .pngtreementalhealthcounselingimage2226225 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 39px;
+    height              : 98px;
+    width               : 153px;
+    position            : absolute;
+    margin              : 0;
+    left                : 142px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy4 .group .pngtreementalhealthcounselingimage2226225 .layer0 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 98px;
+    width               : 153px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy4 .councelling {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 57px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 18.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 24.0px;
+  }

@@ -1,0 +1,260 @@
+.sendafeedback {
+    width               : 100%;
+    min-width           : 320px;
+    height              : 100vh;
+    min-height          : 872px;
+    position            : relative;
+    overflow            : hidden;
+    margin              : 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color    : rgba(255, 255, 255, 1.0);
+    opacity             : 1.0;
+  }
+  .sendafeedback .sendafeedback1 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 80px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-style          : normal;
+    font-size           : 47.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 48.0px;
+  }
+  .sendafeedback .label{
+    font-family         : "Roboto-bold", Helvetica, Arial, serif !important;
+  }
+  .sendafeedback .rectangle1 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 801px;
+    height              : 92px;
+    width               : 345px;
+    position            : absolute;
+    margin              : 0;
+    left                : -13px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendafeedback .rectangle2 {
+    background-color    : rgba(255, 144, 1, 1.0);
+    top                 : 719px;
+    height              : 56px;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    border-radius       : 28px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendafeedback .submit {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 738px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 125px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(255, 255, 255, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .sendafeedback .group {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 231px;
+    height              : 73px;
+    width               : 286px;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendafeedback .group .rectanglecopy {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 27px;
+    height              : 46px;
+    box-sizing          : border-box;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 1px;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(51, 112, 163, 0.16);
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendafeedback .group .firstnameandlast {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 43px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(177, 177, 177, 1.0);
+    text-align          : left;
+    line-height         : 16.0px;
+  }
+  .sendafeedback .group .fullname {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .sendafeedback .groupcopy2 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 337px;
+    height              : 73px;
+    width               : 286px;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendafeedback .groupcopy2 .rectanglecopy {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 27px;
+    height              : 46px;
+    box-sizing          : border-box;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 1px;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(51, 112, 163, 0.16);
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendafeedback .groupcopy2 .youremailaddress {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 43px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(177, 177, 177, 1.0);
+    text-align          : left;
+    line-height         : 16.0px;
+  }
+  .sendafeedback .groupcopy2 .emailaddress {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .sendafeedback .groupcopy3 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 442px;
+    height              : 233px;
+    width               : 286px;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendafeedback .groupcopy3 .rectanglecopy {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 27px;
+    height              : 206px;
+    box-sizing          : border-box;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 1px;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(51, 112, 163, 0.16);
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendafeedback .groupcopy3 .pleaseenteryourfe {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 41px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(177, 177, 177, 1.0);
+    text-align          : left;
+    line-height         : 21.0px;
+  }
+  .sendafeedback .groupcopy3 .message {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }

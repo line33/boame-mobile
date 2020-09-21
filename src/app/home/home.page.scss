@@ -1,0 +1,234 @@
+.loginaftersplash {
+  width               : 100%;
+  min-width           : 319px;
+  height              : 100vh;
+  min-height          : 788px;
+  position            : relative;
+  overflow            : hidden;
+  margin              : 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color    : rgba(255, 255, 255, 1.0);
+  opacity             : 1.0;
+}
+.loginaftersplash .logintocontinue {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 80px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 15px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+  font-family         : "Roboto-Bold", Helvetica, Arial, serif;
+  font-style          : normal;
+  font-size           : 47.0px;
+  color               : rgba(0, 0, 0, 1.0);
+  text-align          : left;
+  line-height         : 48.0px;
+}
+.loginaftersplash .rectangle {
+  background-color    : rgba(255, 144, 1, 1.0);
+  top                 : 586px;
+  height              : 56px;
+  width               : 285px;
+  position            : absolute;
+  margin              : 0;
+  left                : 15px;
+  border-radius       : 28px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+}
+.loginaftersplash .login {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 606px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 139px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 16.0px;
+  color               : rgba(255, 255, 255, 1.0);
+  text-align          : left;
+  line-height         : 19.0px;
+}
+.loginaftersplash .groupcopy {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 373px;
+  height              : 75px;
+  width               : 286px;
+  position            : absolute;
+  margin              : 0;
+  left                : 14px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+}
+.loginaftersplash .groupcopy .username {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+  font-family         : "Roboto-Bold", Helvetica, Arial, serif;
+  font-style          : normal;
+  font-size           : 16.0px;
+  color               : rgba(0, 0, 0, 1.0);
+  text-align          : left;
+  line-height         : 19.0px;
+}
+.loginaftersplash .groupcopy2 {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 473px;
+  height              : 75px;
+  width               : 286px;
+  position            : absolute;
+  margin              : 0;
+  left                : 14px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+}
+.loginaftersplash .groupcopy2 .password {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+  font-family         : "Roboto-Bold", Helvetica, Arial, serif;
+  font-style          : normal;
+  font-size           : 16.0px;
+  color               : rgba(0, 0, 0, 1.0);
+  text-align          : left;
+  line-height         : 19.0px;
+}
+.loginaftersplash .rectangle1 {
+  background-color    : rgba(228, 138, 16, 0.12);
+  top                 : 235px;
+  height              : 99px;
+  width               : 285px;
+  position            : absolute;
+  margin              : 0;
+  left                : 15px;
+  border-radius       : 6px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+}
+.loginaftersplash .clickheretologin {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 263px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 92px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(121, 121, 121, 1.0);
+  text-align          : left;
+  line-height         : 21.0px;
+}
+.loginaftersplash .facebookcolored {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 264px;
+  height              : 41px;
+  width               : 41px;
+  position            : absolute;
+  margin              : 0;
+  left                : 32px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+}
+.loginaftersplash .facebookcolored .oval {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 0px;
+  height              : 41px;
+  width               : 41px;
+  position            : absolute;
+  margin              : 0;
+  left                : 0px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+}
+.loginaftersplash .facebookcolored .path {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 8px;
+  height              : 27px;
+  width               : 12px;
+  position            : absolute;
+  margin              : 0;
+  left                : 14px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+}
+.loginaftersplash .skiploginandconti {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 676px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 86px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(177, 177, 177, 1.0);
+  text-align          : left;
+  line-height         : 16.0px;
+  text-decoration     : underline;
+}
+.loginaftersplash .createone {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 375px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 221px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(255, 144, 1, 1.0);
+  text-align          : left;
+  line-height         : 16.0px;
+}
+.loginaftersplash .reset {
+  background-color    : rgba(255,255,255,0.0);
+  top                 : 475px;
+  height              : auto;
+  width               : auto;
+  position            : absolute;
+  margin              : 0;
+  left                : 256px;
+  transform           : rotate(0deg);
+  opacity             : 1.0;
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 400;
+  font-style          : normal;
+  font-size           : 14.0px;
+  color               : rgba(255, 144, 1, 1.0);
+  text-align          : left;
+  line-height         : 16.0px;
+}

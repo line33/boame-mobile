@@ -1,0 +1,259 @@
+.sendanaudio {
+    width               : 100%;
+    min-width           : 320px;
+    height              : 100vh;
+    min-height          : 688px;
+    position            : relative;
+    overflow            : hidden;
+    margin              : 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color    : rgba(255, 255, 255, 1.0);
+    opacity             : 1.0;
+  }
+  .sendanaudio .sendanaudio1 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 80px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-style          : normal;
+    font-size           : 47.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 48.0px;
+  }
+  .sendanaudio .group {
+    background-color    : rgba(250, 250, 250, 1.0);
+    top                 : 235px;
+    height              : 159px;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    border-radius       : 8px;
+    overflow            : hidden;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .group .rectangle1 {
+    background-color    : rgba(250, 250, 250, 1.0);
+    top                 : 0px;
+    height              : 159px;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    border-radius       : 8px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .group .oval {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 33px;
+    height              : 30px;
+    width               : 30px;
+    position            : absolute;
+    margin              : 0;
+    left                : 28px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .group .uploadfromyourpho {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 72px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 28px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 18.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 21.0px;
+  }
+  .sendanaudio .group .upload {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 38px;
+    height              : 18px;
+    width               : 14px;
+    position            : absolute;
+    margin              : 0;
+    left                : 36px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .group .upload .path {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 12px;
+    width               : 7px;
+    position            : absolute;
+    margin              : 0;
+    left                : 3px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .group .upload .path1 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 5px;
+    height              : 13px;
+    width               : 14px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .group .arrowright {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 126px;
+    height              : 12px;
+    width               : 26px;
+    position            : absolute;
+    margin              : 0;
+    left                : 249px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .group .arrowright .path {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 12px;
+    width               : 26px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .groupcopy {
+    background-color    : rgba(250, 250, 250, 1.0);
+    top                 : 406px;
+    height              : 159px;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    border-radius       : 8px;
+    overflow            : hidden;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .groupcopy .rectangle1 {
+    background-color    : rgba(250, 250, 250, 1.0);
+    top                 : 0px;
+    height              : 159px;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    border-radius       : 8px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .groupcopy .oval {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 33px;
+    height              : 30px;
+    width               : 30px;
+    position            : absolute;
+    margin              : 0;
+    left                : 28px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .groupcopy .recordanewvoice {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 72px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 28px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 18.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 21.0px;
+  }
+  .sendanaudio .groupcopy .arrowright {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 126px;
+    height              : 12px;
+    width               : 26px;
+    position            : absolute;
+    margin              : 0;
+    left                : 249px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .groupcopy .arrowright .path {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 12px;
+    width               : 26px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .rectangle {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 721px;
+    height              : 92px;
+    width               : 345px;
+    position            : absolute;
+    margin              : 0;
+    left                : -13px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .microphone {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 446px;
+    height              : 21px;
+    width               : 12px;
+    position            : absolute;
+    margin              : 0;
+    left                : 52px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .microphone .path {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 10px;
+    height              : 11px;
+    width               : 12px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendanaudio .microphone .shape {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 16px;
+    width               : 8px;
+    position            : absolute;
+    margin              : 0;
+    left                : 2px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }

@@ -1,0 +1,164 @@
+.sendamessage {
+    width               : 100%;
+    min-width           : 320px;
+    height              : 100vh;
+    min-height          : 788px;
+    position            : relative;
+    overflow            : hidden;
+    margin              : 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color    : rgba(255, 255, 255, 1.0);
+    opacity             : 1.0;
+  }
+  .sendamessage .sendamessage1 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 80px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-style          : normal;
+    font-size           : 47.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 48.0px;
+  }
+  .sendamessage .rectangle {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 331px;
+    box-sizing          : border-box;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    opacity             : 1.0;
+  }
+  .sendamessage .rectangle .form-input{
+    height              : 249px;
+  }
+  .sendamessage .yourreporthere {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 384px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 32px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(178, 178, 178, 1.0);
+    text-align          : left;
+    line-height         : 16.0px;
+  }
+  .sendamessage .rectangle1 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 721px;
+    height              : 92px;
+    width               : 345px;
+    position            : absolute;
+    margin              : 0;
+    left                : -13px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendamessage .rectangle2 {
+    background-color    : rgba(228, 138, 16, 0.12);
+    top                 : 235px;
+    height              : 99px;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    border-radius       : 6px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendamessage .oval {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 256px;
+    height              : 57px;
+    width               : 57px;
+    position            : absolute;
+    margin              : 0;
+    left                : 226px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendamessage .havesomeimagesyo {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 256px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 30px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(121, 121, 121, 1.0);
+    text-align          : left;
+    line-height         : 21.0px;
+  }
+  .sendamessage .add {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 274px;
+    height              : 22px;
+    width               : 20px;
+    position            : absolute;
+    margin              : 0;
+    left                : 245px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendamessage .add .path {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 22px;
+    width               : 20px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendamessage .rectangle3 {
+    background-color    : rgba(255, 144, 1, 1.0);
+    top                 : 639px;
+    height              : 56px;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    border-radius       : 28px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .sendamessage .submitreport {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 658px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 105px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(255, 255, 255, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }

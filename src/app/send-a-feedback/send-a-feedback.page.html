@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-go-back></app-go-back>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="sendafeedback anima-word-break">
+    <div class="page-wrapper">
+
+        <div class="sendafeedback1">
+            Send a <br />Feedback
+        </div>
+
+        <a href="javascript:void(0)" ion-button>
+          <div class="rectangle2">
+          </div>
+          <div class="submit">
+              Submit
+          </div>
+        </a>
+
+        <div class="group">
+            <input type="text" class="form-input" placeholder="First Name and Last Name"/>
+            <div class="fullname label">
+                Full Name
+            </div>
+        </div>
+
+        <div class="groupcopy2">
+            <input class="form-input" placeholder="Your email address" type="email"/>
+            <div class="emailaddress label">
+                Email Address
+            </div>
+        </div>
+
+        <div class="groupcopy3">
+            <textarea class="form-input" placeholder="Please enter your feedback message here,"></textarea>
+            <div class="message label">
+                Message
+            </div>
+        </div>
+
+    </div>
+</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-basic-footer></app-basic-footer>
+</ion-footer>

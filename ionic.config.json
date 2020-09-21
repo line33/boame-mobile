@@ -1,0 +1,7 @@
+{
+  "name": "Boame_App",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,447 @@
+.createanaccount {
+    width               : 100%;
+    min-width           : 320px;
+    height              : 100vh;
+    min-height          : 1081px;
+    position            : relative;
+    overflow            : hidden;
+    margin              : 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color    : rgba(255, 255, 255, 1.0);
+    opacity             : 1.0;
+  }
+  .createanaccount .createanaccount1 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 80px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-style          : normal;
+    font-size           : 47.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 48.0px;
+  }
+  .createanaccount .label{
+    font-family         : "Roboto-bold", Helvetica, Arial, serif !important;
+  }
+  .createanaccount .rectangle {
+    background-color    : rgba(255, 144, 1, 1.0);
+    top                 : 902px;
+    height              : 56px;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    border-radius       : 28px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .register {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 922px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 130px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(255, 255, 255, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .createanaccount .groupcopy {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 476px;
+    height              : 75px;
+    width               : 286px;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .groupcopy .rectanglecopy {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 27px;
+    height              : 48px;
+    box-sizing          : border-box;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 1px;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(51, 112, 163, 0.16);
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .groupcopy .youremail {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 42px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(177, 177, 177, 1.0);
+    text-align          : left;
+    line-height         : 20.0px;
+  }
+  .createanaccount .groupcopy .emailaddress {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .createanaccount .groupcopy2 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 580px;
+    height              : 75px;
+    width               : 286px;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .groupcopy2 .rectanglecopy {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 27px;
+    height              : 48px;
+    box-sizing          : border-box;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 1px;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(51, 112, 163, 0.16);
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .groupcopy2 .yourphonenumber {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 42px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(177, 177, 177, 1.0);
+    text-align          : left;
+    line-height         : 20.0px;
+  }
+  .createanaccount .groupcopy2 .telephone {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .createanaccount .groupcopy4 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 686px;
+    height              : 75px;
+    width               : 286px;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .groupcopy4 .rectanglecopy {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 27px;
+    height              : 48px;
+    box-sizing          : border-box;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 1px;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(51, 112, 163, 0.16);
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .groupcopy4 .yourpassword {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 42px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(177, 177, 177, 1.0);
+    text-align          : left;
+    line-height         : 20.0px;
+  }
+  .createanaccount .groupcopy4 .password {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .createanaccount .groupcopy5 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 791px;
+    height              : 75px;
+    width               : 286px;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .groupcopy5 .rectanglecopy {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 27px;
+    height              : 48px;
+    box-sizing          : border-box;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 1px;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(51, 112, 163, 0.16);
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .groupcopy5 .yourpasswordagain {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 42px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(177, 177, 177, 1.0);
+    text-align          : left;
+    line-height         : 20.0px;
+  }
+  .createanaccount .groupcopy5 .passwordagain {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .createanaccount .groupcopy3 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 372px;
+    height              : 75px;
+    width               : 286px;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .groupcopy3 .rectanglecopy {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 27px;
+    height              : 48px;
+    box-sizing          : border-box;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 1px;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(51, 112, 163, 0.16);
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .groupcopy3 .yourfirstandlast {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 42px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(177, 177, 177, 1.0);
+    text-align          : left;
+    line-height         : 20.0px;
+  }
+  .createanaccount .groupcopy3 .fullname {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .createanaccount .rectangle1 {
+    background-color    : rgba(228, 138, 16, 0.12);
+    top                 : 235px;
+    height              : 99px;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    border-radius       : 6px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .group {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 256px;
+    height              : 57px;
+    width               : 57px;
+    position            : absolute;
+    margin              : 0;
+    left                : 226px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .group .oval {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 57px;
+    width               : 57px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .clickheretoregist {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 263px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 32px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(121, 121, 121, 1.0);
+    text-align          : left;
+    line-height         : 21.0px;
+  }
+  .createanaccount .users {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 271px;
+    height              : 23px;
+    width               : 25px;
+    position            : absolute;
+    margin              : 0;
+    left                : 243px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .createanaccount .users .shape {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 23px;
+    width               : 25px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }

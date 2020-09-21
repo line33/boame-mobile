@@ -1,0 +1,334 @@
+.inner-scroll{background: transparent !important;}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+a {
+    text-decoration     : none;
+  }
+  div {
+    -webkit-text-size-adjust: none;
+  }
+  .anima-full-width-a {
+    width               : 100%;
+  }
+  .anima-full-height-a {
+    height              : 100%;
+  }
+  div {
+    -webkit-text-size-adjust: none;
+  }
+
+.anima-component-wrapper,
+.anima-component-wrapper * {
+  pointer-events      : none;
+}
+.anima-component-wrapper a *,
+.anima-component-wrapper a,
+.anima-component-wrapper input,
+.anima-component-wrapper video,
+.anima-component-wrapper iframe,
+.anima-listeners-active,
+.anima-listeners-active * {
+  pointer-events      : auto;
+}
+.anima-hidden,
+.anima-hidden * {
+  visibility          : hidden;
+  pointer-events      : none;
+}
+.anima-smart-layers-pointers,
+.anima-smart-layers-pointers * {
+  pointer-events      : auto;
+  visibility          : visible;
+}
+.anima-component-wrapper.anima-not-ready,
+.anima-component-wrapper.anima-not-ready * {
+  visibility          : hidden !important;
+}
+.anima-listeners-active-click,
+.anima-listeners-active-click * {
+  cursor              : pointer;
+}
+.anima-word-break {
+  overflow-wrap       : break-word;
+  word-wrap           : break-word;
+  word-break          : break-all;
+  word-break          : break-word;
+}
+
+/* .anima-animate-appear prefix for appear animations */
+.anima-animate-appear {
+    opacity             : 0;
+    display             : block;
+    -webkit-animation   : anima-reveal 0.3s ease-in-out 1 normal forwards;
+    -moz-animation      : anima-reveal 0.3s ease-in 1 normal forwards;
+    -o-animation        : anima-reveal 0.3s ease-in-out 1 normal forwards;
+    animation           : anima-reveal 0.3s ease-in-out 1 normal forwards;
+  }
+  .anima-animate-disappear {
+    opacity             : 1;
+    display             : block;
+    -webkit-animation   : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+    -moz-animation      : anima-reveal 0.3s ease-in 1 normal forwards;
+    -o-animation        : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+    animation           : anima-reveal 0.3s ease-in-out 1 reverse forwards;
+  }
+  .anima-animate-nodelay {
+    -webkit-animation-delay: 0;
+    -moz-animation-delay: 0;
+    -o-animation-delay  : 0;
+    animation-delay     : 0;
+  }
+  @-webkit-keyframes anima-reveal {
+    0%
+     
+    {
+        opacity: 0;
+      }
+    
+      
+    100%
+     
+    {
+        opacity: 1;
+      }
+  }
+  @-moz-keyframes anima-reveal {
+    0%
+     
+    {
+        opacity: 0;
+      }
+    
+      
+    100%
+     
+    {
+        opacity: 1;
+      }
+  }
+  @-o-keyframes anima-reveal {
+    0%
+     
+    {
+        opacity: 0;
+      }
+    
+      
+    100%
+     
+    {
+        opacity: 1;
+      }
+  }
+  @keyframes anima-reveal {
+    0%
+     
+    {
+        opacity: 0;
+      }
+    
+      
+    100%
+     
+    {
+        opacity: 1;
+      }
+  }
+
+  .page-wrapper{
+    max-width: 320px; 
+    height: 100%; 
+    position:relative; 
+    margin:auto;
+  }
+
+  /* fonts */
+  @font-face{
+      src : url('../assets/fonts/Roboto/Roboto-Bold.ttf');
+      font-family: 'Roboto-Bold';
+  }
+
+  @font-face{
+    src : url('../assets/fonts/Roboto/Roboto-Medium.ttf');
+    font-family: 'Roboto-medium';
+  }
+
+  @font-face{
+    src : url('../assets/fonts/Roboto/Roboto-Regular.ttf');
+    font-family: 'Roboto';
+  }
+
+  .btn-group{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+  }
+
+  a .btn-group{
+      color: #fff;
+  }
+
+  .form-input {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 27px;
+    height              : 48px;
+    box-sizing          : border-box;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 1px;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(51, 112, 163, 0.16);
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    padding-left        : 15px;
+    padding-right       : 15px;
+    font-size           : 14px;
+    line-height         : 20.0px;
+    outline             : none;
+  }
+
+  .form-input::placeholder{
+    color               : #A09999;
+  }
+  
+  .arrow1 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 12px;
+    width               : 26px;
+    margin              : 0;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    position            : relative;
+    margin              : 0;
+    left                : 15px;
+  }
+
+  .header-btn-wrapper{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    justify-content: space-between;
+    padding-right: 15px;
+  }
+
+  iframe{
+      background: #fff !important;
+  }
+
+  select{
+    -webkit-appearance:none;
+    appearance: none;
+    background-image: url('../assets/img/down-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: 95%;
+  }
+
+  .footer-buttons{
+    background: #fff;
+    height: 48px;
+    box-shadow: 0px -3px 13px rgba(0,0,0,0.07);
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-buttons .footer-buttons-group{
+    display: flex;
+    justify-content: space-between;
+    width: 280px;
+    margin: auto;
+  }
+
+  .footer-buttons .footer-buttons-group a:hover, .footer-buttons .footer-buttons-group a.active{
+    opacity: 1;
+  }
+
+  .footer-buttons .footer-buttons-group a{
+    opacity: 0.3;
+  }
+
+  textarea.form-input{
+    height: 204px;
+    padding-top: 10px;
+    padding-right: 15px;
+  }
+
+  .header-btn-wrapper .group3 {
+    height              : 15px;
+    width               : 28px;
+    opacity             : 1.0;
+  }
+  .header-btn-wrapper .group3 .oval {
+    height              : 8px;
+    width               : 8px;
+  }
+  .header-btn-wrapper .group3 .ovalcopy {
+    height              : 8px;
+    width               : 8px;
+  }
+  .header-btn-wrapper .group3 .ovalcopy2 {
+    height              : 8px;
+    width               : 8px;
+  }
+  .header-btn-wrapper .search {
+    height              : 18px;
+    width               : 18px;
+    margin-top          : 8px;
+  }
+  .header-btn-wrapper .search .shape {
+    height              : 18px;
+    width               : 18px;
+  }
+
+  @keyframes animate-modal-out{
+    from{transform: translateY(0vh);}
+    to{transform: translateY(-110vh);}
+  }
+
+  @-moz-keyframes animate-modal-out{
+    from{transform: translateY(0vh);}
+    to{transform: translateY(-110vh);}
+  }
+
+  @-webkit-keyframes animate-modal-out{
+    from{transform: translateY(0vh);}
+    to{transform: translateY(-110vh);}
+  }
+
+  @keyframes animate-modal-in{
+    from{transform: translateY(-110vh);}
+    to{transform: translateY(0vh);}
+  }
+
+  @-moz-keyframes animate-modal-in{
+    from{transform: translateY(-110vh);}
+    to{transform: translateY(0vh);}
+  }
+
+  @-webkit-keyframes animate-modal-in{
+    from{transform: translateY(-110vh);}
+    to{transform: translateY(0vh);}
+  }
+
+  .animate-modal-in{
+    animation : animate-modal-in 0.6s forwards 0s;
+    -webkit-animation : animate-modal-in 0.6s forwards 0s;
+    -moz-animation : animate-modal-in 0.6s forwards 0s;
+    -ms-animation : animate-modal-in 0.6s forwards 0s;
+  }
+
+  .animate-modal-out{
+    animation : animate-modal-out 0.6s forwards 0s;
+    -webkit-animation : animate-modal-out 0.6s forwards 0s;
+    -moz-animation : animate-modal-out 0.6s forwards 0s;
+    -ms-animation : animate-modal-out 0.6s forwards 0s;
+  }

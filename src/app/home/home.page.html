@@ -1,0 +1,54 @@
+<ion-content [fullscreen]="true">
+  <div class="loginaftersplash anima-word-break">
+    <div class="page-wrapper">
+        <div class="logintocontinue">
+            Login to <br />Continue
+        </div>
+        <a href="javascript:void(0)" ion-button (click)="login()">
+            <div class="rectangle btn-group">
+              Login
+            </div>
+        </a>
+        <div class="groupcopy">
+            <input class="form-input" placeholder="Email or Telephone" type="text">
+            <div class="username">
+                Username
+            </div>
+        </div>
+        <div class="groupcopy2">
+            <input class="form-input" placeholder="Your password" type="password">
+            <div class="password">
+                Password
+            </div>
+        </div>
+
+        <div class="">
+          <div class="rectangle1">
+          </div>
+          <div class="clickheretologin">
+              Click here to login to your <br />account from facebook.
+          </div>
+          <div class="facebookcolored">
+              <img alt="Image/" src="../../assets/img/eidx-login-after-splash-oval@2x.png" class="oval"/>
+              <img alt="Image/" src="../../assets/img/do48-login-after-splash-path@2x.png" class="path"/>
+          </div>
+        </div>
+
+        <a href="javascript:void(0)" ion-button [routerLink]="['/homescreen']">
+            <div class="skiploginandconti">
+                Skip login and continue
+            </div>
+        </a>
+        <a href="javascript:void(0)" ion-button [routerLink]="['/create-account']">
+            <div class="createone">
+                + Create one
+            </div>
+        </a>
+        <a href="javascript:void(0)" ion-button [routerLink]="['/reset-password']">
+            <div class="reset">
+                Reset ?
+            </div>
+        </a>
+    </div>
+  </div>
+</ion-content>

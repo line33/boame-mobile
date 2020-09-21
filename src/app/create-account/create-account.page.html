@@ -1,0 +1,74 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-go-back></app-go-back>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="createanaccount anima-word-break">
+    <div class="page-wrapper">
+        <div class="createanaccount1">
+            Create an<br />Account
+        </div>
+
+        <a href="javascript:void(0)" ion-button>
+            <div class="rectangle">
+            </div>
+
+            <div class="register">
+              Register
+            </div>
+        </a>
+        
+        <div class="groupcopy">
+            <input class="form-input" placeholder="Your email" type="email">
+            <div class="emailaddress label">
+                Email Address
+            </div>
+        </div>
+        <div class="groupcopy2">
+            <input class="form-input" placeholder="Your phone number" type="tel">
+            <div class="telephone label">
+                Telephone
+            </div>
+        </div>
+        <div class="groupcopy4">
+            <input class="form-input" placeholder="Your password" type="password">
+            <div class="password label">
+                Password
+            </div>
+        </div>
+        <div class="groupcopy5">
+            <input class="form-input" placeholder="Your password again" type="password">
+            <div class="passwordagain label">
+                Password Again
+            </div>
+        </div>
+        <div class="groupcopy3">
+            <input class="form-input" placeholder="Your first and last name" type="text">
+            <div class="fullname label">
+                Fullname
+            </div>
+        </div>
+
+        <a href="javascript:void(0)" ion-button [routerLink]="['/become-a-volunteer']">
+            <div class="rectangle1">
+            </div>
+        
+            <div class="group">
+                <img alt="Image/" src="../../assets/img/N6nc-video-submitted-successfully-oval@2x.png" class="oval" />
+            </div>
+            <div class="clickheretoregist">
+                Click here to register as<br />a volunteer.
+            </div>
+            <div class="users">
+                <img alt="Image/" src="../../assets/img/create-an-account-shape@2x.png" class="shape" />
+            </div>
+        </a>
+    </div>
+</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-basic-footer></app-basic-footer>
+</ion-footer>

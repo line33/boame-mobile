@@ -1,0 +1,66 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-go-back></app-go-back>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="becomeavolunteer anima-word-break">
+    <div class="page-wrapper">
+        <div class="becomeavolunteer1">
+            Become a <br />Volunteer
+        </div>
+
+        <div class="position-wrapper pleaseselect">
+          <select class="form-input">
+            <option value="">Please select</option>
+          </select>
+        </div>
+
+        <a href="javascript:void(0)" ion-button [routerLink]="['/complete-volunteer-reg']">
+            <div class="rectangle3">
+            </div>
+            <div class="continue">
+              Continue
+            </div>
+        </a>
+        
+        <div class="chooseaposition label">
+            Choose a Position
+        </div>
+        
+        <div class="group">
+            <input class="form-input" placeholder="First Name and Last Name" type="text">
+            <div class="fullname label">
+                Full Name
+            </div>
+        </div>
+
+        <div class="groupcopy">
+            <input class="form-input" placeholder="Your mobile number" type="tel">
+            <div class="telephone label">
+                Telephone
+            </div>
+        </div>
+
+        <div class="groupcopy2">
+            <input class="form-input" placeholder="Your email address" type="email">
+            <div class="emailaddress label">
+                Email Address
+            </div>
+        </div>
+
+        <div class="groupcopy3">
+            <input class="form-input" placeholder="Home/Office address" type="text">
+            <div class="residentialaddress label">
+                Residential Address
+            </div>
+        </div>
+
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-basic-footer></app-basic-footer>
+</ion-footer>

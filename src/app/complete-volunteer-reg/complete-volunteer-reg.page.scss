@@ -1,0 +1,310 @@
+.becomeavolunteercomplete {
+    width               : 100%;
+    min-width           : 320px;
+    height              : 100vh;
+    min-height          : 898px;
+    position            : relative;
+    overflow            : hidden;
+    margin              : 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color    : rgba(255, 255, 255, 1.0);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .rectangle {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : -1px;
+    height              : 61px;
+    width               : 320px;
+    position            : absolute;
+    margin              : 0;
+    left                : -1px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .volunteerName {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 80px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-style          : normal;
+    font-size           : 47.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 48.0px;
+  }
+  .becomeavolunteercomplete .rectangle1 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 821px;
+    height              : 92px;
+    width               : 345px;
+    position            : absolute;
+    margin              : 0;
+    left                : -13px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .rectangle2 {
+    background-color    : rgba(255, 144, 1, 1.0);
+    top                 : 734px;
+    height              : 56px;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    border-radius       : 28px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .submit {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 753px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 131px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(255, 255, 255, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .becomeavolunteercomplete .groupcopy {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 471px;
+    height              : 231px;
+    width               : 286px;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .groupcopy .rectanglecopy {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 27px;
+    height              : 204px;
+    box-sizing          : border-box;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 1px;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(51, 112, 163, 0.16);
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .groupcopy .tellusalittleabo {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 43px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(177, 177, 177, 1.0);
+    text-align          : left;
+    line-height         : 16.0px;
+  }
+  .becomeavolunteercomplete .groupcopy .aboutyou {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .becomeavolunteercomplete .rectangle3 {
+    background-color    : rgba(51, 112, 163, 0.07);
+    top                 : 195px;
+    height              : 17px;
+    width               : 75px;
+    position            : absolute;
+    margin              : 0;
+    left                : 16px;
+    border-radius       : 5px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .department {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 196px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 33px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 12.0px;
+    color               : rgba(51, 112, 163, 1.0);
+    text-align          : left;
+    line-height         : 14.0px;
+  }
+  .becomeavolunteercomplete .oval {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 201px;
+    height              : 5px;
+    width               : 5px;
+    position            : absolute;
+    margin              : 0;
+    left                : 21px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .rectangle4 {
+    background-color    : rgba(228, 138, 16, 0.12);
+    top                 : 235px;
+    height              : 99px;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    border-radius       : 6px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .oval1 {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 256px;
+    height              : 57px;
+    width               : 57px;
+    position            : absolute;
+    margin              : 0;
+    left                : 226px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .youneedtoattacha {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 256px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 30px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(121, 121, 121, 1.0);
+    text-align          : left;
+    line-height         : 21.0px;
+  }
+  .becomeavolunteercomplete .add {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 274px;
+    height              : 22px;
+    width               : 20px;
+    position            : absolute;
+    margin              : 0;
+    left                : 245px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .add .path {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 22px;
+    width               : 20px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .rectangle5 {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 394px;
+    height              : 46px;
+    box-sizing          : border-box;
+    width               : 285px;
+    position            : absolute;
+    margin              : 0;
+    left                : 15px;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(51, 112, 163, 0.16);
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .becomeavolunteercomplete .selectfromyourlib {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 410px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 29px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(177, 177, 177, 1.0);
+    text-align          : left;
+    line-height         : 16.0px;
+  }
+  .becomeavolunteercomplete .attachyourcv {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 367px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 14px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .becomeavolunteercomplete .document {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 410px;
+    height              : 15px;
+    width               : 12px;
+    position            : absolute;
+    margin              : 0;
+    left                : 273px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }

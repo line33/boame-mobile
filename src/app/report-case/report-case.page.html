@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-go-back></app-go-back>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]='true'>
+  <div class="reportacase anima-word-break ">
+    <div class="page-wrapper">
+        <div class="reportacase1">
+            Report a<br />Case
+        </div>
+        <a href="">
+          <img alt="Image/" src="../../assets/img/report-a-case-rectangle@2x.png" class="rectangle"/>
+          <div class="phone2">
+            <img alt="Image/" src="../../assets/img/report-a-case-path-1@2x.png" class="path"/>
+            <img alt="Image/" src="../../assets/img/report-a-case-shape-3@2x.png" class="shape"/>
+          </div>
+        </a>
+        <a href="javascript:void(0)" ion-button [routerLink]="['/send-an-audio']">
+            <img alt="Image/" src="../../assets/img/report-a-case-rectangle-copy-2@2x.png" class="rectanglecopy2"/>
+            <div class="microphone1">
+              <img alt="Image/" src="../../assets/img/microphone-1.svg" class="shape"/>
+            </div>
+        </a>
+        <a href="javascript:void(0)" ion-button [routerLink]="['/send-a-video']">
+            <img alt="Image/" src="../../assets/img/report-a-case-rectangle-copy@2x.png" class="rectanglecopy"/>
+            <div class="videocamera">
+              <img alt="Image/" src="../../assets/img/report-a-case-shape-1@2x.png" class="shape"/>
+            </div>
+        </a>
+        <a href="javascript:void(0)" ion-button [routerLink]="['/send-a-message']">
+            <img alt="Image/" src="../../assets/img/report-a-case-rectangle-copy-3@2x.png" class="rectanglecopy3"/>
+            <div class="compose">
+              <img alt="Image/" src="../../assets/img/report-a-case-shape-2@2x.png" class="shape"/>
+            </div>
+        </a>
+        <div class="makeaphonecall">
+            Make a <br />Phone call
+        </div>
+        <div class="sendavideo">
+            Send a<br />Video
+        </div>
+        <div class="sendanaudio">
+            Send an <br />Audio
+        </div>
+        <div class="sendamessage">
+            Send a <br />Message
+        </div>
+        
+    </div>
+</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-basic-footer></app-basic-footer>
+</ion-footer>
