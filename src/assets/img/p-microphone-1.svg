@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="58px" viewBox="0 0 32 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>microphone-1</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Boame-mobile-app" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Report-a-case" transform="translate(-68.000000, -464.000000)" fill="#FFFFFF">
+            <g id="microphone-1" transform="translate(68.000000, 464.000000)">
+                <path d="M31,28 C30.448,28 30,28.447 30,29 L30,35 C30,42.72 23.72,49 16,49 C8.28,49 2,42.72 2,35 L2,29 C2,28.447 1.552,28 1,28 C0.448,28 0,28.447 0,29 L0,35 C0,43.485 6.644,50.429 15,50.949 L15,56 L10,56 C9.448,56 9,56.447 9,57 C9,57.553 9.448,58 10,58 L22,58 C22.552,58 23,57.553 23,57 C23,56.447 22.552,56 22,56 L17,56 L17,50.949 C25.356,50.429 32,43.484 32,35 L32,29 C32,28.447 31.552,28 31,28 Z" id="Path"></path>
+                <path d="M16,46 C22.065,46 27,41.065 27,35 L27,11 C27,4.935 22.065,0 16,0 C9.935,0 5,4.935 5,11 L5,35 C5,41.065 9.935,46 16,46 Z M9.469,4.826 C9.625,4.927 9.8,5 10,5 C10.552,5 11,4.552 11,4 C11,3.852 10.964,3.714 10.906,3.588 C12.356,2.589 14.11,2 16,2 C17.89,2 19.644,2.589 21.094,3.588 C21.036,3.714 21,3.852 21,4 C21,4.552 21.448,5 22,5 C22.2,5 22.375,4.927 22.531,4.826 C23.121,5.449 23.621,6.155 24.015,6.926 C24.013,6.952 24,6.974 24,7 C24,7.319 24.159,7.591 24.392,7.774 C24.779,8.777 25,9.862 25,11 L25,12 C24.448,12 24,12.448 24,13 C24,13.552 24.448,14 25,14 L25,18 C24.448,18 24,18.448 24,19 C24,19.552 24.448,20 25,20 L25,24 C24.448,24 24,24.448 24,25 C24,25.552 24.448,26 25,26 L25,30 C24.448,30 24,30.448 24,31 C24,31.552 24.448,32 25,32 L25,35 C25,35.343 24.977,35.679 24.939,36.012 C24.417,36.045 24,36.469 24,37 C24,37.377 24.217,37.693 24.525,37.864 C23.759,40.136 22.112,42.001 19.989,43.056 C19.99,43.036 20,43.02 20,43 C20,42.448 19.552,42 19,42 C18.448,42 18,42.448 18,43 C18,43.271 18.11,43.515 18.285,43.695 C17.554,43.887 16.791,44 16,44 C15.209,44 14.446,43.887 13.715,43.695 C13.89,43.515 14,43.271 14,43 C14,42.448 13.552,42 13,42 C12.448,42 12,42.448 12,43 C12,43.02 12.01,43.036 12.011,43.056 C9.888,42 8.24,40.136 7.475,37.864 C7.783,37.693 8,37.377 8,37 C8,36.469 7.583,36.045 7.061,36.012 C7.023,35.679 7,35.343 7,35 L7,32 C7.552,32 8,31.552 8,31 C8,30.448 7.552,30 7,30 L7,26 C7.552,26 8,25.552 8,25 C8,24.448 7.552,24 7,24 L7,20 C7.552,20 8,19.552 8,19 C8,18.448 7.552,18 7,18 L7,14 C7.552,14 8,13.552 8,13 C8,12.448 7.552,12 7,12 L7,11 C7,9.862 7.221,8.777 7.608,7.774 C7.841,7.591 8,7.319 8,7 C8,6.974 7.987,6.952 7.985,6.926 C8.379,6.155 8.879,5.449 9.469,4.826 Z" id="Shape" fill-rule="nonzero"></path>
+                <circle id="Oval" cx="16" cy="4" r="1"></circle>
+                <circle id="Oval" cx="13" cy="7" r="1"></circle>
+                <circle id="Oval" cx="13" cy="13" r="1"></circle>
+                <circle id="Oval" cx="10" cy="10" r="1"></circle>
+                <circle id="Oval" cx="16" cy="10" r="1"></circle>
+                <circle id="Oval" cx="10" cy="16" r="1"></circle>
+                <circle id="Oval" cx="16" cy="16" r="1"></circle>
+                <circle id="Oval" cx="19" cy="7" r="1"></circle>
+                <circle id="Oval" cx="19" cy="13" r="1"></circle>
+                <circle id="Oval" cx="22" cy="10" r="1"></circle>
+                <circle id="Oval" cx="22" cy="16" r="1"></circle>
+                <circle id="Oval" cx="13" cy="19" r="1"></circle>
+                <circle id="Oval" cx="13" cy="25" r="1"></circle>
+                <circle id="Oval" cx="10" cy="22" r="1"></circle>
+                <circle id="Oval" cx="16" cy="22" r="1"></circle>
+                <circle id="Oval" cx="10" cy="28" r="1"></circle>
+                <circle id="Oval" cx="16" cy="28" r="1"></circle>
+                <circle id="Oval" cx="19" cy="19" r="1"></circle>
+                <circle id="Oval" cx="19" cy="25" r="1"></circle>
+                <circle id="Oval" cx="22" cy="22" r="1"></circle>
+                <circle id="Oval" cx="22" cy="28" r="1"></circle>
+                <circle id="Oval" cx="13" cy="31" r="1"></circle>
+                <circle id="Oval" cx="13" cy="37" r="1"></circle>
+                <circle id="Oval" cx="10" cy="34" r="1"></circle>
+                <circle id="Oval" cx="16" cy="34" r="1"></circle>
+                <circle id="Oval" cx="10" cy="40" r="1"></circle>
+                <circle id="Oval" cx="16" cy="40" r="1"></circle>
+                <circle id="Oval" cx="19" cy="31" r="1"></circle>
+                <circle id="Oval" cx="19" cy="37" r="1"></circle>
+                <circle id="Oval" cx="22" cy="34" r="1"></circle>
+                <circle id="Oval" cx="22" cy="40" r="1"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

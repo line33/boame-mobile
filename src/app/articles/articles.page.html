@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border" translucent="true">
+  <ion-toolbar color="translucent" id="article-app-header">
+    <app-article-header></app-article-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" id="content-wrapper">
+  <ion-slides id="slides-container" (ionSlidesDidLoad)="slideLoaded($event)" (ionSlideDidChange)="slideChanged($event)" paginationType="fraction">
+    <ion-slide id="slide-container" style="background-image: url('../../assets/img/demo-article-image.svg');">
+      <div class="slide-content page-wrapper">
+        <h1>Building a stronger Ghana</h1>
+
+        <a href="javascript:void(0)" ion-button [routerLink]="['/view-article']">
+          <img src="../../assets/img/arrow-right-white.svg"/>
+        </a>
+
+      </div>
+    </ion-slide>
+
+    <ion-slide id="slide-container" style="background-image: url('../../assets/img/unnamed(1).jpg');">
+      <div class="slide-content page-wrapper">
+        <h1>Focus on what works</h1>
+
+        <a href="javascript:void(0)" ion-button>
+          <img src="../../assets/img/arrow-right-white.svg"/>
+        </a>
+
+      </div>
+    </ion-slide>
+
+    <ion-slide id="slide-container">
+      <h1>Slide 3</h1>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- counter -->
+  <div class="counter">
+    {{currentSlide}}/{{totalSlides}}
+  </div>
+
+</ion-content>

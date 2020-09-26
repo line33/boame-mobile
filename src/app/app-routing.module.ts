@@ -67,6 +67,30 @@ const routes: Routes = [
     path: 'online-counselors',
     loadChildren: () => import('./online-counselors/online-counselors.module').then( m => m.OnlineCounselorsPageModule)
   },
+  {
+    path: 'video-center',
+    loadChildren: () => import('./video-center/video-center.module').then( m => m.VideoCenterPageModule)
+  },
+  {
+    path: 'video-info',
+    loadChildren: () => import('./video-info/video-info.module').then( m => m.VideoInfoPageModule)
+  },
+  {
+    path: 'watch-video',
+    loadChildren: () => import('./watch-video/watch-video.module').then( m => m.WatchVideoPageModule)
+  },
+  {
+    path: 'articles',
+    loadChildren: () => import('./articles/articles.module').then( m => m.ArticlesPageModule)
+  },
+  {
+    path: 'view-article',
+    loadChildren: () => import('./view-article/view-article.module').then( m => m.ViewArticlePageModule)
+  },
+  {
+    path: 'complete-reset',
+    loadChildren: () => import('./complete-reset/complete-reset.module').then( m => m.CompleteResetPageModule)
+  },
 ];
 
 @NgModule({

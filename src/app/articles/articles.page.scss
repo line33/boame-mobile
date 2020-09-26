@@ -1,0 +1,109 @@
+ion-slides {
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+}
+
+#content-wrapper{
+    position: relative;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+ion-toolbar {
+    --background-color: transparent;
+    --ion-color-base: transparent !important;
+    z-index: 99;
+    top: 0;
+    position: absolute;
+}
+
+.header::after {
+    background-image: none;
+}
+  
+#slide-container{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 99;
+    color: #fff;
+    overflow: hidden;
+}
+
+#slides-container{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#slide-container::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('../../assets/img/header-overlay.svg');
+    content: "";
+    height: 572px;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#slide-container .slide-content{
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    z-index: 120;
+    color: #fff;
+    max-height: 300px;
+}
+
+#slide-container::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: "";
+    height: 301px;
+    z-index: 2;
+    box-shadow: 0px -27px 42px 64px rgba(51, 112, 163, 0.8);
+    background: rgba(51, 112, 163, 0.8);
+}
+
+.slide-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.slide-content a{
+    width: 84px;
+    height: 42px;
+    background: #FF9001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 21px;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 50px;
+}
+
+.slide-content h1{
+    font-size: 42px;
+    font-family: "Roboto-bold", Helvetica, Arial, serif !important;
+    text-align: left;
+    width: 70%;
+}
+
+.counter{
+    position: fixed;
+    right: 5px;
+    z-index: 999;
+    color: #fff;
+    font-family: "Roboto-bold", Helvetica, Arial, serif !important;
+    bottom: 20px;
+    font-size: 20px;
+}

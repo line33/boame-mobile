@@ -1,6 +1,5 @@
 .becomeavolunteer {
     width               : 100%;
-    min-width           : 320px;
     height              : 100vh;
     min-height          : 898px;
     position            : relative;
@@ -13,26 +12,16 @@
   }
   .becomeavolunteer .rectangle {
     background-color    : rgba(255, 255, 255, 1.0);
-    top                 : -2px;
+    top                 : 0px;
     height              : 61px;
-    width               : 320px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
-  .becomeavolunteer .arrow1 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 24px;
-    height              : 12px;
-    width               : 26px;
-    position            : absolute;
-    margin              : 0;
-    left                : 15px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
+  
   .becomeavolunteer .becomeavolunteer1 {
     background-color    : rgba(255,255,255,0.0);
     top                 : 80px;
@@ -40,7 +29,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto-bold", Helvetica, Arial, serif;
@@ -60,10 +48,9 @@
     top                 : 259px;
     height              : 46px;
     box-sizing          : border-box;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     border-style        : solid;
     border-width        : 1px;
     border-color        : rgba(51, 112, 163, 0.16);
@@ -73,10 +60,9 @@
   .becomeavolunteer .pleaseselect {
     top                 : 235px;
     height              : auto;
-    width               : auto;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 14px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -90,161 +76,7 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 831px;
     height              : 92px;
-    width               : 345px;
-    position            : absolute;
-    margin              : 0;
-    left                : -13px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .becomeavolunteer .chat49 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 863px;
-    height              : 21px;
-    width               : 21px;
-    position            : absolute;
-    margin              : 0;
-    left                : 279px;
-    transform           : rotate(0deg);
-    opacity             : 0.16;
-  }
-  .becomeavolunteer .home1 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 862px;
-    height              : 20px;
-    width               : 20px;
-    position            : absolute;
-    margin              : 0;
-    left                : 15px;
-    transform           : rotate(0deg);
-    opacity             : 0.16;
-  }
-  .becomeavolunteer .home1 .shape {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 20px;
-    width               : 20px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .becomeavolunteer .navigation {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 864px;
-    height              : 19px;
-    width               : 20px;
-    position            : absolute;
-    margin              : 0;
-    left                : 74px;
-    transform           : rotate(0deg);
-    opacity             : 0.16;
-  }
-  .becomeavolunteer .navigation .shape {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 19px;
-    width               : 20px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .becomeavolunteer .alarm1 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 862px;
-    height              : 20px;
-    width               : 21px;
-    position            : absolute;
-    margin              : 0;
-    left                : 146px;
-    transform           : rotate(0deg);
-    opacity             : 0.16;
-  }
-  .becomeavolunteer .alarm1 .shape {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 20px;
-    width               : 17px;
-    position            : absolute;
-    margin              : 0;
-    left                : 2px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .becomeavolunteer .alarm1 .path {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 4px;
-    height              : 4px;
-    width               : 7px;
-    position            : absolute;
-    margin              : 0;
-    left                : 6px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .becomeavolunteer .alarm1 .path1 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 7px;
-    height              : 6px;
-    width               : 2px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .becomeavolunteer .alarm1 .path2 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 8px;
-    height              : 5px;
-    width               : 1px;
-    position            : absolute;
-    margin              : 0;
-    left                : 2px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .becomeavolunteer .alarm1 .path3 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 7px;
-    height              : 6px;
-    width               : 2px;
-    position            : absolute;
-    margin              : 0;
-    left                : 19px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .becomeavolunteer .alarm1 .path4 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 8px;
-    height              : 5px;
-    width               : 1px;
-    position            : absolute;
-    margin              : 0;
-    left                : 18px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .becomeavolunteer .users {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 862px;
-    height              : 20px;
-    width               : 22px;
-    position            : absolute;
-    margin              : 0;
-    left                : 216px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .becomeavolunteer .users .shape {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 20px;
-    width               : 22px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
@@ -255,10 +87,9 @@
     background-color    : rgba(255, 144, 1, 1.0);
     top                 : 749px;
     height              : 56px;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     border-radius       : 28px;
     transform           : rotate(0deg);
     opacity             : 1.0;
@@ -267,10 +98,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 768px;
     height              : auto;
-    width               : auto;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 125px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -278,7 +108,7 @@
     font-style          : normal;
     font-size           : 16.0px;
     color               : rgba(255, 255, 255, 1.0);
-    text-align          : left;
+    text-align          : center;
     line-height         : 19.0px;
   }
   .becomeavolunteer .chooseaposition {
@@ -288,7 +118,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 14px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -299,47 +128,14 @@
     text-align          : left;
     line-height         : 19.0px;
   }
-  .becomeavolunteer .downarrow {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 281px;
-    height              : 6px;
-    width               : 12px;
-    position            : absolute;
-    margin              : 0;
-    left                : 276px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .becomeavolunteer .downarrow .path {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 6px;
-    width               : 12px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .becomeavolunteer .downarrow .path1 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 6px;
-    width               : 12px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
+
   .becomeavolunteer .group {
     background-color    : rgba(255,255,255,0.0);
     top                 : 331px;
     height              : 73px;
-    width               : 286px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 14px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -348,10 +144,9 @@
     top                 : 27px;
     height              : 46px;
     box-sizing          : border-box;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 1px;
     border-style        : solid;
     border-width        : 1px;
     border-color        : rgba(51, 112, 163, 0.16);
@@ -365,7 +160,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -398,10 +192,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 431px;
     height              : 73px;
-    width               : 286px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 14px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -410,10 +203,9 @@
     top                 : 27px;
     height              : 46px;
     box-sizing          : border-box;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 1px;
     border-style        : solid;
     border-width        : 1px;
     border-color        : rgba(51, 112, 163, 0.16);
@@ -427,7 +219,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -460,10 +251,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 535px;
     height              : 73px;
-    width               : 286px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 14px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -472,10 +262,9 @@
     top                 : 27px;
     height              : 46px;
     box-sizing          : border-box;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 1px;
     border-style        : solid;
     border-width        : 1px;
     border-color        : rgba(51, 112, 163, 0.16);
@@ -489,7 +278,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -522,10 +310,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 640px;
     height              : 73px;
-    width               : 286px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 14px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -534,10 +321,9 @@
     top                 : 27px;
     height              : 46px;
     box-sizing          : border-box;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 1px;
     border-style        : solid;
     border-width        : 1px;
     border-color        : rgba(51, 112, 163, 0.16);
@@ -551,7 +337,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;

@@ -1,0 +1,66 @@
+.publishedvideos {
+    width               : 100%;
+    height              : 100vh;
+    min-height          : 688px;
+    position            : relative;
+    overflow            : hidden;
+    margin              : 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color    : rgba(255, 255, 255, 1.0);
+    opacity             : 1.0;
+  }
+
+  .publishedvideos .videos {
+    margin-top          : 50px;
+    position            : relative;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-style          : normal;
+    font-size           : 47.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 48.0px;
+    margin-bottom       : 50px;
+  }
+
+  .video-list-footer{
+      font-size: 14px;
+      color: #D7D7D7;
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      font-family         : "Roboto", Helvetica, Arial, serif;
+  }
+
+  .video-list{
+      margin-bottom: 30px;
+  }
+
+  .video-list h2{
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-size           : 20px;
+  }
+
+  .video-list a {
+      color: initial;
+  }
+
+  .video-filter{
+      position      : fixed;
+      width         : 65px;  
+      height        : 50px;
+      background-color : #3370A3;
+      color         : #fff;
+      border        : none;
+      border-radius : 7px;
+      padding-left  : 5px;
+      bottom        : 20vh;
+      right         : 5px;
+      z-index       : 99;
+      background-image: url('../../assets/img/down-arrow-white.svg');
+      background-position: 90%;
+      outline: none;
+      box-shadow: none;
+  }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GoBackComponent } from '../go-back/go-back.component';
-import { element } from 'protractor';
 
 @Component({
   selector: 'app-volunteer-header',

@@ -10,43 +10,58 @@
         <div class="reportacase1">
             Report a<br />Case
         </div>
-        <a href="">
-          <img alt="Image/" src="../../assets/img/report-a-case-rectangle@2x.png" class="rectangle"/>
-          <div class="phone2">
-            <img alt="Image/" src="../../assets/img/report-a-case-path-1@2x.png" class="path"/>
-            <img alt="Image/" src="../../assets/img/report-a-case-shape-3@2x.png" class="shape"/>
+
+        <div class="report-case-wrapper">
+
+          <div class="case-row">
+              <a href="javascript:void(0)" ion-button>
+                <div class="case-row-icon phone-call">
+                  <img src="../../assets/img/p-phone-white.svg"/>
+                </div>
+                <span class="case-row-text">
+                  Make a Phone call
+                </span>
+              </a>
           </div>
-        </a>
-        <a href="javascript:void(0)" ion-button [routerLink]="['/send-an-audio']">
-            <img alt="Image/" src="../../assets/img/report-a-case-rectangle-copy-2@2x.png" class="rectanglecopy2"/>
-            <div class="microphone1">
-              <img alt="Image/" src="../../assets/img/microphone-1.svg" class="shape"/>
-            </div>
-        </a>
-        <a href="javascript:void(0)" ion-button [routerLink]="['/send-a-video']">
-            <img alt="Image/" src="../../assets/img/report-a-case-rectangle-copy@2x.png" class="rectanglecopy"/>
-            <div class="videocamera">
-              <img alt="Image/" src="../../assets/img/report-a-case-shape-1@2x.png" class="shape"/>
-            </div>
-        </a>
-        <a href="javascript:void(0)" ion-button [routerLink]="['/send-a-message']">
-            <img alt="Image/" src="../../assets/img/report-a-case-rectangle-copy-3@2x.png" class="rectanglecopy3"/>
-            <div class="compose">
-              <img alt="Image/" src="../../assets/img/report-a-case-shape-2@2x.png" class="shape"/>
-            </div>
-        </a>
-        <div class="makeaphonecall">
-            Make a <br />Phone call
+
+
+          <div class="case-row">
+            <a href="javascript:void(0)" ion-button [routerLink]="['/send-a-video']">
+              <div class="case-row-icon send-video">
+                <img src="../../assets/img/p-video-camera.svg"/>
+              </div>
+              <span class="case-row-text">
+                Send a Video
+              </span>
+            </a>
+          </div>
+
+          <div class="case-row">
+            <a href="javascript:void(0)" ion-button [routerLink]="['/send-an-audio']">
+              <div class="case-row-icon send-audio">
+                <img src="../../assets/img/p-microphone-1.svg"/>
+              </div>
+              <span class="case-row-text">
+                Send an Audio
+              </span>
+            </a>
+          </div>
+
+
+          <div class="case-row">
+            <a href="javascript:void(0)" ion-button [routerLink]="['/send-a-message']">
+              <div class="case-row-icon send-message">
+                <img src="../../assets/img/p-compose.svg"/>
+              </div>
+              <span class="case-row-text">
+                Send a Message
+              </span>
+            </a>
+          </div>
+
+
         </div>
-        <div class="sendavideo">
-            Send a<br />Video
-        </div>
-        <div class="sendanaudio">
-            Send an <br />Audio
-        </div>
-        <div class="sendamessage">
-            Send a <br />Message
-        </div>
+        
         
     </div>
 </div>

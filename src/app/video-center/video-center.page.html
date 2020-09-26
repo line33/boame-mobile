@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-video-header></app-video-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="publishedvideos anima-word-break ">
+    <div class="page-wrapper">
+        <div class="videos">
+            Videos
+        </div>
+
+        <div class="video-list-wrapper">
+
+          <div class="video-list">
+            <a href="javascript:void(0)" ion-button [routerLink]="['/video-info']">
+              <h2>Making Men</h2>
+              <div class="video-list-footer">
+                <span>Christopher Joe</span>
+                <span>15 Mins</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="video-list">
+            <a href="javascript:void(0)" ion-button [routerLink]="['/video-info']">
+              <h2>How to Stay Safe</h2>
+              <div class="video-list-footer">
+                <span>Micheal Smith</span>
+                <span>10 Mins</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="video-list">
+            <a href="javascript:void(0)" ion-button [routerLink]="['/video-info']">
+              <h2>Building a better Ghana</h2>
+              <div class="video-list-footer">
+                <span>Anita Benson</span>
+                <span>15 Mins</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <select class="video-filter">
+    <option value="asc">A - Z</option>
+    <option value="desc">Z - A</option>
+  </select>
+  <app-basic-footer></app-basic-footer>
+</ion-footer>

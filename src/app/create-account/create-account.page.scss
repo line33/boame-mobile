@@ -1,6 +1,5 @@
 .createanaccount {
     width               : 100%;
-    min-width           : 320px;
     height              : 100vh;
     min-height          : 1081px;
     position            : relative;
@@ -18,7 +17,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto-bold", Helvetica, Arial, serif;
@@ -35,10 +33,9 @@
     background-color    : rgba(255, 144, 1, 1.0);
     top                 : 902px;
     height              : 56px;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     border-radius       : 28px;
     transform           : rotate(0deg);
     opacity             : 1.0;
@@ -47,10 +44,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 922px;
     height              : auto;
-    width               : auto;
+    width               : 100%;
     position            : absolute;
-    margin              : 0;
-    left                : 130px;
+    margin              : 0 auto;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -58,17 +54,17 @@
     font-style          : normal;
     font-size           : 16.0px;
     color               : rgba(255, 255, 255, 1.0);
-    text-align          : left;
+    text-align          : center;
     line-height         : 19.0px;
   }
   .createanaccount .groupcopy {
     background-color    : rgba(255,255,255,0.0);
     top                 : 476px;
     height              : 75px;
-    width               : 286px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 14px;
+    left                : 0px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -77,10 +73,10 @@
     top                 : 27px;
     height              : 48px;
     box-sizing          : border-box;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 1px;
+    left                : 0px;
     border-style        : solid;
     border-width        : 1px;
     border-color        : rgba(51, 112, 163, 0.16);
@@ -94,7 +90,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -127,10 +122,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 580px;
     height              : 75px;
-    width               : 286px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 14px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -139,10 +133,9 @@
     top                 : 27px;
     height              : 48px;
     box-sizing          : border-box;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 1px;
     border-style        : solid;
     border-width        : 1px;
     border-color        : rgba(51, 112, 163, 0.16);
@@ -156,7 +149,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -189,10 +181,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 686px;
     height              : 75px;
-    width               : 286px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 14px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -201,10 +192,9 @@
     top                 : 27px;
     height              : 48px;
     box-sizing          : border-box;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 1px;
     border-style        : solid;
     border-width        : 1px;
     border-color        : rgba(51, 112, 163, 0.16);
@@ -218,7 +208,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -251,10 +240,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 791px;
     height              : 75px;
-    width               : 286px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 14px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -263,10 +251,9 @@
     top                 : 27px;
     height              : 48px;
     box-sizing          : border-box;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 1px;
     border-style        : solid;
     border-width        : 1px;
     border-color        : rgba(51, 112, 163, 0.16);
@@ -280,7 +267,7 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
+    left                : 0px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -313,10 +300,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 372px;
     height              : 75px;
-    width               : 286px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -325,10 +311,9 @@
     top                 : 27px;
     height              : 48px;
     box-sizing          : border-box;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 1px;
     border-style        : solid;
     border-width        : 1px;
     border-color        : rgba(51, 112, 163, 0.16);
@@ -342,7 +327,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -375,10 +359,9 @@
     background-color    : rgba(228, 138, 16, 0.12);
     top                 : 235px;
     height              : 99px;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     border-radius       : 6px;
     transform           : rotate(0deg);
     opacity             : 1.0;
@@ -390,7 +373,7 @@
     width               : 57px;
     position            : absolute;
     margin              : 0;
-    left                : 226px;
+    right                : 20px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -430,7 +413,7 @@
     width               : 25px;
     position            : absolute;
     margin              : 0;
-    left                : 243px;
+    right                : 35px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }

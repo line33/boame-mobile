@@ -10,20 +10,20 @@
             </div>
         </a>
         <div class="groupcopy">
-            <input class="form-input" placeholder="Email or Telephone" type="text">
+            <input class="form-input" placeholder="Email or Telephone" type="text" [(ngModel)]="username" data-input="[\S]{2,}" data-message="You must provide a valid username">
             <div class="username">
                 Username
             </div>
         </div>
         <div class="groupcopy2">
-            <input class="form-input" placeholder="Your password" type="password">
+            <input class="form-input" placeholder="Your password" type="password" [(ngModel)]="password" data-input="[\S\s]{4,}" data-message="Your password must not be empty or less than 4 characters">
             <div class="password">
                 Password
             </div>
         </div>
 
         <div class="">
-          <div class="rectangle1">
+          <div class="rectangle1 add-shadow-and-curve">
           </div>
           <div class="clickheretologin">
               Click here to login to your <br />account from facebook.

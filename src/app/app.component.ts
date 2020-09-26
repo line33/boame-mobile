@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { Router, NavigationEnd } from '@angular/router';
+import { CacheService } from './services/cache.service';
 
 @Component({
   selector: 'app-root',
@@ -23,16 +23,24 @@ export class AppComponent {
     "/volunteers"               : "volunteer-tab",
     "/knowledge-center"         : "nav-tab",
     "/online-counselors"        : "chat-tab",
+    "/video-center"             : "nav-tab",
+    "/audio-center"             : "nav-tab",
+    "/video-info"               : "nav-tab",
+    "/watch-video"              : "nav-tab",
+    "/articles"                 : "nav-tab",
+    "/view-article"             : "nav-tab",
   };
+
+  static accountInformation : any = {};
 
   static defaultNavigation = [];
   static isLoggedIn : boolean = false;
 
   constructor(
     private platform: Platform,
-    private router: Router,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private cache : CacheService
   ) {
     this.initializeApp();
   }
@@ -41,6 +49,9 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      // load to local storage 
+      this.cache.loadAll();
 
     });
   }

@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-go-back></app-go-back>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="complete-resetyourpassword anima-word-break">
+    <div class="page-wrapper">
+        
+        <div class="resetyourpassword1">
+            Complete your<br />Password Reset
+        </div>
+
+        <a href="javascript:void(0)" ion-button (click)="submit()">
+          <div class="rectangle1">
+          </div>
+          <div class="sendrequest">
+              Complete
+          </div>
+        </a>
+        
+        <div class="groupcopy">
+            <input class="form-input" [(ngModel)]="resetCode" placeholder="Reset Verification Code" type="tel" data-input="[\S]{4,}" data-message="You must provide the code sent to your mail">
+            <div class="username label">
+                Reset Code
+            </div>
+        </div>
+
+        <a href="javascript:void(0)" ion-button (click)="resend()">
+            <div class="resendCode">
+              <span class="timer"></span>  <span class="text">Resend Code</span>
+            </div>
+        </a>
+    </div>
+</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-basic-footer></app-basic-footer>
+</ion-footer>

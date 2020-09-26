@@ -11,7 +11,7 @@
             Create an<br />Account
         </div>
 
-        <a href="javascript:void(0)" ion-button>
+        <a href="javascript:void(0)" ion-button (click)="register()">
             <div class="rectangle">
             </div>
 
@@ -21,38 +21,42 @@
         </a>
         
         <div class="groupcopy">
-            <input class="form-input" placeholder="Your email" type="email">
+            <input class="form-input" placeholder="Your email" [(ngModel)]="inputs.email" type="email" data-input="[\S]{5,}" data-message="Should be a valid email address">
             <div class="emailaddress label">
                 Email Address
             </div>
         </div>
         <div class="groupcopy2">
-            <input class="form-input" placeholder="Your phone number" type="tel">
+            <input class="form-input" placeholder="Your phone number" type="tel" [(ngModel)]="inputs.phone" data-input="[\d]{5,}" data-message="Should be a valid telephone number">
             <div class="telephone label">
                 Telephone
             </div>
         </div>
         <div class="groupcopy4">
-            <input class="form-input" placeholder="Your password" type="password">
+            <input class="form-input" placeholder="Your password" type="password" [(ngModel)]="inputs.password" data-input="[\S\s]{4,}" data-message="Should be a password you can remember of 4 characters or more.">
             <div class="password label">
                 Password
             </div>
         </div>
         <div class="groupcopy5">
-            <input class="form-input" placeholder="Your password again" type="password">
+            <input class="form-input" placeholder="Your password again" type="password" [(ngModel)]="inputs.password_again" data-input="[\S\s]{4,}" data-message="Should match your password and cannot be empty.">
             <div class="passwordagain label">
                 Password Again
             </div>
         </div>
         <div class="groupcopy3">
-            <input class="form-input" placeholder="Your first and last name" type="text">
+            <div class="input-group">
+                <input class="form-input" placeholder="First Name" type="text" [(ngModel)]="inputs.firstname" data-input="[\S\s]{2,}" data-parent=".groupcopy3 > .error-wrapper" data-message="Should be your first name">
+                <input class="form-input" placeholder="last Name" type="text" [(ngModel)]="inputs.lastname" data-input="[\S\s]{2,}" data-parent=".groupcopy3 > .error-wrapper" data-message="Should be your last name">
+            </div>
+            <div class="error-wrapper"></div>
             <div class="fullname label">
                 Fullname
             </div>
         </div>
 
         <a href="javascript:void(0)" ion-button [routerLink]="['/become-a-volunteer']">
-            <div class="rectangle1">
+            <div class="rectangle1 add-shadow-and-curve">
             </div>
         
             <div class="group">

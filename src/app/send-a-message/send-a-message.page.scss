@@ -1,6 +1,5 @@
 .sendamessage {
     width               : 100%;
-    min-width           : 320px;
     height              : 100vh;
     min-height          : 788px;
     position            : relative;
@@ -18,7 +17,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto-bold", Helvetica, Arial, serif;
@@ -34,17 +32,18 @@
     box-sizing          : border-box;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     opacity             : 1.0;
+    width               : 100%;
   }
   .sendamessage .rectangle .form-input{
     height              : 249px;
+    width               : 100%;
   }
   .sendamessage .yourreporthere {
     background-color    : rgba(255,255,255,0.0);
     top                 : 384px;
     height              : auto;
-    width               : auto;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 32px;
@@ -73,10 +72,9 @@
     background-color    : rgba(228, 138, 16, 0.12);
     top                 : 235px;
     height              : 99px;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     border-radius       : 6px;
     transform           : rotate(0deg);
     opacity             : 1.0;
@@ -88,7 +86,7 @@
     width               : 57px;
     position            : absolute;
     margin              : 0;
-    left                : 226px;
+    right               : 20px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -99,7 +97,7 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 30px;
+    left                : 20px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -117,7 +115,7 @@
     width               : 20px;
     position            : absolute;
     margin              : 0;
-    left                : 245px;
+    right               : 38px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -136,10 +134,9 @@
     background-color    : rgba(255, 144, 1, 1.0);
     top                 : 639px;
     height              : 56px;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     border-radius       : 28px;
     transform           : rotate(0deg);
     opacity             : 1.0;
@@ -148,10 +145,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 658px;
     height              : auto;
-    width               : auto;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 105px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -159,6 +155,6 @@
     font-style          : normal;
     font-size           : 16.0px;
     color               : rgba(255, 255, 255, 1.0);
-    text-align          : left;
+    text-align          : center;
     line-height         : 19.0px;
   }

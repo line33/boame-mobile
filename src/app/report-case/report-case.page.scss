@@ -1,6 +1,5 @@
 .reportacase {
     width               : 100%;
-    min-width           : 319px;
     height              : 100vh;
     min-height          : 688px;
     position            : relative;
@@ -19,7 +18,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto-bold", Helvetica, Arial, serif;
@@ -29,417 +27,76 @@
     text-align          : left;
     line-height         : 48.0px;
   }
-  .reportacase .rectangle {
+  .reportacase .report-case-wrapper {
     background-color    : rgba(255,255,255,0.0);
     top                 : 234px;
-    height              : 132px;
-    width               : 139px;
     position            : absolute;
     margin              : 0;
-    left                : 14px;
+    left                : 0px;
     transform           : rotate(0deg);
     opacity             : 1.0;
-  }
-  .reportacase .rectanglecopy2 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 434px;
-    height              : 132px;
-    width               : 139px;
-    position            : absolute;
-    margin              : 0;
-    left                : 14px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .rectanglecopy {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 234px;
-    height              : 132px;
-    width               : 139px;
-    position            : absolute;
-    margin              : 0;
-    left                : 162px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .rectanglecopy3 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 434px;
-    height              : 132px;
-    width               : 139px;
-    position            : absolute;
-    margin              : 0;
-    left                : 162px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .makeaphonecall {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 367px;
-    height              : auto;
-    width               : auto;
-    position            : absolute;
-    margin              : 0;
-    left                : 50px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-    font-family         : "Roboto", Helvetica, Arial, serif;
-    font-weight         : 400;
-    font-style          : normal;
-    font-size           : 14.0px;
-    color               : rgba(0, 0, 0, 1.0);
-    text-align          : center;
-    line-height         : 16.0px;
-  }
-  .reportacase .sendavideo {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 367px;
-    height              : auto;
-    width               : auto;
-    position            : absolute;
-    margin              : 0;
-    left                : 210px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-    font-family         : "Roboto", Helvetica, Arial, serif;
-    font-weight         : 400;
-    font-style          : normal;
-    font-size           : 14.0px;
-    color               : rgba(0, 0, 0, 1.0);
-    text-align          : center;
-    line-height         : 16.0px;
-  }
-  .reportacase .sendanaudio {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 565px;
-    height              : auto;
-    width               : auto;
-    position            : absolute;
-    margin              : 0;
-    left                : 53px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-    font-family         : "Roboto", Helvetica, Arial, serif;
-    font-weight         : 400;
-    font-style          : normal;
-    font-size           : 14.0px;
-    color               : rgba(0, 0, 0, 1.0);
-    text-align          : center;
-    line-height         : 16.0px;
-  }
-  .reportacase .sendamessage {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 564px;
-    height              : auto;
-    width               : auto;
-    position            : absolute;
-    margin              : 0;
-    left                : 205px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-    font-family         : "Roboto", Helvetica, Arial, serif;
-    font-weight         : 400;
-    font-style          : normal;
-    font-size           : 14.0px;
-    color               : rgba(0, 0, 0, 1.0);
-    text-align          : center;
-    line-height         : 16.0px;
-  }
-  .reportacase .microphone1 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 464px;
-    height              : 58px;
-    width               : 32px;
-    position            : relative;
-    margin              : 0;
-    left                : 68px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
+    display             : grid;
+    grid-template-columns : 1fr 1fr;
+    width               : 100%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  .reportacase .videocamera {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 218px;
-    height              : 41px;
-    width               : 57px;
-    position            : relative;
-    margin              : 0;
-    left                : 206px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
+  .reportacase .report-case-wrapper .case-row{
+    width: 100%;
+    display: flex;
+    margin-bottom: 40px;
   }
-  .reportacase .videocamera .shape {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 40px;
-    width               : 57px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
+
+  .reportacase .report-case-wrapper .case-row:nth-of-type(odd){
+    justify-content: flex-start;
   }
-  .reportacase .compose {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 465px;
-    height              : 57px;
-    width               : 57px;
-    position            : absolute;
-    margin              : 0;
-    left                : 206px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
+
+  .reportacase .report-case-wrapper .case-row:nth-of-type(even){
+    justify-content: flex-end;
   }
-  .reportacase .compose .shape {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 57px;
-    width               : 57px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
+
+  .reportacase .report-case-wrapper .case-row a{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 123px;
+    color: #000;
   }
-  .reportacase .phone2 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 272px;
-    height              : 49px;
-    width               : 49px;
-    position            : absolute;
-    margin              : 0;
-    left                : 59px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
+
+  .report-case-wrapper .case-row-icon{
+    width: 123px;
+    height: 116px;
+    border-radius: 20px;
+    box-shadow: -1px 7px 8px rgba(0,0,0,0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .reportacase .phone2 .path {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 5px;
-    height              : 17px;
-    width               : 17px;
-    position            : absolute;
-    margin              : 0;
-    left                : 26px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
+
+  .report-case-wrapper .case-row-text{
+    font-size           : 14px;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    margin              : 0 auto;
+    margin-top          : 20px;
+    width               : 65px;
+    display             : block;
+    text-align          : center;
   }
-  .reportacase .phone2 .shape {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 49px;
-    width               : 49px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
+
+  .case-row .phone-call{
+    background: #00CC5F;
   }
-  .reportacase .rectangle1 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 721px;
-    height              : 92px;
-    width               : 345px;
-    position            : absolute;
-    margin              : 0;
-    left                : -13px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
+
+  .case-row .send-video{
+    background: #FFD862;
   }
-  .reportacase .chat49 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 753px;
-    height              : 21px;
-    width               : 21px;
-    position            : absolute;
-    margin              : 0;
-    left                : 279px;
-    transform           : rotate(0deg);
-    opacity             : 0.16;
+
+  .case-row .send-audio{
+    background: #3370A3;
   }
-  .reportacase .chat49 .shape {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 21px;
-    width               : 21px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .chat49 .shape1 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 11px;
-    height              : 3px;
-    width               : 3px;
-    position            : absolute;
-    margin              : 0;
-    left                : 4px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .chat49 .shape2 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 11px;
-    height              : 3px;
-    width               : 3px;
-    position            : absolute;
-    margin              : 0;
-    left                : 7px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .chat49 .shape3 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 11px;
-    height              : 3px;
-    width               : 3px;
-    position            : absolute;
-    margin              : 0;
-    left                : 11px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .home1 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 752px;
-    height              : 20px;
-    width               : 20px;
-    position            : absolute;
-    margin              : 0;
-    left                : 15px;
-    transform           : rotate(0deg);
-    opacity             : 0.16;
-  }
-  .reportacase .home1 .shape {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 20px;
-    width               : 20px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .navigation {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 754px;
-    height              : 19px;
-    width               : 20px;
-    position            : absolute;
-    margin              : 0;
-    left                : 74px;
-    transform           : rotate(0deg);
-    opacity             : 0.16;
-  }
-  .reportacase .navigation .shape {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 19px;
-    width               : 20px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .alarm1 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 752px;
-    height              : 20px;
-    width               : 21px;
-    position            : absolute;
-    margin              : 0;
-    left                : 146px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .alarm1 .shape {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 20px;
-    width               : 17px;
-    position            : absolute;
-    margin              : 0;
-    left                : 2px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .alarm1 .path {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 4px;
-    height              : 4px;
-    width               : 7px;
-    position            : absolute;
-    margin              : 0;
-    left                : 6px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .alarm1 .path1 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 7px;
-    height              : 6px;
-    width               : 2px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .alarm1 .path2 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 8px;
-    height              : 5px;
-    width               : 1px;
-    position            : absolute;
-    margin              : 0;
-    left                : 2px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .alarm1 .path3 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 7px;
-    height              : 6px;
-    width               : 2px;
-    position            : absolute;
-    margin              : 0;
-    left                : 19px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .alarm1 .path4 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 8px;
-    height              : 5px;
-    width               : 1px;
-    position            : absolute;
-    margin              : 0;
-    left                : 18px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .reportacase .users {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 752px;
-    height              : 20px;
-    width               : 22px;
-    position            : absolute;
-    margin              : 0;
-    left                : 216px;
-    transform           : rotate(0deg);
-    opacity             : 0.16;
-  }
-  .reportacase .users .shape {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 0px;
-    height              : 20px;
-    width               : 22px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
+
+  .case-row .send-message{
+    background: #FF9001;
   }

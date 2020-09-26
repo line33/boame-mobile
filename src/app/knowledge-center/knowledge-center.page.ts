@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-knowledge-center',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KnowledgeCenterPage implements OnInit {
 
+  @ViewChild(IonContent) content: IonContent;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  scrollToTop() {
+    this.content.scrollToPoint(0, -10, 400);
+  }
+
+  ionViewDidEnter(){
+    this.scrollToTop();
+  }
 }

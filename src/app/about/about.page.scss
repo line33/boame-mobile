@@ -1,23 +1,25 @@
+  .about .page-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   .about .asset14x {
     background-color    : rgba(255,255,255,0.0);
     top                 : 25px;
     height              : 159px;
     width               : 159px;
-    position            : absolute;
-    margin              : 0;
-    left                : 80px;
+    position            : relative;
+    margin              : 0 auto;
     transform           : rotate(0deg);
     opacity             : 1.0;
     margin-top          : -10px;
   }
   .about .version001 {
     background-color    : rgba(255,255,255,0.0);
-    top                 : 141px;
     height              : auto;
     width               : auto;
-    position            : absolute;
     margin              : 0;
-    left                : 124px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -31,12 +33,9 @@
   }
   .about .theunitednationsp {
     background-color    : rgba(255,255,255,0.0);
-    top                 : 174px;
     height              : auto;
-    width               : 273px;
-    position            : absolute;
+    width               : 90%;
     margin              : 0;
-    left                : 24px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -46,156 +45,32 @@
     color               : rgba(0, 0, 0, 1.0);
     text-align          : center;
     line-height         : 21.0px;
-    margin-top          : -10px;
+    margin-top          : 10px;
+    margin-bottom       : 20px;
   }
   .about .group {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 600px;
-    height              : 35px;
-    width               : 208px;
-    position            : absolute;
-    margin              : 0;
-    left                : 60px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .about .group .rectangle {
     background-color    : rgba(51, 112, 163, 0.08);
-    top                 : 0px;
     height              : 35px;
     width               : 208px;
-    position            : absolute;
     margin              : 0;
-    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
     border-radius       : 17px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .about .group .reportacase {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 9px;
-    height              : auto;
-    width               : auto;
-    position            : absolute;
-    margin              : 0;
-    left                : 60px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-    font-family         : "Roboto", Helvetica, Arial, serif;
-    font-weight         : 400;
-    font-style          : normal;
-    font-size           : 14.0px;
-    color               : rgba(0, 0, 0, 1.0);
-    text-align          : center;
-    line-height         : 16.0px;
-  }
-  .about .groupcopy {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 650px;
-    height              : 35px;
-    width               : 208px;
-    position            : absolute;
-    margin              : 0;
-    left                : 60px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .about .groupcopy .rectangle {
-    background-color    : rgba(51, 112, 163, 0.08);
-    top                 : 0px;
-    height              : 35px;
-    width               : 208px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    border-radius       : 17px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .about .groupcopy .getinformed {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 9px;
-    height              : auto;
-    width               : auto;
-    position            : absolute;
-    margin              : 0;
-    left                : 63px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-    font-family         : "Roboto", Helvetica, Arial, serif;
-    font-weight         : 400;
-    font-style          : normal;
-    font-size           : 14.0px;
-    color               : rgba(0, 0, 0, 1.0);
-    text-align          : center;
-    line-height         : 16.0px;
-  }
-  .about .groupcopy2 {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 699px;
-    height              : 35px;
-    width               : 208px;
-    position            : absolute;
-    margin              : 0;
-    left                : 60px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .about .groupcopy2 .rectangle {
-    background-color    : rgba(51, 112, 163, 0.08);
-    top                 : 0px;
-    height              : 35px;
-    width               : 208px;
-    position            : absolute;
-    margin              : 0;
-    left                : 0px;
-    border-radius       : 17px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .about .groupcopy2 .sendusafeedback {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 9px;
-    height              : auto;
-    width               : auto;
-    position            : absolute;
-    margin              : 0;
-    left                : 43px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-    font-family         : "Roboto", Helvetica, Arial, serif;
-    font-weight         : 400;
-    font-style          : normal;
-    font-size           : 14.0px;
-    color               : rgba(0, 0, 0, 1.0);
-    text-align          : center;
-    line-height         : 16.0px;
-  }
-  .about .download {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 454px;
-    height              : 37px;
-    width               : 79px;
-    position            : absolute;
-    margin              : 0;
-    left                : 121px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
-  }
-  .about .a1129201912415123041q5ddxdovvsu {
-    background-color    : rgba(255,255,255,0.0);
-    top                 : 508px;
-    height              : 40px;
-    width               : 112px;
-    position            : absolute;
-    margin              : 0;
-    left                : 102px;
-    transform           : rotate(0deg);
-    opacity             : 1.0;
+  .about a{
+    margin-bottom: 15px;
+    color: #000;
+    font-size: 14px;
   }
   .partners{
-      margin-top: -50px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
   }
-  .about .page-wrapper{
-      height: 120vh;
+  .partners img{
+    margin-bottom: 15px;
   }

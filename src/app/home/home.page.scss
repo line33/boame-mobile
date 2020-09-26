@@ -1,8 +1,7 @@
 .loginaftersplash {
   width               : 100%;
-  min-width           : 319px;
   height              : 100vh;
-  min-height          : 788px;
+  min-height          : 710px;
   position            : relative;
   overflow            : hidden;
   margin              : 0px;
@@ -18,7 +17,6 @@
   width               : auto;
   position            : absolute;
   margin              : 0;
-  left                : 15px;
   transform           : rotate(0deg);
   opacity             : 1.0;
   font-family         : "Roboto-Bold", Helvetica, Arial, serif;
@@ -32,13 +30,13 @@
   background-color    : rgba(255, 144, 1, 1.0);
   top                 : 586px;
   height              : 56px;
-  width               : 285px;
+  width               : 100%;
   position            : absolute;
   margin              : 0;
-  left                : 15px;
   border-radius       : 28px;
   transform           : rotate(0deg);
   opacity             : 1.0;
+  
 }
 .loginaftersplash .login {
   background-color    : rgba(255,255,255,0.0);
@@ -47,7 +45,6 @@
   width               : auto;
   position            : absolute;
   margin              : 0;
-  left                : 139px;
   transform           : rotate(0deg);
   opacity             : 1.0;
   font-family         : "Roboto", Helvetica, Arial, serif;
@@ -62,10 +59,9 @@
   background-color    : rgba(255,255,255,0.0);
   top                 : 373px;
   height              : 75px;
-  width               : 286px;
+  width               : 100%;
   position            : absolute;
   margin              : 0;
-  left                : 14px;
   transform           : rotate(0deg);
   opacity             : 1.0;
 }
@@ -90,10 +86,9 @@
   background-color    : rgba(255,255,255,0.0);
   top                 : 473px;
   height              : 75px;
-  width               : 286px;
+  width               : 100%;
   position            : absolute;
   margin              : 0;
-  left                : 14px;
   transform           : rotate(0deg);
   opacity             : 1.0;
 }
@@ -118,10 +113,9 @@
   background-color    : rgba(228, 138, 16, 0.12);
   top                 : 235px;
   height              : 99px;
-  width               : 285px;
+  width               : 100%;
   position            : absolute;
   margin              : 0;
-  left                : 15px;
   border-radius       : 6px;
   transform           : rotate(0deg);
   opacity             : 1.0;
@@ -181,10 +175,10 @@
   background-color    : rgba(255,255,255,0.0);
   top                 : 676px;
   height              : auto;
-  width               : auto;
+  width               : 100%;
   position            : absolute;
   margin              : 0;
-  left                : 86px;
+  left                : 0px;
   transform           : rotate(0deg);
   opacity             : 1.0;
   font-family         : "Roboto", Helvetica, Arial, serif;
@@ -192,7 +186,7 @@
   font-style          : normal;
   font-size           : 14.0px;
   color               : rgba(177, 177, 177, 1.0);
-  text-align          : left;
+  text-align          : center;
   line-height         : 16.0px;
   text-decoration     : underline;
 }
@@ -203,7 +197,7 @@
   width               : auto;
   position            : absolute;
   margin              : 0;
-  left                : 221px;
+  right               : 0;
   transform           : rotate(0deg);
   opacity             : 1.0;
   font-family         : "Roboto", Helvetica, Arial, serif;
@@ -221,7 +215,7 @@
   width               : auto;
   position            : absolute;
   margin              : 0;
-  left                : 256px;
+  right               : 0;
   transform           : rotate(0deg);
   opacity             : 1.0;
   font-family         : "Roboto", Helvetica, Arial, serif;

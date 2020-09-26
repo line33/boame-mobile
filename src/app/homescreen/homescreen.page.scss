@@ -1,6 +1,5 @@
  .homescreen {
     width               : 100%;
-    min-width           : 320px;
     height              : 100vh;
     min-height          : 1091px;
     position            : relative;
@@ -18,11 +17,9 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 18px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto-bold", Helvetica, Arial, serif;
-    font-weight         : 500;
     font-style          : normal;
     font-size           : 18.0px;
     color               : rgba(0, 0, 0, 1.0);
@@ -36,11 +33,9 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 17px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto-bold", Helvetica, Arial, serif;
-    font-weight         : 500;
     font-style          : normal;
     font-size           : 18.0px;
     color               : rgba(0, 0, 0, 1.0);
@@ -51,10 +46,9 @@
     background-color    : rgba(228, 138, 16, 0.12);
     top                 : 77px;
     height              : 108px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 18px;
     border-radius       : 6px;
     transform           : rotate(0deg);
     opacity             : 1.0;
@@ -66,7 +60,7 @@
     width               : 57px;
     position            : absolute;
     margin              : 0;
-    left                : 228px;
+    right                : 10px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -77,7 +71,7 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 32px;
+    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto", Helvetica, Arial, serif;
@@ -95,7 +89,7 @@
     width               : 10px;
     position            : absolute;
     margin              : 0;
-    left                : 251px;
+    right               : 35px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -125,10 +119,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 252px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 18px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -136,19 +129,21 @@
     background-color    : rgba(255, 144, 1, 0.12);
     top                 : 0px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
     overflow            : hidden;
     transform           : rotate(0deg);
     opacity             : 1.0;
+    border-radius: 10px;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.1);
   }
   .homescreen .group2 .group .rectangle1 {
     background-color    : rgba(255, 144, 1, 0.12);
     top                 : 0px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
@@ -157,20 +152,20 @@
   }
   .homescreen .group2 .group .genderviolenceconceptillustration1143601972 {
     background-color    : rgba(255,255,255,0.0);
-    top                 : 26px;
-    height              : 135px;
-    width               : 138px;
+    top                 : 31px;
+    height              : 109px;
+    width               : 142px;
     position            : absolute;
     margin              : 0;
-    left                : 151px;
+    right               : 0px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
   .homescreen .group2 .group .genderviolenceconceptillustration1143601972 .layer0 {
     background-color    : rgba(255,255,255,0.0);
     top                 : 0px;
-    height              : 135px;
-    width               : 138px;
+    height              : 100%;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
@@ -188,7 +183,6 @@
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto-bold", Helvetica, Arial, serif;
-    font-weight         : 500;
     font-style          : normal;
     font-size           : 18.0px;
     color               : rgba(0, 0, 0, 1.0);
@@ -199,10 +193,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 411px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 18px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -210,19 +203,21 @@
     background-color    : rgba(89, 112, 255, 0.12);
     top                 : 0px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
     overflow            : hidden;
     transform           : rotate(0deg);
     opacity             : 1.0;
+    border-radius: 10px;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.1);
   }
   .homescreen .group2copy .group .rectangle1 {
     background-color    : rgba(89, 112, 255, 0.12);
     top                 : 0px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
@@ -231,12 +226,12 @@
   }
   .homescreen .group2copy .group .stopgenderviolenceconcept232148582544 {
     background-color    : rgba(255,255,255,0.0);
-    top                 : 39px;
+    top                 : 10px;
     height              : 131px;
-    width               : 112px;
+    width               : 181px;
     position            : absolute;
     margin              : 0;
-    left                : 166px;
+    right               : -32px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -244,7 +239,7 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 0px;
     height              : 131px;
-    width               : 112px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
@@ -262,7 +257,6 @@
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto-bold", Helvetica, Arial, serif;
-    font-weight         : 500;
     font-style          : normal;
     font-size           : 18.0px;
     color               : rgba(0, 0, 0, 1.0);
@@ -273,10 +267,9 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 570px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 18px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -284,19 +277,21 @@
     background-color    : rgba(159, 255, 89, 0.12);
     top                 : 0px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
     overflow            : hidden;
     transform           : rotate(0deg);
     opacity             : 1.0;
+    border-radius: 10px;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.1);
   }
   .homescreen .group2copy2 .group .rectangle1 {
     background-color    : rgba(159, 255, 89, 0.12);
     top                 : 0px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
@@ -305,20 +300,20 @@
   }
   .homescreen .group2copy2 .group .a46512 {
     background-color    : rgba(255,255,255,0.0);
-    top                 : 41px;
-    height              : 151px;
-    width               : 139px;
+    top                 : 25px;
+    height              : 121px;
+    width               : 121px;
     position            : absolute;
     margin              : 0;
-    left                : 150px;
+    right               : 8px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
   .homescreen .group2copy2 .group .a46512 .layer0 {
     background-color    : rgba(255,255,255,0.0);
     top                 : 0px;
-    height              : 151px;
-    width               : 139px;
+    height              : 100%;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
@@ -336,7 +331,6 @@
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto-bold", Helvetica, Arial, serif;
-    font-weight         : 500;
     font-style          : normal;
     font-size           : 18.0px;
     color               : rgba(0, 0, 0, 1.0);
@@ -347,18 +341,36 @@
     background-color    : rgba(255,255,255,0.0);
     top                 : 730px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 18px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .homescreen .group2copy3 .layer0 {
+    background-color    : rgba(255,255,255,0.0);
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
   .homescreen .group2copy3 .group {
-    background-color    : rgba(255,255,255,0.0);
+    background-color    : rgba(255, 197, 89, 0.12);
     top                 : 0px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    overflow            : hidden;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    border-radius: 10px;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.1);
+  }
+  .homescreen .group2copy3 .group .rectangle1 {
+    background-color    : rgba(255, 197, 89, 0.12);
+    top                 : 0px;
+    height              : 140px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
@@ -372,25 +384,23 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 14px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto-bold", Helvetica, Arial, serif;
-    font-weight         : 500;
     font-style          : normal;
     font-size           : 18.0px;
     color               : rgba(0, 0, 0, 1.0);
     text-align          : left;
     line-height         : 24.0px;
+    left                : 14px;
   }
   .homescreen .group2copy4 {
     background-color    : rgba(255,255,255,0.0);
     top                 : 888px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 18px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -398,19 +408,21 @@
     background-color    : rgba(89, 255, 231, 0.12);
     top                 : 0px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
     overflow            : hidden;
     transform           : rotate(0deg);
     opacity             : 1.0;
+    border-radius: 10px;
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.1);
   }
   .homescreen .group2copy4 .group .rectangle1 {
     background-color    : rgba(89, 255, 231, 0.12);
     top                 : 0px;
     height              : 140px;
-    width               : 283px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
@@ -419,19 +431,19 @@
   }
   .homescreen .group2copy4 .group .pngtreementalhealthcounselingimage2226225 {
     background-color    : rgba(255,255,255,0.0);
-    top                 : 39px;
-    height              : 98px;
+    top                 : 26px;
+    height              : 135px;
     width               : 153px;
     position            : absolute;
     margin              : 0;
-    left                : 142px;
+    right               : 8px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
   .homescreen .group2copy4 .group .pngtreementalhealthcounselingimage2226225 .layer0 {
     background-color    : rgba(255,255,255,0.0);
     top                 : 0px;
-    height              : 98px;
+    height              : 100%;
     width               : 153px;
     position            : absolute;
     margin              : 0;
@@ -456,4 +468,12 @@
     color               : rgba(0, 0, 0, 1.0);
     text-align          : left;
     line-height         : 24.0px;
+  }
+
+  .a46512x{
+    width               : 171px;
+    top                 : 29px;
+    position            : absolute;
+    margin              : 0;
+    right               : 0px;
   }

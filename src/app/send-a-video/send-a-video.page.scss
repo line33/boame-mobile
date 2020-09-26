@@ -1,6 +1,5 @@
 .sendavideo {
     width               : 100%;
-    min-width           : 320px;
     height              : 100vh;
     min-height          : 688px;
     position            : relative;
@@ -19,7 +18,6 @@
     width               : auto;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     transform           : rotate(0deg);
     opacity             : 1.0;
     font-family         : "Roboto-bold", Helvetica, Arial, serif;
@@ -33,10 +31,9 @@
     background-color    : rgba(250, 250, 250, 1.0);
     top                 : 235px;
     height              : 159px;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     border-radius       : 8px;
     overflow            : hidden;
     transform           : rotate(0deg);
@@ -46,7 +43,7 @@
     background-color    : rgba(250, 250, 250, 1.0);
     top                 : 0px;
     height              : 159px;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
@@ -123,7 +120,7 @@
     width               : 26px;
     position            : absolute;
     margin              : 0;
-    left                : 249px;
+    right               : 24px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -142,10 +139,9 @@
     background-color    : rgba(250, 250, 250, 1.0);
     top                 : 408px;
     height              : 159px;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
-    left                : 15px;
     border-radius       : 8px;
     overflow            : hidden;
     transform           : rotate(0deg);
@@ -155,7 +151,7 @@
     background-color    : rgba(250, 250, 250, 1.0);
     top                 : 0px;
     height              : 159px;
-    width               : 285px;
+    width               : 100%;
     position            : absolute;
     margin              : 0;
     left                : 0px;
@@ -199,7 +195,7 @@
     width               : 26px;
     position            : absolute;
     margin              : 0;
-    left                : 249px;
+    right               : 24px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -243,7 +239,7 @@
     width               : 18px;
     position            : absolute;
     margin              : 0;
-    left                : 0px;
+    left                : -14px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
@@ -254,7 +250,7 @@
     width               : 4px;
     position            : absolute;
     margin              : 0;
-    left                : 2px;
+    left                : -14px;
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
