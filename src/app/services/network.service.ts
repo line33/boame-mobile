@@ -287,11 +287,6 @@ export class NetworkService {
     return this;
   }
 
-  alive(message:string)
-  {
-    return true;
-  }
-
   // validate input
   inputValid(target:any = '')
   {
@@ -352,8 +347,8 @@ export class NetworkService {
             }
           }
 
-          // apply keyup event
-          element.addEventListener('keyup', (e:any)=>{
+          // match element
+          const matchElement = () => {
             // match val
             if (element.value.match(regXp))
             {
@@ -363,7 +358,12 @@ export class NetworkService {
               // remove error
               if (spanError !== null) spanError.innerHTML = '';
             }
-          });
+          };
+
+          // apply keyup event
+          element.addEventListener('keyup', matchElement);
+          element.addEventListener('change', matchElement);
+
         }
         else
         {

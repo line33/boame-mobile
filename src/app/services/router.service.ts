@@ -21,6 +21,9 @@ export class RouterService {
 
     // route now  
     this.router.navigate([path], navigationExtra);
+
+    // return
+    return null;
   }
 
   // get route data

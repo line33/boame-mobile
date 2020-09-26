@@ -69,13 +69,15 @@ export class AlertComponent implements OnInit {
       }
 
     }
+
+    return null;
   }
 
   // success alert
   success(message : string, callback : any = null)
   {
     this.successAlert = true;
-    this.show(message, callback);
+    return this.show(message, callback);
   }
 
 }

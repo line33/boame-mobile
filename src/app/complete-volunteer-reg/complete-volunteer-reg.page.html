@@ -7,10 +7,15 @@
 <ion-content [fullscreen]="true">
   <div class="becomeavolunteercomplete anima-word-break ">
     <div class="page-wrapper">
-        <div class="volunteerName">
-            Chinedu<br />Frank
+        <div class="volunteerName" *ngIf="loaded">
+            {{lastname | titlecase}}<br />{{firstname | titlecase}}
         </div>
-        <a href="javascript:void(0)" ion-button [routerLink]="['/homescreen']">
+
+        <div class="volunteerName" *ngIf="loaded == false">
+            <span class="preloader"></span><span class="preloader"></span>
+        </div>
+
+        <a href="javascript:void(0)" ion-button (click)="submit()">
           <div class="rectangle2">
           </div>
           <div class="submit">
@@ -19,31 +24,46 @@
         </a>
 
         <div class="groupcopy">
-            <textarea class="form-input" placeholder="Tell us a little about you"></textarea>
+            <textarea class="form-input" placeholder="Tell us a little about you" [(ngModel)]="inputs.bio" data-input="[\S\s]{10,}" data-message="We need to know a little bit more about you."></textarea>
             <div class="aboutyou">
                 About you
             </div>
         </div>
-        <div class="rectangle3">
+        <div class="rectangle3" *ngIf="loaded">
         </div>
-        <div class="department">
-            Warefare
+        <div class="department" *ngIf="loaded">
+            {{position | titlecase}}
         </div>
-        <img alt="Image/" src="../../assets/img/become-a-volunteer-complete-oval@2x.png" class="oval" />
-        <div class="rectangle4">
+
+        <div class="rectangle3-p" *ngIf="loaded == false">
+            <span class="preloader"></span>
         </div>
-        <img alt="Image/" src="../../assets/img/N6nc-video-submitted-successfully-oval@2x.png" class="oval1"/>
-        <div class="youneedtoattacha">
-            You need to attach a <br />display image. Click here<br />to continue.
-        </div>
-        <div class="add">
-            <img alt="Image/" src="../../assets/img/PpSK-send-a-message-path-5@2x.png" class="path"/>
-        </div>
-        <div class="rectangle5">
-        </div>
-        <div class="selectfromyourlib">
-            Select from your library
-        </div>
+
+        <img alt="Image/" src="../../assets/img/become-a-volunteer-complete-oval@2x.png" class="oval" *ngIf="loaded"/>
+
+        <label ion-button for="display_image">
+            
+            <div class="rectangle4">
+            </div>
+            <img alt="Image/" src="../../assets/img/N6nc-video-submitted-successfully-oval@2x.png" class="oval1"/>
+            <div class="youneedtoattacha">
+                You need to attach a <br />display image. Click here<br />to continue.
+            </div>
+            <div class="add">
+                <img alt="Image/" src="../../assets/img/PpSK-send-a-message-path-5@2x.png" class="path image"/>
+                <span class="path number"></span>
+            </div>
+            <input type="file" accept=".png,.jpg,.jpeg,.gif" id="display_image" data-single-file=".add .count" style="display: none;"/>
+        </label>
+
+        <label class="rectangle5" ion-button for="cv">
+            <input type="file" accept=".png,.jpg,.jpeg,.doc,.docx,.pdf" id="cv" data-single-file=".rectangle5 .count" style="display: none;"/>
+        
+            <div class="selectfromyourlib">
+                Click here to select from your library <span class="count"></span>
+            </div>
+
+        </label>
         <div class="attachyourcv">
             Attach your CV
         </div>

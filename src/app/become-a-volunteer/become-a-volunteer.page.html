@@ -12,12 +12,13 @@
         </div>
 
         <div class="position-wrapper pleaseselect">
-          <select class="form-input">
+          <select class="form-input" [(ngModel)]="inputs.positionid" data-input="[\d]+" data-message="You must select a position">
             <option value="">Please select</option>
+            <option *ngFor="let position of positions" value="{{position.volunteerpositionid}}">{{position.volunteerposition | titlecase}}</option>
           </select>
         </div>
 
-        <a href="javascript:void(0)" ion-button [routerLink]="['/complete-volunteer-reg']">
+        <a href="javascript:void(0)" ion-button (click)="submit()">
             <div class="rectangle3">
             </div>
             <div class="continue">
@@ -30,31 +31,53 @@
         </div>
         
         <div class="group">
-            <input class="form-input" placeholder="First Name and Last Name" type="text">
-            <div class="fullname label">
-                Full Name
-            </div>
+          <div class="input-group">
+              <input class="form-input" placeholder="First Name" type="text" [(ngModel)]="inputs.firstname" data-input="[\S\s]{2,}" data-parent=".group > .error-wrapper" data-message="Should be your first name">
+              <input class="form-input" placeholder="last Name" type="text" [(ngModel)]="inputs.lastname" data-input="[\S\s]{2,}" data-parent=".group > .error-wrapper" data-message="Should be your last name">
+          </div>
+          <div class="error-wrapper"></div>
+          <div class="fullname label">
+              Fullname
+          </div>
         </div>
 
         <div class="groupcopy">
-            <input class="form-input" placeholder="Your mobile number" type="tel">
+            <input class="form-input" placeholder="Your mobile number" [(ngModel)]="inputs.phone" type="tel" data-input="[\d]{6,}" data-message="Must be a valid telephone number">
             <div class="telephone label">
                 Telephone
             </div>
         </div>
 
         <div class="groupcopy2">
-            <input class="form-input" placeholder="Your email address" type="email">
+            <input class="form-input" placeholder="Your email address" type="email" [(ngModel)]="inputs.email" data-input="[\S]{5,}" data-message="Must be a valid email address">
             <div class="emailaddress label">
                 Email Address
             </div>
         </div>
 
         <div class="groupcopy3">
-            <input class="form-input" placeholder="Home/Office address" type="text">
+            <input class="form-input" placeholder="Home/Office address" type="text" [(ngModel)]="inputs.address" data-input="[\S\s]{5,}" data-message="Must be a valid address">
             <div class="residentialaddress label">
                 Residential Address
             </div>
+        </div>
+
+        <div class="groupcopy4">
+          
+          <div class="label">
+              Password
+          </div>
+
+          <input class="form-input" placeholder="Your password" type="password" [(ngModel)]="inputs.password" data-input="[\S\s]{4,}" data-message="Should be a password you can remember">
+        </div>
+
+        <div class="groupcopy5">
+          
+          <div class="label">
+              Password Again
+          </div>
+
+          <input class="form-input" placeholder="Your password again" type="password" [(ngModel)]="inputs.password_again" data-input="[\S\s]{4,}" data-message="Should match your password, and cannot be empty">
         </div>
 
     </div>
