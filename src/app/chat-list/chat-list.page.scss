@@ -1,0 +1,144 @@
+.choose-conversation{
+    width: 62px;
+    height: 62px;
+    background-color: #FF9001;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 80px;
+    right: 10px;
+    box-shadow: -10px 10px 10px rgba(0,0,0,0.1);
+}
+
+.choose-conversation:hover{
+    cursor: pointer;
+}
+
+.page-title{
+    font-size: 47px;
+    line-height: 48px;
+    font-family: 'Roboto-Bold';
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.section-header{
+    font-size: 20px;
+    font-family: 'Roboto-Bold';
+    margin-bottom: 20px;
+}
+
+.message-pointer.hide{
+    display: none !important;
+}
+
+.message-pointer.read{
+    background-image: url('../../assets/img/message-read.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.message-pointer.unread
+{
+    background-image: url('../../assets/img/unread.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.chat-list-footer .short-message{
+    white-space: nowrap;
+    width: 60%;
+    overflow: hidden;
+    display: block;
+    font-size: 14px;
+    color: #ACACAC;
+}
+
+.chat-list-image img{
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.chat-lists{
+    margin-top: 40px;
+}
+
+.chat-lists .chat-list{
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.chat-lists .chat-list:hover{
+    cursor: pointer;
+}
+
+.chat-list .chat-list-image{
+    margin-right: 5%;
+}
+
+.chat-list .chat-list-content{
+    width: 80%;
+}
+
+.chat-list-footer{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #F2F2F2;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.chat-list-footer .message-count{
+    display: none;
+}
+
+.chat-list-footer .message-pointer{
+    width: 14px;
+    height: 15px;
+    display: flex;
+    margin-right: 5px;
+}
+
+.chat-list .chat-list-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.chat-list .chat-list-header .chat-name{
+    font-size: 16px;
+}
+
+.chat-list .chat-list-header .chat-time{
+    font-size: 12px;
+    color: #ACACAC;
+}
+
+.chat-list.new-message .chat-time{
+    color: #FF9001 !important;
+}
+
+.chat-list.new-message .chat-list-footer .message-count{
+    display: flex !important;
+    position: absolute;
+    right: 0;
+    font-size: 10px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background: #FF9001;
+    color: #fff;
+}

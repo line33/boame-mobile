@@ -9,15 +9,16 @@ import { VideoHeaderComponent } from './video-header/video-header.component';
 import { ArticleHeaderComponent } from './article-header/article-header.component';
 import { LoaderComponent } from './loader/loader.component';
 import { AlertComponent } from './alert/alert.component';
+import { CounselorChatHeaderComponent } from './counselor-chat-header/counselor-chat-header.component';
 
 @NgModule({
     imports : [
         IonicModule, CommonModule
     ],
     declarations:[GoBackComponent, BasicHeaderComponent, BasicFooterComponent, VolunteerHeaderComponent, VideoHeaderComponent, ArticleHeaderComponent,
-    LoaderComponent, AlertComponent],
+    LoaderComponent, AlertComponent, CounselorChatHeaderComponent],
     exports:[GoBackComponent, BasicHeaderComponent, BasicFooterComponent, VolunteerHeaderComponent, VideoHeaderComponent, ArticleHeaderComponent,
-    LoaderComponent, AlertComponent]
+    LoaderComponent, AlertComponent, CounselorChatHeaderComponent]
 })
 export class ComponentModule{
     @Input() page : string;

@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonContent } from '@ionic/angular';
+import { RouterService } from '../services/router.service';
+import { CacheService } from '../services/cache.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-view-article',
@@ -9,8 +12,16 @@ import { IonContent } from '@ionic/angular';
 export class ViewArticlePage implements OnInit {
 
   @ViewChild(IonContent) content: IonContent;
+  article : any = {};
+  storageUrl : string = '';
 
-  constructor() { }
+  constructor(private router : RouterService, private cache : CacheService) {
+    this.router.getData((data:any)=>{
+      if (typeof data.article == 'undefined') return this.router.route('/articles');
+      // push article
+      this.article = data.article;
+    });
+  }
 
   ngOnInit() {
   }
@@ -21,6 +32,11 @@ export class ViewArticlePage implements OnInit {
 
   ionViewDidEnter(){
     this.scrollToTop();
+  }
+
+  loadImage(image:string)
+  {
+    return AppComponent.storageUrl + '/' + image;
   }
 
 }

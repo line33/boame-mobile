@@ -64,11 +64,15 @@ class HTTP
 			if (this.useFormData === false)
 			{
 				var ffm = new FormData();
-				for (let i in post)
+
+				if (post.toString() !== ffm.toString())
 				{
-					ffm.append(i, post[i]);
+					for (let i in post)
+					{
+						ffm.append(i, post[i]);
+					}
+					post = ffm;
 				}
-				post = ffm;
 			}
 		}
 

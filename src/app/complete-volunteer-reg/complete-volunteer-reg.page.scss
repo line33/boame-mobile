@@ -350,9 +350,30 @@
     background: linear-gradient(80deg,#dff5f7, #d4eff1, #dff5f7);
     content: "";
     animation: preload 1s linear infinite;
+    -webkit-animation: preload 1s linear infinite;
+    -moz-animation: preload 1s linear infinite;
+    -ms-animation: preload 1s linear infinite;
   }
 
   @keyframes preload{
+    to{
+      left: -50%;
+    }
+  }
+
+  @-webkit-keyframes preload{
+    to{
+      left: -50%;
+    }
+  }
+
+  @-moz-keyframes preload{
+    to{
+      left: -50%;
+    }
+  }
+
+  @-ms-keyframes preload{
     to{
       left: -50%;
     }

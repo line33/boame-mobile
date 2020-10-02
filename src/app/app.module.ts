@@ -16,11 +16,27 @@ import { IonicStorageModule } from '@ionic/storage';
 import { AlertComponent } from './components/alert/alert.component';
 import { RouterService } from './services/router.service';
 import { CacheService } from './services/cache.service';
+import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
+import { AudioService } from './services/audio.service';
+import { VideoService } from './services/video.service';
+
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+const config : SocketIoConfig = {url : 'wss://www.mediaccess.com.ng/', options : { 
+  secure: true, transports: ['websocket'], port: 8082
+}};
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(),  IonicStorageModule.forRoot(), AppRoutingModule, ComponentModule],
+  imports: [
+    BrowserModule, 
+    SocketIoModule.forRoot(config), 
+    IonicModule.forRoot(),  
+    IonicStorageModule.forRoot(), 
+    AppRoutingModule, 
+    ComponentModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
@@ -30,6 +46,9 @@ import { CacheService } from './services/cache.service';
     AlertComponent,
     RouterService,
     CacheService,
+    UniqueDeviceID,
+    AudioService,
+    VideoService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

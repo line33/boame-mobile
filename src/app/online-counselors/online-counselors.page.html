@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border">
+<ion-header class="ion-no-border header-with-color">
   <ion-toolbar>
     <app-go-back></app-go-back>
   </ion-toolbar>
@@ -11,7 +11,7 @@
         <div class="onlinecounselors1">
             Online<br />Counselors
         </div>
-        <a href="javascript:void(0)" ion-button>
+        <a href="javascript:void(0)" ion-button (click)="loginAndRedirect()">
             <div class="group">
                 <div class="rectangle1">
                 </div>
@@ -22,9 +22,13 @@
                 <div class="arrowright">
                     <img alt="Image/" src="../../assets/img/mwr3-knowledge-center-path-1@2x.png" class="path" />
                 </div>
+
+                <div class="clickheretologin">
+                    Click here to login as a counselor to continue chatting.
+                </div>
             </div>
         </a>
-        <a href="javascript:void(0)" ion-button>
+        <a href="javascript:void(0)" ion-button (click)="loginAndRedirect()">
             <div class="groupcopy">
                 <div class="rectangle1">
                 </div>
@@ -41,15 +45,13 @@
                 <div class="arrowright">
                     <img alt="Image/" src="../../assets/img/mwr3-knowledge-center-path-1@2x.png" class="path" />
                 </div>
+
+                <div class="needcounsellingcl">
+                    Need counselling? Click here to chat with an online counselor.
+                </div>
             </div>
         </a>
-        <div class="needcounsellingcl">
-            Need counselling? Click here to chat with an online counselor.
-        </div>
         
-        <div class="clickheretologin">
-            Click here to login as a counselor to continue chatting.
-        </div>
         <div class="user">
             <img alt="Image/" src="../../assets/img/online-counselors-shape-9@2x.png" class="shape" />
         </div>

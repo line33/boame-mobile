@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,9 @@ export class RouterService {
       }
     };
 
+    // push to 
+    AppComponent.navigatedData = data;
+
     // route now  
     this.router.navigate([path], navigationExtra);
 
@@ -27,17 +31,16 @@ export class RouterService {
   }
 
   // get route data
-  getData(ref:any = null)
+  getData(callback = null)
   {
-    this.activated.queryParams.subscribe(params => {
-      if (this.router.getCurrentNavigation().extras.state)
-      {
-        const data = this.router.getCurrentNavigation().extras.state.data;
+    // load callback
+    if (callback !== null) callback.call(this, AppComponent.navigatedData);
 
-        // make general
-        ref &= this.dataPassed = data;
-      }
-    });
+    // get the data
+    this.dataPassed = AppComponent.navigatedData;
+
+    // clear now
+    AppComponent.navigatedData = {};
 
     // return data passed
     return this.dataPassed;

@@ -147,6 +147,12 @@ a {
     margin:auto;
   }
 
+  .page-wrapper-no-height{
+    width: 97%;
+    position:relative; 
+    margin:auto;
+  }
+
   /* fonts */
   @font-face{
       src : url('../assets/fonts/Roboto/Roboto-Bold.ttf');
@@ -384,4 +390,35 @@ a {
 
   .add-shadow-and-curve{
     border-radius: 10px;
+  }
+
+  #isButton:hover{
+    cursor: pointer;
+  }
+
+  .header-chat-wrapper{
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+
+  .header-chat-wrapper .chat-header-info{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    margin-left: 20px;
+  }
+
+  .header-chat-wrapper .chat-header-info h2
+  {
+    font-size: 16px;
+    margin: 0;
+    font-family: 'Roboto-medium';
+    color: #fff;
+  }
+
+  .header-chat-wrapper .chat-header-info p{
+    margin: 0;
+    font-size: 14px;
+    color: #E0E0E0;
   }

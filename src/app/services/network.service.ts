@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HTTP } from 'src/assets/http/http';
+import { AppComponent } from '../app.component';
+import { Storage } from '@ionic/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +24,8 @@ export class NetworkService {
   public static runningService : boolean = false;
 
   constructor(
-    public router : Router
+    public router : Router,
+    private storage : Storage
   ) {
     // set request header;
     this.callback = new Function();
@@ -429,5 +432,24 @@ export class NetworkService {
     // return node
     return parentNode;
 
+  }
+
+  // add accountid if it exists
+  withAccount(data:any = {}, callback:any = null)
+  {
+    const info = AppComponent.accountInformation;
+
+    if (info !== null) data.accountid = info.account.accountid;
+
+    // add hash
+    this.storage.get('boame_device_hash').then((hash:any)=>{
+
+      // add hash
+      if (hash !== null) data.devicehash = hash;
+
+      // load callback
+      if (callback !== null) callback.call(this, data);
+
+    });
   }
 }

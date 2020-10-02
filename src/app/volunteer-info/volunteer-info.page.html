@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-go-back></app-go-back>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]='true'>
+  <div class="volunteers anima-word-break">
+    <div class="page-wrapper-no-height">
+      <div class="pageTitle">
+        {{firstname | titlecase}}<br />{{lastname | titlecase}}
+      </div>
+
+      <div class="position">
+      {{position | titlecase}}
+      </div>
+
+    </div>
+
+    <!-- main picture -->
+    <div class="main-picture">
+      <img src="{{loadImage(image)}}"/>
+    </div>
+
+    <div class="page-wrapper-no-height">
+      <h3 class="label">Biography</h3>
+      <p class="text">{{biography | titlecase}}</p>
+    </div>
+    
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-basic-footer></app-basic-footer>
+</ion-footer>

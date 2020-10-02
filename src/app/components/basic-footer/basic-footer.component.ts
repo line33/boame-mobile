@@ -132,6 +132,17 @@ export class BasicFooterComponent implements OnInit {
            default:
              this.navigations = AppComponent.defaultNavigation;
         }
+
+        // are we loggedin??
+        if (AppComponent.accountInformation !== null)
+        {
+          this.navigations.forEach((obj:any, index:number) =>{
+            if (obj.tag == 'chat-tab')
+            {
+              this.navigations[index].route = '/chat-list';
+            }
+          }); 
+        }
       }
     });
   }

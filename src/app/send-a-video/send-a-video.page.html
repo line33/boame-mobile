@@ -11,7 +11,7 @@
         <div class="sendavideo1">
             Send a<br />Video
         </div>
-        <a href="submituploadedvideo.html">
+        <label for="video_file" ion-button id="isButton">
             <div class="group">
                 <div class="rectangle1">
                 </div>
@@ -27,8 +27,10 @@
                     <img alt="Image/" src="../../assets/img/mwr3-knowledge-center-path-1@2x.png" class="path"/>
                 </div>
             </div>
-        </a>
-        <a href="recordvideo.html">
+
+            <input type="file" style="display: none;" accept="{{formats}}" name="video_file" id="video_file"/>
+        </label>
+        <a href="javascript:void(0)" ion-button>
             <div class="groupcopy">
                 <div class="rectangle1">
                 </div>
@@ -41,7 +43,6 @@
                 </div>
             </div>
         </a>
-        <img alt="Image/" src="../../assets/img/DLLg-send-a-feedback-rectangle.png" class="rectangle"/>
        
         <div class="videocamera1">
             <img alt="Image/" src="../../assets/img/send-a-video-shape-8@2x.png" class="shape"/>

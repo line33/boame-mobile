@@ -1,0 +1,67 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-go-back></app-go-back>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="submituploadedvideo anima-word-break">
+    <div class="page-wrapper">
+        
+        <div class="submityouraudio">
+            Submit your<br />Video
+        </div>
+
+        <a href="javascript:void(0)" ion-button (click)="submit()">
+          <div class="rectangle1">
+          </div>
+          <div class="submit">
+              Submit
+          </div>
+        </a>
+
+        <div class="groupcopy">
+            <textarea class="form-input" [(ngModel)]="reportText" placeholder="Do you have additional text to share ? This is entirely optional"></textarea>
+            <div class="additionalinformati">
+                Additional Information
+            </div>
+        </div>
+
+        <label for="video_file2" ion-button *ngIf="videoRecord == false">
+          <div class="rectangle2">
+          </div>
+          <div class="wishtouploadanoth">
+              Wish to upload another ? <br/> Click here to choose video.
+          </div>
+          <div class="group">
+              <img alt="Image/" src="../../assets/img/N6nc-video-submitted-successfully-oval@2x.png" class="oval" />
+          </div>
+          <div class="microphone">
+              <img alt="Image/" src="../../assets/img/rxZS-audio-submitted-successfully-uploaded-path@2x.png" class="path" />
+              <img alt="Image/" src="../../assets/img/nFGg-submit-uploaded-audio-shape-8@2x.png" class="shape" />
+          </div>
+          <input type="file" style="display: none;" accept="{{formats}}" name="video_file" id="video_file2"/>
+        </label>
+
+        <a href="javascript:void(0)" ion-button *ngIf="videoRecord == true">
+          <div class="rectangle2">
+          </div>
+          <div class="wishtouploadanoth">
+            Wish to record another ?<br />Click here to use camera.
+          </div>
+          <div class="group">
+              <img alt="Image/" src="../../assets/img/N6nc-video-submitted-successfully-oval@2x.png" class="oval" />
+          </div>
+          <div class="microphone">
+              <img alt="Image/" src="../../assets/img/rxZS-audio-submitted-successfully-uploaded-path@2x.png" class="path" />
+              <img alt="Image/" src="../../assets/img/microphone-recorder.svg" class="shape" />
+          </div>
+        </a>
+          
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-basic-footer></app-basic-footer>
+</ion-footer>

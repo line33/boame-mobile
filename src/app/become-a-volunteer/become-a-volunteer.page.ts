@@ -18,6 +18,7 @@ export class BecomeAVolunteerPage implements OnInit {
   inputs : any = {
     positionid : ''
   };
+  static clearInputs : boolean = false;
 
   constructor(private cache : CacheService, private network : NetworkService,
     private router : RouterService, private alert : AlertComponent) {
@@ -34,11 +35,20 @@ export class BecomeAVolunteerPage implements OnInit {
     {
       // compare password
       if (this.inputs.password != this.inputs.password_again) return this.alert.show('Password provided does not match');
-      
+
       // move to the next screen
       this.router.route('/complete-volunteer-reg', this.inputs);
     }
   }
+
+  ionViewWillEnter()
+  {
+    if (BecomeAVolunteerPage.clearInputs)
+    {
+      this.inputs = {positionid : ''};
+      BecomeAVolunteerPage.clearInputs = false;
+    }
+  } 
 
   ngOnInit() {
   }

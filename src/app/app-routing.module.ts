@@ -91,6 +91,26 @@ const routes: Routes = [
     path: 'complete-reset',
     loadChildren: () => import('./complete-reset/complete-reset.module').then( m => m.CompleteResetPageModule)
   },
+  {
+    path: 'submit-audio',
+    loadChildren: () => import('./submit-audio/submit-audio.module').then( m => m.SubmitAudioPageModule)
+  },
+  {
+    path: 'submit-video',
+    loadChildren: () => import('./submit-video/submit-video.module').then( m => m.SubmitVideoPageModule)
+  },
+  {
+    path: 'volunteer-info',
+    loadChildren: () => import('./volunteer-info/volunteer-info.module').then( m => m.VolunteerInfoPageModule)
+  },
+  {
+    path: 'chat-list',
+    loadChildren: () => import('./chat-list/chat-list.module').then( m => m.ChatListPageModule)
+  },
+  {
+    path: 'select-counselors',
+    loadChildren: () => import('./select-counselors/select-counselors.module').then( m => m.SelectCounselorsPageModule)
+  },
 ];
 
 @NgModule({

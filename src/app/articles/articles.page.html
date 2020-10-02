@@ -5,36 +5,36 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" id="content-wrapper">
-  <ion-slides id="slides-container" (ionSlidesDidLoad)="slideLoaded($event)" (ionSlideDidChange)="slideChanged($event)" paginationType="fraction">
+  <ion-slides id="slides-container" paginationType="fraction" *ngIf="loaded === false">
+    
     <ion-slide id="slide-container" style="background-image: url('../../assets/img/demo-article-image.svg');">
       <div class="slide-content page-wrapper">
-        <h1>Building a stronger Ghana</h1>
-
-        <a href="javascript:void(0)" ion-button [routerLink]="['/view-article']">
-          <img src="../../assets/img/arrow-right-white.svg"/>
-        </a>
-
-      </div>
-    </ion-slide>
-
-    <ion-slide id="slide-container" style="background-image: url('../../assets/img/unnamed(1).jpg');">
-      <div class="slide-content page-wrapper">
-        <h1>Focus on what works</h1>
-
+        <h1>
+          <span class="preloader"></span>
+          <span class="preloader"></span>
+        </h1>
         <a href="javascript:void(0)" ion-button>
-          <img src="../../assets/img/arrow-right-white.svg"/>
         </a>
-
       </div>
     </ion-slide>
 
-    <ion-slide id="slide-container">
-      <h1>Slide 3</h1>
+  </ion-slides>
+
+  <ion-slides *ngIf="loaded === true" id="slides-container" (ionSlidesDidLoad)="slideLoaded($event)" (ionSlideDidChange)="slideChanged($event)" paginationType="fraction">
+    
+    <ion-slide id="slide-container" *ngFor="let article of articles" style="background-image: url('{{loadImage(article.article_cover_image)}}');">
+      <div class="slide-content page-wrapper">
+        <h1>{{article.article_title | titlecase}}</h1>
+        <a href="javascript:void(0)" ion-button (click)="load(article)">
+          <img src="../../assets/img/arrow-right-white.svg"/>
+        </a>
+      </div>
     </ion-slide>
+    
   </ion-slides>
 
   <!-- counter -->
-  <div class="counter">
+  <div class="counter" *ngIf="loaded === true">
     {{currentSlide}}/{{totalSlides}}
   </div>
 

@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { CacheService } from './services/cache.service';
 
 @Component({
   selector: 'app-root',
@@ -17,12 +16,16 @@ export class AppComponent {
     "/report-case"              : "alert-tab",
     "/complete-volunteer-reg"   : "volunteer-tab",
     "/send-a-video"             : "alert-tab",
+    "/submit-audio"             : "alert-tab",
     "/send-an-audio"            : "alert-tab",
     "/send-a-message"           : "alert-tab",
     "/homescreen"               : "home-tab",
     "/volunteers"               : "volunteer-tab",
+    "/volunteer-info"           : "volunteer-tab",
     "/knowledge-center"         : "nav-tab",
     "/online-counselors"        : "chat-tab",
+    "/chat-list"                : "chat-tab",
+    "/select-counselors"        : "chat-tab",
     "/video-center"             : "nav-tab",
     "/audio-center"             : "nav-tab",
     "/video-info"               : "nav-tab",
@@ -31,16 +34,18 @@ export class AppComponent {
     "/view-article"             : "nav-tab",
   };
 
-  static accountInformation : any = {};
+  static accountInformation : any = null;
 
   static defaultNavigation = [];
   static isLoggedIn : boolean = false;
+  static navigatedData : any = {};
+  static storageUrl : string = '';
+  static redirectTo : string = '';
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private cache : CacheService
+    private statusBar: StatusBar
   ) {
     this.initializeApp();
   }
@@ -49,10 +54,6 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-
-      // load to local storage 
-      this.cache.loadAll();
-
     });
   }
 }

@@ -5,22 +5,21 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="article-content-header" style="background-image: url('../../assets/img/City-view-demo.svg');"></div>
+  <div class="article-content-header" style="background-image: url('{{loadImage(article.article_cover_image)}}');"></div>
   <div class="page-wrapper">
     <div class="author-pub-info">
-      <span>Frank Ogudu</span>
-      <span>22 OCT 2019</span>
+      <span>{{article.submittedby | titlecase}}</span>
+      <span>{{article.date_string}}</span>
     </div>
 
     <!-- article title -->
     <div class="article-title">
-      Building a stronger Ghana
+      {{article.article_title | titlecase}}
     </div>
 
     <!-- article content -->
     <p class="article-content">
-      We have seen this effect where there a bunch of text links on the page and on hover an image is loaded up and shown to the visitor. This snippet allows you to achieve this popup image on text link hover on your web pages. 
-      However, if you’re accessing blocked content, things are a little different. While a proxy is good for low stakes, it doesn’t remove identifying information other than the IP address. It’s open to snooping from anyone with access to your data stream, such as your ISP and government. Accessing censored file-sharing websites and other questionable content is best done through a VPN.
+      {{article.article_text | titlecase}}
     </p>
   </div>
 </ion-content>

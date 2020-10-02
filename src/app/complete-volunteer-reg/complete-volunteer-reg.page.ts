@@ -5,6 +5,7 @@ import { LoaderComponent } from '../components/loader/loader.component';
 import { NetworkService } from '../services/network.service';
 import { AlertComponent } from '../components/alert/alert.component';
 import { Storage } from '@ionic/storage';
+import { BecomeAVolunteerPage } from '../become-a-volunteer/become-a-volunteer.page';
 
 @Component({
   selector: 'app-complete-volunteer-reg',
@@ -65,13 +66,13 @@ export class CompleteVolunteerRegPage implements OnInit {
 
   submit()
   {
-    if (this.network.inputValid())
+    if (this.network.inputValid('.becomeavolunteercomplete'))
     {
       // check for cv upload
-      if (this.files.cv === '') return this.alert.show('You need to attach your CV to continue.');
+      if (this.files.cv == '') return this.alert.show('You need to attach your CV to continue.');
 
       // check for display image  
-      if (this.files.display === '') return this.alert.show('You need to attach a profile/display image to continue.');
+      if (this.files.display == '') return this.alert.show('You need to attach a profile/display image to continue.');
 
       // start submission
       this.loader.show(()=>{
@@ -89,7 +90,26 @@ export class CompleteVolunteerRegPage implements OnInit {
           volunteerpositionid : this.inputs.positionid,
           residential_address : this.inputs.address
         }).then((res:any)=>{
-          console.log(res);
+
+          if (res.data.status == 'error')
+          {
+            this.alert.show(res.data.message);
+            this.loader.hide();
+          }
+          else
+          {
+            this.alert.success(res.data.message, ()=>{
+
+              BecomeAVolunteerPage.clearInputs = true;
+              this.files = {cv : '', display : ''};
+              this.router.route('/homescreen');
+              this.loader.hide();
+              this.loaded = false;
+              this.resetFileUpload();
+
+            });
+          }
+
         });
       });
     }

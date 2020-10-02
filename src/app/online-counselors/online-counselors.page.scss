@@ -31,7 +31,7 @@
     top                 : 235px;
     height              : 159px;
     width               : 100%;
-    position            : absolute;
+    position            : relative;
     margin              : 0;
     border-radius       : 8px;
     overflow            : hidden;
@@ -233,10 +233,10 @@
   }
   .onlinecounselors .needcounsellingcl {
     background-color    : rgba(255,255,255,0.0);
-    top                 : 508px;
+    top                 : 100px;
     height              : auto;
     width               : 171px;
-    position            : absolute;
+    position            : relative;
     margin              : 0;
     left                : 30px;
     transform           : rotate(0deg);
@@ -251,10 +251,10 @@
   }
   .onlinecounselors .clickheretologin {
     background-color    : rgba(255,255,255,0.0);
-    top                 : 333px;
+    top                 : 100px;
     height              : auto;
     width               : 171px;
-    position            : absolute;
+    position            : relative;
     margin              : 0;
     left                : 30px;
     transform           : rotate(0deg);

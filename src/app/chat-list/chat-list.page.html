@@ -1,0 +1,77 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-go-back></app-go-back>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="page-wrapper-no-height">
+    <div class="page-title">
+      Online<br/>Counselling
+    </div>
+
+    <!-- chat title -->
+    <h3 class="section-header">Recent Chat</h3>
+
+    <!-- chat list -->
+    <div class="chat-lists">
+
+      <div class="chat-list" ion-button>
+        <div class="chat-list-image">
+          <img src="../../assets/img/unnamed(1).jpg"/>
+        </div>
+        <div class="chat-list-content">
+          <div class="chat-list-header">
+            <span class="chat-name">Martin Micheal</span>
+            <span class="chat-time">10:20 PM</span>
+          </div>
+          <div class="chat-list-footer">
+            <span class="message-pointer read"></span>
+            <span class="short-message">This is a very long text, and we should make it pretty short</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-list new-message" ion-button>
+        <div class="chat-list-image">
+          <img src="../../assets/img/unnamed(1).jpg"/>
+        </div>
+        <div class="chat-list-content">
+          <div class="chat-list-header">
+            <span class="chat-name">Anita Hopeson</span>
+            <span class="chat-time">10:20 PM</span>
+          </div>
+          <div class="chat-list-footer">
+            <span class="message-pointer hide"></span>
+            <span class="short-message">This is a very long text, and we should make it pretty short</span>
+            <span class="message-count">1</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-list" ion-button>
+        <div class="chat-list-image">
+          <img src="../../assets/img/unnamed(1).jpg"/>
+        </div>
+        <div class="chat-list-content">
+          <div class="chat-list-header">
+            <span class="chat-name">Samson Doe</span>
+            <span class="chat-time">11:20 PM</span>
+          </div>
+          <div class="chat-list-footer">
+            <span class="message-pointer unread"></span>
+            <span class="short-message">This is a very long text, and we should make it pretty short</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-basic-footer></app-basic-footer>
+  <div class="choose-conversation" ion-button [routerLink]="['/select-counselors']">
+    <img src="../../assets/img/chat-19.svg"/>
+  </div>
+</ion-footer>

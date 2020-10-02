@@ -7,28 +7,26 @@
 <ion-content [fullscreen]="true">
   <div class="videoinformation anima-word-break ">
     <div class="page-wrapper">
-        <div class="title">
-            Making<br />Men
+        <div class="title" style="width:80%">
+            {{video.video_title | titlecase}}
         </div>
         <div class="a2020">
-            2020
+            {{video.date_string}}
         </div>
         <div class="a15mins">
-            15 Mins
+            {{video.video_length}}
         </div>
-        <a href="javascript:void(0)" ion-button [routerLink]="['/watch-video']">
+        <a href="javascript:void(0)" ion-button (click)="watch()">
           <div class="group">
               <div class="rectangle1">
               </div>
-              <img alt="Image/" src="../../assets/img/fRUp-watch-video-african-city-skyline-night.jpg" class="bgimage"/>
+              <img alt="Image/" src="{{loadImage(video.attachment.video_frame_address)}}" class="bgimage"/>
           </div>
           <div class="author">
-              Christopher Joe
+              {{video.submittedby | titlecase}}
           </div>
-          <a href="watchvideo.html">
-              <div class="rectangle">
-              </div>
-          </a>
+          <div class="rectangle">
+          </div>
           <div class="playbutton">
               <img alt="Image/" src="../../assets/img/video-information-shape@2x.png" class="shape"/>
           </div>

@@ -1,0 +1,88 @@
+ion-header{
+    background-color: #3370A3;
+}
+.chat-list-footer .short-message{
+    white-space: nowrap;
+    width: 60%;
+    overflow: hidden;
+    display: block;
+    font-size: 14px;
+    color: #ACACAC;
+}
+
+.chat-list-image img{
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.chat-lists{
+    margin-top: 40px;
+}
+
+.chat-lists .chat-list{
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.chat-lists .chat-list:hover{
+    cursor: pointer;
+}
+
+.chat-list .chat-list-image{
+    margin-right: 5%;
+}
+
+.chat-list .chat-list-content{
+    width: 80%;
+}
+
+.chat-list-footer{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #F2F2F2;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.chat-list-footer .message-count{
+    display: none;
+}
+
+.chat-list-footer .message-pointer{
+    width: 14px;
+    height: 15px;
+    display: flex;
+    margin-right: 5px;
+}
+
+.chat-list .chat-list-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.chat-list .chat-list-header .chat-name{
+    font-size: 16px;
+}
+
+.pointer{
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.pointer.success{
+    background: #FF9001;
+}
+
+.pointer.away{
+    background: #3370A3;
+}

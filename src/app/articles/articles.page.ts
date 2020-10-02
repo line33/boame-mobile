@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
+import { NetworkService } from '../services/network.service';
+import { AlertComponent } from '../components/alert/alert.component';
+import { RouterService } from '../services/router.service';
+import { CacheService } from '../services/cache.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-articles',
@@ -12,10 +17,62 @@ export class ArticlesPage implements OnInit {
 
   totalSlides : number = 0;
   currentSlide : any = '01';
+  articles : any = [];
+  static backupArticles : any = [];
+  loaded : boolean = false;
+  storageUrl : string = '';
 
-  constructor() { }
+  constructor(private network : NetworkService,
+    private alert : AlertComponent, private router : RouterService,
+    private cache : CacheService) { 
+
+    // load all articles
+    this.loadAllArticles();
+  }
 
   ngOnInit() {
+  }
+
+  loadAllArticles()
+  {
+    if (ArticlesPage.backupArticles.length == 0)
+    {
+      // add limts
+      this.network.headers = {
+        'x-query-limits' : '0,50'
+      };
+
+      // make query
+      this.network.get('library/articles').then((res:any)=>{
+        // if (res.data.status == 'error')
+        // {
+        //   this.alert.show(res.data.message, ()=>{
+        //     this.router.route('/knowledge-center');
+        //   });
+        // }
+        // else
+        // {
+        //   // this.articles = res.data.articles;
+        //   //ArticlesPage.backupArticles = this.articles;
+        //   //this.loaded = true;
+        // }
+
+        const articles = [];
+
+        res.data.articles.forEach((e)=>{
+          articles.push(e);
+        });
+
+        this.articles = articles;
+        this.loaded = true;
+        console.log(res.data);
+      });
+    }
+    else
+    {
+      this.articles = ArticlesPage.backupArticles;
+      this.loaded = true;
+    }
   }
 
   slideChanged(ev:any)
@@ -35,15 +92,30 @@ export class ArticlesPage implements OnInit {
   }
 
   loadMoreSlides()
+  { 
+  }
+
+  loadImage(image:string)
   {
-    console.log('load more slides');
+    return AppComponent.storageUrl + '/' + image;
+  }
+
+  load(article:any)
+  {
+
+    // make view request
+    this.network.get('library/article/' + article.articleid);
+
+    // view article
+    this.router.route('/view-article', {
+      article : article
+    });
   }
 
   slideLoaded(ev:any)
   {
     // get total slides
     this.getTotalSlides(ev);
-    
   }
 
   getTotalSlides(ev:any)

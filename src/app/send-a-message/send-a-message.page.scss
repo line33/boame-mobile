@@ -158,3 +158,15 @@
     text-align          : center;
     line-height         : 19.0px;
   }
+
+  .sendamessage label[for="multipleImages"]:hover{
+    cursor: pointer;
+  }
+
+  .sendamessage .add .path.number{
+    font-size           : 20px;
+    left                : 4px;
+    color               : rgba(255, 144, 1, 1.0);
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    display             : none;
+  }

@@ -1,0 +1,209 @@
+.submituploadedaudio {
+    width               : 100%;
+    height              : 100vh;
+    min-height          : 720px;
+    position            : relative;
+    overflow            : hidden;
+    margin              : 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color    : rgba(255, 255, 255, 1.0);
+    opacity             : 1.0;
+  }
+  .submituploadedaudio .submityouraudio {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 80px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-style          : normal;
+    font-size           : 47.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 48.0px;
+  }
+  .submituploadedaudio .rectangle {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 721px;
+    height              : 92px;
+    width               : 100%;
+    position            : absolute;
+    margin              : 0;
+    left                : -13px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .submituploadedaudio .rectangle1 {
+    background-color    : rgba(255, 144, 1, 1.0);
+    top                 : 642px;
+    height              : 56px;
+    width               : 100%;
+    position            : absolute;
+    margin              : 0;
+    border-radius       : 28px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .submituploadedaudio .submit {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 661px;
+    height              : auto;
+    width               : 100%;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(255, 255, 255, 1.0);
+    text-align          : center;
+    line-height         : 19.0px;
+  }
+  .submituploadedaudio .groupcopy {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 373px;
+    height              : 231px;
+    width               : 100%;
+    position            : absolute;
+    margin              : 0;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .submituploadedaudio .groupcopy .rectanglecopy {
+    background-color    : rgba(255, 255, 255, 1.0);
+    top                 : 27px;
+    height              : 204px;
+    box-sizing          : border-box;
+    width               : 100%;
+    position            : absolute;
+    margin              : 0;
+    left                : 1px;
+    border-style        : solid;
+    border-width        : 1px;
+    border-color        : rgba(51, 112, 163, 0.16);
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .submituploadedaudio .groupcopy .doyouhaveaddition {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 41px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(177, 177, 177, 1.0);
+    text-align          : left;
+    line-height         : 20.0px;
+  }
+  .submituploadedaudio .groupcopy .additionalinformati {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto-bold", Helvetica, Arial, serif;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+  .submituploadedaudio .rectangle2 {
+    background-color    : rgba(228, 138, 16, 0.12);
+    top                 : 235px;
+    height              : 99px;
+    width               : 100%;
+    position            : absolute;
+    margin              : 0;
+    border-radius       : 6px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .submituploadedaudio .wishtouploadanoth {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 262px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 24px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 400;
+    font-style          : normal;
+    font-size           : 14.0px;
+    color               : rgba(121, 121, 121, 1.0);
+    text-align          : left;
+    line-height         : 21.0px;
+  }
+  .submituploadedaudio .group {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 256px;
+    height              : 57px;
+    width               : 57px;
+    position            : absolute;
+    margin              : 0;
+    right               : 24px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .submituploadedaudio .group .oval {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 57px;
+    width               : 57px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .submituploadedaudio .microphone {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 272px;
+    height              : 28px;
+    width               : 19px;
+    position            : absolute;
+    margin              : 0;
+    right               : 43px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .submituploadedaudio .microphone .path {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 13px;
+    height              : 15px;
+    width               : 19px;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+  .submituploadedaudio .microphone .shape {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : 22px;
+    width               : 13px;
+    position            : absolute;
+    margin              : 0;
+    left                : 3px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }

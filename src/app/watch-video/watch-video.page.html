@@ -6,23 +6,23 @@
 
 <ion-content [fullscreen]="true">
   <div class="video-wrapper">
-    <video poster="../../assets/img/fRUp-watch-video-african-city-skyline-night.jpg" controls>
-      <!-- <source src="" type="video/mp4"/> -->
+    <video poster="{{loadFile(video.attachment.video_frame_address)}}" controls>
+      <source src="{{loadFile(video.attachment.video_address)}}" type="video/mp4"/>
     </video>
   </div>
 
   <div class="page-wrapper">
-    <h2 class="video-title">Making Men</h2>
-    <span class="views">20 views</span>
+    <h2 class="video-title">{{video.video_title | titlecase}}</h2>
+    <span class="views">{{video.attachment.total_views}} views</span>
     <div class="options">
-      <a href="javascript:void(0)">
+      <a href="javascript:void(0)" (click)="like()">
         <img src="../../assets/img/like-faded.svg"/>
-        <span>20</span>
+        <span>{{total_likes}}</span>
       </a>
 
-      <a href="javascript:void(0)">
+      <a href="javascript:void(0)" (click)="dislike()">
         <img src="../../assets/img/dislike-faded.svg"/>
-        <span>0</span>
+        <span>{{total_dislikes}}</span>
       </a>
 
       <a href="javascript:void(0)">
@@ -33,17 +33,16 @@
 
     <!-- author -->
     <div class="author">
-      <img src="../../assets/img/author-image.svg"/>
-      <span class="author-name">Christopher Joe</span>
+      <img src="{{loadFile(profile_image)}}"/>
+      <span class="author-name">{{video.submittedby | titlecase}}</span>
     </div>
 
     <!-- date published -->
-    <div class="date-published">August 4, 2020</div>
+    <div class="date-published">{{video.date_string}}</div>
 
     <!-- about -->
     <p class="about-video">
-      Owing to the SGBV Helplines, there has been identified lapses, which the SGBV helpline as unable to
-      attend to, the issue of prompt responsiveness to counselling and other psychosocial support. 
+      {{video.attachment.video_caption}} 
     </p>
 
   </div>
