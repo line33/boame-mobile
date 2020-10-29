@@ -11,56 +11,26 @@
     </div>
 
     <!-- chat title -->
-    <h3 class="section-header">Recent Chat</h3>
+    <h3 class="section-header">Recent Chat{{plural}}</h3>
 
     <!-- chat list -->
     <div class="chat-lists">
 
-      <div class="chat-list" ion-button>
+      <div class="{{newMessage(chat)}}" ion-button *ngFor="let chat of chats" (click)="chatNow(chat)">
         <div class="chat-list-image">
-          <img src="../../assets/img/unnamed(1).jpg"/>
+          <img src="{{loadImage(chat.display_image)}}"/>
         </div>
         <div class="chat-list-content">
           <div class="chat-list-header">
-            <span class="chat-name">Martin Micheal</span>
-            <span class="chat-time">10:20 PM</span>
+            <span class="chat-name">{{chat.firstname | titlecase}} {{chat.lastname | titlecase}}</span>
+            <span class="chat-time">{{chat.date}}</span>
           </div>
           <div class="chat-list-footer">
-            <span class="message-pointer read"></span>
-            <span class="short-message">This is a very long text, and we should make it pretty short</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="chat-list new-message" ion-button>
-        <div class="chat-list-image">
-          <img src="../../assets/img/unnamed(1).jpg"/>
-        </div>
-        <div class="chat-list-content">
-          <div class="chat-list-header">
-            <span class="chat-name">Anita Hopeson</span>
-            <span class="chat-time">10:20 PM</span>
-          </div>
-          <div class="chat-list-footer">
-            <span class="message-pointer hide"></span>
-            <span class="short-message">This is a very long text, and we should make it pretty short</span>
-            <span class="message-count">1</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="chat-list" ion-button>
-        <div class="chat-list-image">
-          <img src="../../assets/img/unnamed(1).jpg"/>
-        </div>
-        <div class="chat-list-content">
-          <div class="chat-list-header">
-            <span class="chat-name">Samson Doe</span>
-            <span class="chat-time">11:20 PM</span>
-          </div>
-          <div class="chat-list-footer">
-            <span class="message-pointer unread"></span>
-            <span class="short-message">This is a very long text, and we should make it pretty short</span>
+            <!-- <span class="message-pointer read"    *ngIf="chat.unread == 0"></span> -->
+            <span class="message-pointer hide"    *ngIf="chat.lastreplied == 0"></span>
+            <!-- <span class="message-pointer unread"  *ngIf="chat.unread == 1"></span> -->
+            <span class="short-message">{{chat.message}}</span>
+            <span class="message-count" *ngIf="chat.lastreplied == chat.accountid">1</span>
           </div>
         </div>
       </div>

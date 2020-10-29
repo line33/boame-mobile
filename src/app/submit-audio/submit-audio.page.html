@@ -43,7 +43,7 @@
           <input type="file" style="display: none;" accept="{{formats}}" name="audio_file" id="audio_file2"/>
         </label>
 
-        <a href="javascript:void(0)" ion-button *ngIf="audioRecord == true">
+        <a href="javascript:void(0)" (click)="recordAudio()" ion-button *ngIf="audioRecord == true">
           <div class="rectangle2">
           </div>
           <div class="wishtouploadanoth">

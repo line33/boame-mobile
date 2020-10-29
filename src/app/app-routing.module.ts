@@ -7,11 +7,6 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
     path: 'homescreen',
     loadChildren: () => import('./homescreen/homescreen.module').then( m => m.HomescreenPageModule)
   },
@@ -111,6 +106,31 @@ const routes: Routes = [
     path: 'select-counselors',
     loadChildren: () => import('./select-counselors/select-counselors.module').then( m => m.SelectCounselorsPageModule)
   },
+  {
+    path: 'welcome',
+    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'welcome',
+    pathMatch: 'full'
+  },
+  {
+    path: 'chat-screen',
+    loadChildren: () => import('./chat-screen/chat-screen.module').then( m => m.ChatScreenPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'cases-assigned',
+    loadChildren: () => import('./cases-assigned/cases-assigned.module').then( m => m.CasesAssignedPageModule)
+  },
+  {
+    path: 'view-case-assigned',
+    loadChildren: () => import('./view-case-assigned/view-case-assigned.module').then( m => m.ViewCaseAssignedPageModule)
+  }
 ];
 
 @NgModule({

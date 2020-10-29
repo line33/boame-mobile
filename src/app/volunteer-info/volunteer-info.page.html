@@ -25,6 +25,8 @@
     <div class="page-wrapper-no-height">
       <h3 class="label">Biography</h3>
       <p class="text">{{biography | titlecase}}</p>
+
+
     </div>
     
   </div>
@@ -32,4 +34,9 @@
 
 <ion-footer class="ion-no-border">
   <app-basic-footer></app-basic-footer>
+
+  <div class="choose-conversation" ion-button (click)="startChat()">
+    <img src="../../assets/img/chat-19.svg"/>
+  </div>
+
 </ion-footer>

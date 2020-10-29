@@ -1,3 +1,9 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+      <app-go-back></app-go-back>
+    </ion-toolbar>
+</ion-header>
+  
 <ion-content [fullscreen]="true">
   <div class="loginaftersplash anima-word-break">
     <div class="page-wrapper">
@@ -34,11 +40,6 @@
           </div>
         </div>
 
-        <a href="javascript:void(0)" ion-button [routerLink]="['/homescreen']">
-            <div class="skiploginandconti">
-                Skip login and continue
-            </div>
-        </a>
         <a href="javascript:void(0)" ion-button [routerLink]="['/create-account']">
             <div class="createone">
                 + Create one

@@ -1,0 +1,43 @@
+<ion-content [fullscreen]="true" id="welcome-screen">
+<ion-slides pager loop>
+  <ion-slide id="welcome-slide">
+
+    <div class="slide-image">
+      <img src="../../assets/img/report-case.svg">
+    </div>
+    <div class="page-wrapper-no-height slide-content">
+        <h2>Report Abuse</h2>
+        <p>Are you a victim of sexual abuse or someone around you? Report to us anonymously or with your information for immediate support.</p>
+    </div>
+
+  </ion-slide>
+
+  <ion-slide id="welcome-slide">
+
+    <div class="slide-image">
+      <img src="../../assets/img/get-help.svg">
+    </div>
+    <div class="page-wrapper-no-height slide-content">
+        <h2>Get Help</h2>
+        <p>We have dedicated support counselors and volunteers ready to help at any time. You can chat them up through the app.</p>
+    </div>
+
+  </ion-slide>
+
+  <ion-slide id="welcome-slide">
+
+    <div class="slide-image">
+      <img src="../../assets/img/get-informed.svg">
+    </div>
+    <div class="page-wrapper-no-height slide-content">
+        <h2>Stay Informed</h2>
+        <p>Access our up to date videos and articles through the app.</p>
+    </div>
+
+  </ion-slide>
+</ion-slides>
+<div class="page-wrapper-no-height button-wrapper">
+  <a href="javascript:void(0)" ion-button class="btn btn-full" [routerLink]="['/homescreen']">Continue Anonymously</a>
+  <a href="javascript:void(0)" ion-button class="btn btn-outline" [routerLink]="['/home']">Login or Register</a>
+</div>
+</ion-content>

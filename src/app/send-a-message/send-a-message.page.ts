@@ -5,6 +5,7 @@ import { LoaderComponent } from '../components/loader/loader.component';
 import { NetworkService } from '../services/network.service';
 import { AlertComponent } from '../components/alert/alert.component';
 import { Storage } from '@ionic/storage';
+import { ChatService } from '../services/chat.service';
 
 @Component({
   selector: 'app-send-a-message',
@@ -21,7 +22,7 @@ export class SendAMessagePage implements OnInit {
   inputs : any = {};
 
   constructor(private router : RouterService, private loader : LoaderComponent,
-    private network : NetworkService, private alert : AlertComponent, private storage : Storage) { }
+    private network : NetworkService, private alert : AlertComponent, private chatService : ChatService) { }
 
   ngOnInit() {
   }
@@ -30,12 +31,8 @@ export class SendAMessagePage implements OnInit {
   {
     if (this.network.inputValid())
     {
-      console.log(30);
-
       // check images
       if (this.files.images ==  '') return this.alert.show('You need to attach one or more images');
-
-      console.log(31);
 
       // start loader
       this.loader.show(()=>{
@@ -72,7 +69,14 @@ export class SendAMessagePage implements OnInit {
             }
             else
             {
+              this.chatService.caseSubmitted('text');
+              
               this.alert.success(res.data.message, ()=>{
+                
+                // report case service requested
+                this.chatService.serviceRequested('report-case-tag');
+
+                // route
                 this.router.route('/report-case');
                 this.inputs = {};
                 this.files = {images : ''};

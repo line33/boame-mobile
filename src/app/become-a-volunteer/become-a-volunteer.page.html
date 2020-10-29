@@ -80,6 +80,17 @@
           <input class="form-input" placeholder="Your password again" type="password" [(ngModel)]="inputs.password_again" data-input="[\S\s]{4,}" data-message="Should match your password, and cannot be empty">
         </div>
 
+        <div class="groupcopy7">
+          <select class="form-input" [(ngModel)]="inputs.gender" data-input="[\S]{2,}" data-message="You must select a gender">
+            <option value="">Please select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <div class="gender label">
+              Gender
+          </div>
+        </div>
+
     </div>
   </div>
 </ion-content>

@@ -7,14 +7,14 @@
 <ion-content [fullscreen]="true">
   <div class="videoinformation anima-word-break ">
     <div class="page-wrapper">
-        <div class="title" style="width:80%">
+        <div class="title">
             {{video.video_title | titlecase}}
         </div>
         <div class="a2020">
             {{video.date_string}}
         </div>
         <div class="a15mins">
-            {{video.video_length}}
+            
         </div>
         <a href="javascript:void(0)" ion-button (click)="watch()">
           <div class="group">

@@ -44,30 +44,27 @@ export class VideoCenterPage implements OnInit {
   {
     if (VideoCenterPage.allVideos.length == 0)
     {
-      this.loader.show(()=>{
-        setTimeout(()=>{
-          this.network.headers = {'x-query-limits' : '0,50'};
-          this.network.get('library/videos').then((res:any)=>{
-            if (res.data.status == 'error')
-            {
-              this.alert.show(res.data.message, ()=>{
-                this.router.route('/knowledge-center');
-                this.loader.hide();
-              });
-            }
-            else
-            {
-              this.videos = res.data.videos;
-              VideoCenterPage.allVideos = this.videos;
-              this.loader.hide();
-            }
+      this.network.headers = {'x-query-limits' : '0,50'};
+      this.network.get('library/videos').then((res:any)=>{
+        if (res.data.status == 'error')
+        {
+          this.alert.show(res.data.message, ()=>{
+            this.router.route('/knowledge-center');
+            this.loader.hide();
           });
-        },1000);
-      }); 
+        }
+        else
+        {
+          this.videos = res.data.videos;
+          VideoCenterPage.allVideos = this.videos;
+          this.loader.hide();
+        }
+      });
     }
     else
     {
       this.videos = VideoCenterPage.allVideos;
+      this.loader.hide();
     }
   }
 

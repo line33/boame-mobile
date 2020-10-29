@@ -1,7 +1,7 @@
 .createanaccount {
     width               : 100%;
     height              : 100vh;
-    min-height          : 1081px;
+    min-height          : 1141px;
     position            : relative;
     overflow            : hidden;
     margin              : 0px;
@@ -31,7 +31,7 @@
   }
   .createanaccount .rectangle {
     background-color    : rgba(255, 144, 1, 1.0);
-    top                 : 902px;
+    top                 : 997px;
     height              : 56px;
     width               : 100%;
     position            : absolute;
@@ -42,7 +42,7 @@
   }
   .createanaccount .register {
     background-color    : rgba(255,255,255,0.0);
-    top                 : 922px;
+    top                 : 1015px;
     height              : auto;
     width               : 100%;
     position            : absolute;
@@ -120,6 +120,17 @@
   }
   .createanaccount .groupcopy2 {
     background-color    : rgba(255,255,255,0.0);
+    top                 : 682px;
+    height              : 75px;
+    width               : 100%;
+    position            : absolute;
+    margin              : 0;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+  }
+
+  .createanaccount .groupcopy7 {
+    background-color    : rgba(255,255,255,0.0);
     top                 : 580px;
     height              : 75px;
     width               : 100%;
@@ -128,6 +139,26 @@
     transform           : rotate(0deg);
     opacity             : 1.0;
   }
+
+  .createanaccount .groupcopy7 .gender {
+    background-color    : rgba(255,255,255,0.0);
+    top                 : 0px;
+    height              : auto;
+    width               : auto;
+    position            : absolute;
+    margin              : 0;
+    left                : 0px;
+    transform           : rotate(0deg);
+    opacity             : 1.0;
+    font-family         : "Roboto", Helvetica, Arial, serif;
+    font-weight         : 500;
+    font-style          : normal;
+    font-size           : 16.0px;
+    color               : rgba(0, 0, 0, 1.0);
+    text-align          : left;
+    line-height         : 19.0px;
+  }
+
   .createanaccount .groupcopy2 .rectanglecopy {
     background-color    : rgba(255, 255, 255, 1.0);
     top                 : 27px;
@@ -179,7 +210,7 @@
   }
   .createanaccount .groupcopy4 {
     background-color    : rgba(255,255,255,0.0);
-    top                 : 686px;
+    top                 : 787px;
     height              : 75px;
     width               : 100%;
     position            : absolute;
@@ -238,7 +269,7 @@
   }
   .createanaccount .groupcopy5 {
     background-color    : rgba(255,255,255,0.0);
-    top                 : 791px;
+    top                 : 890px;
     height              : 75px;
     width               : 100%;
     position            : absolute;

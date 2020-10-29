@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border" translucent="true">
+  <ion-toolbar color="translucent">
+    <div class="page-wrapper-no-height header-btn-wrapper">
+      <a href="javascript:void(0)" ion-button (click)="goback()" class="arrow1">
+        <img alt="Image/" src="../../assets/img/sVeO-online-conversation-arrow1@2x.png"/>
+      </a>
+
+      <!-- save button -->
+      <a href="javascript:void(0)" ion-button (click)="saveProfile()" *ngIf="canSave == true" class="save-text">SAVE</a>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="yes">
+
+  <!-- image container -->
+  <div class="image-wrapper">
+    <label for="display_image" class="image-container" ion-button>
+      <img src="{{loadImage()}}" class="display_image"/>
+      <button ion-button class="edit-button">
+        <img src="../../assets/img/edit2.svg"/>
+      </button>
+      <input id="display_image" type="file" name="display_image" style="display: none;"/>
+    </label>
+  </div>
+
+  <div class="page-wrapper-no-height">
+    <ul class="account-information">
+      <li>
+        <span class="title">Lastname</span>
+        <span class="text">{{account.lastname | titlecase}}</span>
+      </li>
+
+      <li>
+        <span class="title">Firstname</span>
+        <span class="text">{{account.firstname | titlecase}}</span>
+      </li>
+
+      <li>
+        <span class="title">Email</span>
+        <span class="text">{{account.email}}</span>
+      </li>
+
+      <li>
+        <span class="title">Telephone</span>
+        <span class="text">{{account.telephone}}</span>
+      </li>
+    </ul>
+
+    <!-- logout button -->
+    <button class="logout-button" [routerLink]="['/home']">Logout</button>
+
+  </div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-basic-footer></app-basic-footer>
+</ion-footer>

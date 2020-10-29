@@ -1,0 +1,100 @@
+.page-title{
+    font-family: 'Roboto-bold';
+    font-size: 47px;
+    line-height: 48px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.case-badge{
+    background: rgba(51, 112, 163, 0.03);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.case-badge .pointer{
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(51, 112, 163, 1);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.case-badge .case-type{
+    font-size: 12px;
+    font-family: 'Roboto';
+    opacity: 0.30;
+}
+
+.case-body-time{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.case-body-time img{
+    display: block;
+    margin-right: 10px;
+}
+
+.case-body-time span{
+    color: #000;
+    opacity: 0.21;
+    font-size: 12px;
+}
+
+.main-body{
+    margin-top: 20px;
+}
+
+.main-body video, .main-body audio{
+    width: 100%;
+    height: 200px;
+}
+
+.main-body audio{
+    background-image: url('../../assets/img/crying_woman.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main-body .images{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-body .images .image{
+    height: 300px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.main-body .images .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-body p{
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+.main-body a{
+    height: 56px;
+    border-radius: 26px;
+    background: #FF9001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}

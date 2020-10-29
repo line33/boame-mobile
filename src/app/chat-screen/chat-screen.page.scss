@@ -1,0 +1,132 @@
+ion-header{
+    background-color: #3370A3;
+    padding-bottom: 5px;
+}
+
+ion-grid{
+    padding-bottom: 50px;
+}
+
+.arrow1{
+    filter: invert(100);
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.header-wrapper{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+    justify-content: space-between;
+}
+
+.image-container{
+    width: 46px;
+    height: 46px;
+}
+
+.image-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    flex: 1;
+}
+
+.user-wrapper h1{
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Roboto-medium';
+    margin: 0;
+    color: #fff;
+}
+
+.user-wrapper .activity{
+    color: #ddd;
+    font-size: 14px;
+}
+
+.call-button:hover{
+    cursor: pointer;
+}
+
+.record-audio{
+    width: 40px;
+    height: 40px;
+    background: #FF9001;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    width: 90%;
+    margin: auto;
+}
+
+.form-container form{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-container form input{
+    border-radius: 15px;
+    background: #FDFCFC;
+    width: 85%;
+    border: 1px solid rgba(51,112,163,0.16);
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.chat-container{
+    padding-top: 20px;
+}
+
+.message{
+    color: #000;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message span{
+    font-size: 14px;
+    white-space: normal;
+    display: block;
+    margin-bottom: 3px;
+    padding: 10px;
+}
+
+.message time{
+    opacity: 0.7;
+    color: #A7A7A7;
+    font-size: 10px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.outgoing-message{
+    background-color: rgba(255,144,1,0.12);
+}
+
+.incoming-message{
+    background-color: rgba(51,112,163,0.12);
+}

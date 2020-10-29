@@ -19,11 +19,13 @@ import { CacheService } from './services/cache.service';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
 import { AudioService } from './services/audio.service';
 import { VideoService } from './services/video.service';
-
+import { MediaCapture } from '@ionic-native/media-capture/ngx';
+import { File } from '@ionic-native/File/ngx';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { NotificationService } from './services/notification.service';
 
-const config : SocketIoConfig = {url : 'wss://www.mediaccess.com.ng/', options : { 
-  secure: true, transports: ['websocket'], port: 8082
+const config : SocketIoConfig = {url : 'ws://0.0.0.0:8083', options : { 
+  secure: true, transports: ['websocket'], port: 8083
 }};
 
 @NgModule({
@@ -49,6 +51,9 @@ const config : SocketIoConfig = {url : 'wss://www.mediaccess.com.ng/', options :
     UniqueDeviceID,
     AudioService,
     VideoService,
+    NotificationService,
+    MediaCapture,
+    File,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

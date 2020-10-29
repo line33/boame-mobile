@@ -16,7 +16,8 @@ export class BecomeAVolunteerPage implements OnInit {
 
   positions : any = [];
   inputs : any = {
-    positionid : ''
+    positionid : '',
+    gender : ''
   };
   static clearInputs : boolean = false;
 
@@ -28,6 +29,7 @@ export class BecomeAVolunteerPage implements OnInit {
       this.positions = positions;
     });
   }
+
 
   submit()
   {

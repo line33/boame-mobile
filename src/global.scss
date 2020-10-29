@@ -39,3 +39,16 @@ ion-slides .swiper-wrapper{
 #article-app-header img{
     filter: invert(100);
 }
+
+#welcome-screen ion-slides .swiper-pagination{
+    bottom: -35px !important;
+}
+
+#welcome-screen ion-slides .swiper-pagination-bullet{
+    background: transparent !important;
+    border: 1px solid #FF9001;
+}
+
+#welcome-screen ion-slides .swiper-pagination-bullet-active{
+    background: #FF9001 !important;
+}

@@ -4,6 +4,7 @@ import { NetworkService } from '../services/network.service';
 import { RouterService } from '../services/router.service';
 import { LoaderComponent } from '../components/loader/loader.component';
 import { AlertComponent } from '../components/alert/alert.component';
+import { ChatService } from '../services/chat.service';
 
 @Component({
   selector: 'app-submit-video',
@@ -19,7 +20,7 @@ export class SubmitVideoPage implements OnInit {
 
   constructor(private video : VideoService, private network : NetworkService,
     private router : RouterService, private loader : LoaderComponent,
-    private alert : AlertComponent) {
+    private alert : AlertComponent, private chatService : ChatService) {
     this.formats = this.video.formats;
   }
 
@@ -51,6 +52,17 @@ export class SubmitVideoPage implements OnInit {
   {
     // process video
     this.processVideo();
+  }
+
+  recordVideo()
+  {
+    this.video.captureVideo((video:any) => {
+      // changed
+      this.alert.success('Video file changed, please close this modal to continue.');
+
+      // update file
+      this.file = video;
+    });
   }
 
   processVideo()
@@ -85,7 +97,8 @@ export class SubmitVideoPage implements OnInit {
         REQUEST_METHOD  : 'PUT' 
       }, (data:any)=>{
 
-        this.network.post('cases/report/video', data).then((res:any)=>{
+        // process callback function
+        const processor = (res:any)=>{
 
           if (res.data.status == 'error')
           {
@@ -94,7 +107,16 @@ export class SubmitVideoPage implements OnInit {
           }
           else
           {
+            this.chatService.caseSubmitted('video');
             this.alert.success(res.data.message, ()=>{
+
+              // report case service requested
+              this.chatService.serviceRequested('report-case-tag-video');
+
+              // delete video locally
+              if (this.videoRecord) this.video.deleteVideo(this.file);
+
+              // route out
               this.router.route('/send-a-video');
               this.file = null;
               this.reportText = '';
@@ -102,7 +124,24 @@ export class SubmitVideoPage implements OnInit {
             });
           }
 
-        });
+        };
+
+        if (this.videoRecord == false) return this.network.post('cases/report/video', data).then(processor);
+
+        // create form data
+        const formData = new FormData();
+
+        // delete video
+        delete data['video'];
+
+        // add others
+        for (var key in data) formData.append(key, data[key]);
+
+        // add video
+        formData.append('video', this.file.blob, this.file.name);
+
+        // run post
+        this.network.post('cases/report/video', formData, false).then(processor);
 
       });
     });

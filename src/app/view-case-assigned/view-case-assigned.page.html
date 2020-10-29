@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-go-back></app-go-back>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="yes">
+  <div class="page-wrapper-no-height" *ngIf="isReady">
+    <h1 class="page-title" [innerHTML]="getName()"></h1>
+
+    <!-- time -->
+    <div class="case-body-time">
+      <img src="../../assets/img/time.svg"/>
+      <span>{{caseRow.date_formatted}}</span>
+    </div>
+
+    <!-- case badge -->
+    <div class="case-badge">
+      <span class="pointer"></span>
+      <span class="case-type">{{caseRow.caseType.case_type | titlecase}} Case</span>
+    </div>
+
+    <!-- main body -->
+    <div class="main-body">
+
+      <video controls *ngIf="caseRow.caseType.case_type == 'video' && caseRow.uploads.length > 0">
+        <source src="{{getFile(upload.video_address)}}" type="video/mp4" *ngFor="let upload of caseRow.uploads"/>
+      </video>
+
+      <audio controls *ngIf="caseRow.caseType.case_type == 'audio' && caseRow.uploads.length > 0">
+        <source src="{{getFile(upload.audio_address)}}" type="audio/mp3" *ngFor="let upload of caseRow.uploads"/>
+      </audio>
+
+      <div class="images" *ngIf="caseRow.caseType.case_type == 'text'">
+        <div class="image" *ngFor="let upload of caseRow.uploads">
+          <img src="{{getFile(upload.image_address)}}"/>
+        </div>
+      </div>
+
+      <p>
+        {{caseRow.case_text | titlecase}}
+      </p>
+
+      <a href="javascript:void(0)" ion-button (click)="startChat()">Start a Chat</a>
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-basic-footer></app-basic-footer>
+</ion-footer>

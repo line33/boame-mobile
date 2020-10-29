@@ -82,3 +82,21 @@
   .volunteers p.text{
     line-height: 21px;
   }
+
+  .choose-conversation{
+    width: 62px;
+    height: 62px;
+    background-color: #FF9001;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 80px;
+    right: 10px;
+    box-shadow: -10px 10px 10px rgba(0,0,0,0.1);
+}
+
+.choose-conversation:hover{
+    cursor: pointer;
+}

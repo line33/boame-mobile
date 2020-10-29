@@ -18,9 +18,7 @@
     </div>
 
     <!-- article content -->
-    <p class="article-content">
-      {{article.article_text | titlecase}}
-    </p>
+    <p class="article-content" [innerHTML]="article.article_text"></p>
   </div>
 </ion-content>
 

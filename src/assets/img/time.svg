@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="11px" viewBox="0 0 11 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>time</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Boame-mobile-app" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.399855841">
+        <g id="Cases-Reported" transform="translate(-92.000000, -347.000000)" fill="#000000">
+            <g id="Group-2" transform="translate(15.000000, 235.000000)">
+                <g id="time" transform="translate(77.000000, 112.000000)">
+                    <path d="M5.5,0 C2.4673,0 0,2.4673 0,5.5 C0,8.5327 2.4673,11 5.5,11 C8.5327,11 11,8.5327 11,5.5 C11,2.4673 8.5327,0 5.5,0 Z M5.5,10.6333333 C2.66951667,10.6333333 0.366666667,8.33048333 0.366666667,5.5 C0.366666667,2.66951667 2.66951667,0.366666667 5.5,0.366666667 C8.33048333,0.366666667 10.6333333,2.66951667 10.6333333,5.5 C10.6333333,8.33048333 8.33048333,10.6333333 5.5,10.6333333 Z" id="Shape" fill-rule="nonzero"></path>
+                    <path d="M5.83333333,1 C5.74133333,1 5.66666667,1.06876923 5.66666667,1.15384615 L5.66666667,4.69230769 L3.16666667,4.69230769 C3.07466667,4.69230769 3,4.76107692 3,4.84615385 C3,4.93123077 3.07466667,5 3.16666667,5 L5.83333333,5 C5.92533333,5 6,4.93123077 6,4.84615385 L6,1.15384615 C6,1.06876923 5.92533333,1 5.83333333,1 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

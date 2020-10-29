@@ -1,0 +1,63 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <app-go-back></app-go-back>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="yes">
+  <div class="page-wrapper-no-height">
+    <h1 class="page-title">Cases <br> Assigned</h1>
+
+    <!-- loader -->
+    <div class="case-loader" *ngIf="loaded == false">
+      <img src="../../assets/img/spinner-test4.gif"/>
+      <span> loading, please wait.</span>
+    </div>
+
+    <div class="cases-list" *ngIf="loaded == true">
+
+      <!-- no case -->
+      <div class="no-case-assigned" *ngIf="cases.length == 0">
+        <p>There are no assigned cases currently for you.</p>
+      </div>
+
+      <div class="case-list" *ngFor="let row of cases" (click)="gotoCase(row)">
+
+        <!-- case badge -->
+        <div class="case-badge">
+          <span class="pointer"></span>
+          <span class="case-type">{{row.caseType.case_type | titlecase}} Case</span>
+        </div>
+
+        <!-- case body -->
+        <div class="case-body">
+          <div class="case-body-image">
+            <img src="{{loadImage(row)}}"/>
+          </div>
+
+          <!-- user -->
+          <h2>{{getName(row) | titlecase}}</h2>
+
+          <!-- time -->
+          <div class="case-body-time">
+            <img src="../../assets/img/time.svg"/>
+            <span>{{row.date_formatted}}</span>
+          </div>
+        </div>
+
+        <!-- case footer -->
+        <div class="case-footer">
+          <span class="case-footer-circle">
+            <img src="../../assets/img/arrow-right-white2.svg"/>
+          </span>
+        </div>
+
+      </div>
+      
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <app-basic-footer></app-basic-footer>
+</ion-footer>

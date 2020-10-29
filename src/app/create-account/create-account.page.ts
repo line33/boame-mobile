@@ -14,7 +14,9 @@ export class CreateAccountPage implements OnInit {
 
   @ViewChild(IonContent) content: IonContent;
 
-  inputs : any = {};
+  inputs : any = {
+    gender : ''
+  };
 
   constructor(private network : NetworkService,
     private loader : LoaderComponent,
@@ -43,6 +45,7 @@ export class CreateAccountPage implements OnInit {
             telephone       : this.inputs.phone,
             password        : this.inputs.password,
             password_again  : this.inputs.password_again,
+            gender          : this.inputs.gender,
           }).then((res:any)=>{
 
             // do we have a response

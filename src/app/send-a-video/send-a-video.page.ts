@@ -34,6 +34,13 @@ export class SendAVideoPage implements OnInit {
     this.processVideo();
   }
 
+  recordVideo()
+  {
+    this.video.captureVideo((video:any)=>{
+      this.router.route('/submit-video', {type:'recorded', file : video});
+    });
+  }
+
   processVideo()
   {
     this.video.getVideo('.sendavideo #video_file').then((file:any)=>{

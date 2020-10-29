@@ -32,6 +32,16 @@
                 Telephone
             </div>
         </div>
+        <div class="groupcopy7">
+            <select [(ngModel)]="inputs.gender" class="form-input" data-input="[\S]{2,}" data-message="Please select a gender">
+                <option value="">Please select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <div class="gender label">
+                Gender
+            </div>
+        </div>
         <div class="groupcopy4">
             <input class="form-input" placeholder="Your password" type="password" [(ngModel)]="inputs.password" data-input="[\S\s]{4,}" data-message="Should be a password you can remember of 4 characters or more.">
             <div class="password label">

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { promise } from 'protractor';
 import { AppComponent } from '../app.component';
 import { NetworkService } from './network.service';
 
@@ -75,6 +76,7 @@ export class CacheService {
         if (typeof this.network != 'undefined')
         {
           this.network.get('service/config').then((res:any)=>{
+            
             // are we good ??
             if (res.data.status == 'success')
             {
@@ -110,6 +112,108 @@ export class CacheService {
 
     // return promise
     return promise;
+    
+  }
+
+  // get chat list
+  getChatList()
+  {
+    const promise = new Promise((resolver, reject)=>{
+      this.storage.get('boame_user_chat_list').then((chat_list:any)=>{
+        if (chat_list == null) return reject('no chat list cache');
+        // return cache
+        resolver(chat_list);
+      });
+    });
+
+    return promise;
+  }
+
+  // load getCounsellors
+  getCounsellors()
+  {
+    return new Promise((resolve, reject)=>{
+      this.storage.get('boame_counsellors_list').then((counsellors:any)=>{
+        if (counsellors !== null) return resolve(counsellors);
+        reject('no counselor');
+      }).catch(()=>{
+        reject('no counselor');
+      })
+    });
+  }
+
+  // cache counsellors
+  cacheCounsellors(counsellors:any)
+  {
+    this.storage.set('boame_counsellors_list', counsellors);
+  }
+
+  // cache response
+  cacheChatList(response:any)
+  {
+    this.storage.set('boame_user_chat_list', response);
+  }
+
+  // cache chat
+  cacheChat(receiver:number = 0, chat:any = [])
+  {
+    // get cache
+    this.storage.get('boame_user_chat_history').then((history:any)=>{
+
+      this.storage.get('boame_device_hash').then(hash => {
+
+        // save now
+        const key = "chat"+receiver+'_'+hash;
+
+        // do we have something
+        if (history == null)
+        {
+          // add to list
+          const chatList = {key : chat};
+
+          // save now
+          this.storage.set('boame_user_chat_history', chatList);
+        }
+        else
+        {
+          history[key] = chat;
+          
+          // save now
+          this.storage.set('boame_user_chat_history', history);
+        }
+
+      });
+
+    });
+  }
+
+  // get chat cache
+  getChatCache(receiver:number = 0)
+  {
+    return new Promise((resolver, reject)=>{
+
+      // get cache
+      this.storage.get('boame_user_chat_history').then((history:any)=>{
+
+        if (history == null) return reject();
+
+        // get accountid
+        this.storage.get('boame_device_hash').then(hash => {
+
+          // find key
+          const key = "chat"+receiver+'_'+hash;
+
+          // do we have an entry
+          if (typeof history[key] != 'undefined') return resolver(history[key]);
+
+          // not foumd
+          reject();
+
+        });
+
+      });
+
+    });
     
   }
 }

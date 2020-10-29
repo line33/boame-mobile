@@ -35,6 +35,16 @@ export class SendAnAudioPage implements OnInit {
     this.processAudio(); 
   }
 
+  captureAudio()
+  {
+    this.audio.captureAudio((audio:any)=>{
+      this.router.route('/submit-audio', {
+        type : 'recorded',
+        file : audio
+      });
+    });
+  }
+
   processAudio()
   {
     this.audio.getAudio('.sendanaudio #audio_file').then((file:any)=>{

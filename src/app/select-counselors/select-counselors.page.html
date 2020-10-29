@@ -8,17 +8,22 @@
   <div class="page-wrapper-no-height">
     <div class="chat-lists">
 
-      <div class="chat-list" ion-button>
+      <div class="chat-list" ion-button *ngFor="let counselor of counsellors" (click)="startChat(counselor)">
         <div class="chat-list-image">
-          <img src="../../assets/img/unnamed(1).jpg"/>
+          <img src="{{getImage(counselor.display_image)}}"/>
         </div>
         <div class="chat-list-content">
-          <div class="chat-list-header">
-            <span class="chat-name">Martin Micheal</span>
+          <div class="chat-list-header" style="margin-bottom:6px">
+            <span class="chat-name">{{counselor.firstname | titlecase}} {{counselor.lastname | titlecase}}</span>
           </div>
-          <div class="chat-list-footer">
+          <div class="chat-list-footer" *ngIf="counselor.isonline == 1">
             <span class="pointer success"></span>
             <span class="short-message">avaliable</span>
+          </div>
+
+          <div class="chat-list-footer" *ngIf="counselor.isonline == 0">
+            <span class="pointer away"></span>
+            <span class="short-message">away</span>
           </div>
         </div>
       </div>

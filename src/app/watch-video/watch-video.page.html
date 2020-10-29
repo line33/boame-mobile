@@ -41,9 +41,7 @@
     <div class="date-published">{{video.date_string}}</div>
 
     <!-- about -->
-    <p class="about-video">
-      {{video.attachment.video_caption}} 
-    </p>
+    <p class="about-video" [innerHTML]="video.attachment.video_caption"></p>
 
   </div>
 

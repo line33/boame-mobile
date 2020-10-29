@@ -65,7 +65,6 @@ export class ArticlesPage implements OnInit {
 
         this.articles = articles;
         this.loaded = true;
-        console.log(res.data);
       });
     }
     else

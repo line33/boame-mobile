@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonContent } from '@ionic/angular';
 import { RouterService } from '../services/router.service';
-import { CacheService } from '../services/cache.service';
 import { AppComponent } from '../app.component';
 import { NetworkService } from '../services/network.service';
 import { Storage } from '@ionic/storage';
+import { ChatService } from '../services/chat.service';
 
 @Component({
   selector: 'app-watch-video',
@@ -23,7 +23,7 @@ export class WatchVideoPage implements OnInit {
   static videoLiked : any = [];
   static videoDisLiked : any = [];
 
-  constructor(private router : RouterService, private cache : CacheService,
+  constructor(private router : RouterService, private chat : ChatService,
     private network : NetworkService, private storage : Storage) {
     this.router.getData((data:any)=>{
       this.video = data.video;
@@ -38,7 +38,7 @@ export class WatchVideoPage implements OnInit {
       this.network.get('service/account/' + data.video.accountid).then((res:any)=>{
         if (res.data.status == 'success')
         {
-          this.profile_image = (res.data.display_image == null) ? 'weki-icon.png' : res.data.display_image;
+          this.profile_image = (res.data.display_image == null) ? 'generic_avatar.png' : res.data.display_image;
         }
       });
       
@@ -54,6 +54,9 @@ export class WatchVideoPage implements OnInit {
     this.storage.get('boame_video_activities').then((activity:any)=>{
       if (activity == null) this.storage.set('boame_video_activities', []);
     });
+
+    // read article service requested
+    this.chat.serviceRequested('watch-video');
   }
 
   like()

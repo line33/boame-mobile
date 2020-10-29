@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -32,6 +31,9 @@ export class AppComponent {
     "/watch-video"              : "nav-tab",
     "/articles"                 : "nav-tab",
     "/view-article"             : "nav-tab",
+    "/profile"                  : "profile-tab",
+    "/cases-assigned"           : "cases-tab",
+    "/view-case-assigned"       : "cases-tab",
   };
 
   static accountInformation : any = null;
@@ -41,6 +43,7 @@ export class AppComponent {
   static navigatedData : any = {};
   static storageUrl : string = '';
   static redirectTo : string = '';
+  static currentChatId : any = 0;
 
   constructor(
     private platform: Platform,
@@ -54,6 +57,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      
     });
   }
 }

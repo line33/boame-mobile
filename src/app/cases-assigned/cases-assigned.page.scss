@@ -1,0 +1,135 @@
+.page-title{
+    font-family: 'Roboto-bold';
+    font-size: 47px;
+    line-height: 48px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.case-list{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.12);
+    margin-bottom: 40px;
+}
+
+.case-list:hover{
+    cursor: pointer;
+}
+
+.case-badge{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(51, 112, 163, 0.03);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.case-badge .pointer{
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(51, 112, 163, 1);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.case-badge .case-type{
+    font-size: 12px;
+    font-family: 'Roboto';
+    opacity: 0.30;
+}
+
+.case-footer{
+    position: absolute;
+    bottom: -15px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.case-footer .case-footer-circle{
+    width: 30px;
+    height: 30px;
+    background-color: #FF9001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.case-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.case-body .case-body-image{
+    width: 58px;
+    height: 57px;
+    margin-bottom: 10px;
+}
+
+.case-body .case-body-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.case-body h2{
+    font-size: 16px;
+    font-family: 'Roboto-bold';
+    margin: 0;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.case-body-time{
+    display: flex;
+    align-items: center;
+}
+
+.case-body-time img{
+    display: block;
+    margin-right: 10px;
+}
+
+.case-body-time span{
+    color: #000;
+    opacity: 0.21;
+    font-size: 12px;
+}
+
+.case-loader{
+    display: flex;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.12);
+    align-items: center;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.case-loader img{
+    width: 30px;
+    height: 30px;
+}
+
+.no-case-assigned{
+    background-color:  rgba(228, 138, 16, 0.12);
+    padding: 10px;
+}

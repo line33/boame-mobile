@@ -88,7 +88,8 @@ export class CompleteVolunteerRegPage implements OnInit {
           cv                  : this.files.cv,
           display_image       : this.files.display,
           volunteerpositionid : this.inputs.positionid,
-          residential_address : this.inputs.address
+          residential_address : this.inputs.address,
+          gender              : this.inputs.gender,
         }).then((res:any)=>{
 
           if (res.data.status == 'error')
@@ -106,7 +107,6 @@ export class CompleteVolunteerRegPage implements OnInit {
               this.loader.hide();
               this.loaded = false;
               this.resetFileUpload();
-
             });
           }
 

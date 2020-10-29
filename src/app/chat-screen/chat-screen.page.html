@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border" translucent="true">
+  <ion-toolbar color="translucent">
+    <div class="page-wrapper-no-height header-chat-wrapper" style="background:none">
+      <a href="javascript:void(0)" ion-button (click)="goback()" class="arrow1">
+        <img alt="Image/" src="../../../assets/img/sVeO-online-conversation-arrow1@2x.png"/>
+      </a>
+      <div class="chat-header-info header-wrapper">
+        <div class="image-container">
+          <img src="{{image}}"/>
+        </div>
+
+        <div class="user-wrapper">
+          <h1 class="user-name">{{fullname | titlecase}}</h1>
+          <span class="activity">{{activity}}</span>
+        </div>
+
+        <div class="call-button" ion-button (click)="makeCall()">
+          <img src="../../assets/img/phone-bold.svg"/>
+        </div>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="page-wrapper chat-container {{domLoaded}}">
+    <ion-grid>
+      <ion-row *ngFor="let chat of chats">
+        <ion-col size="9" *ngIf="chat.type == 'incoming'" class="message incoming-message">
+          <span>{{chat.message}}</span>
+          <time text-right>{{chat.date}}</time>
+        </ion-col>
+        <ion-col offset="3" size="9" *ngIf="chat.type == 'outgoing'" class="message outgoing-message">
+          <span>{{chat.message}}</span>
+          <time text-right>{{chat.date}}</time>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div class="footer-buttons">
+    <div class="form-container">
+      <form action="javascript:void(0)" method="POST" (ngSubmit)="sendMessage()">
+        <input type="text" placeholder="Type a message" autofocus="yes" autocorrect="yes" [(ngModel)]="message" (input)='ionInput()' [ngModelOptions]="{standalone: true}"/>
+        <div class="record-audio" ion-button (click)="recordAudio()">
+          <img src="../../assets/img/microphone-bold.svg"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-footer>

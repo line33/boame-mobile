@@ -4,6 +4,7 @@ import { RouterService } from '../services/router.service';
 import { AlertComponent } from '../components/alert/alert.component';
 import { LoaderComponent } from '../components/loader/loader.component';
 import { NetworkService } from '../services/network.service';
+import { ChatService } from '../services/chat.service';
 
 @Component({
   selector: 'app-submit-audio',
@@ -19,7 +20,7 @@ export class SubmitAudioPage implements OnInit {
 
   constructor(private audio : AudioService, private router : RouterService,
     private alert : AlertComponent, private loader : LoaderComponent,
-    private network : NetworkService)
+    private network : NetworkService, private chatService : ChatService)
   {
     this.formats = this.audio.formats;
   }
@@ -49,6 +50,20 @@ export class SubmitAudioPage implements OnInit {
     });
 
   }
+
+  recordAudio()
+  {
+    this.audio.captureAudio((audio:any) => {
+
+      // changed
+      this.alert.success('Audio file changed, please close this modal to continue.');
+
+      // update file
+      this.file = audio;
+
+    });
+  }
+
 
   ionViewDidEnter()
   {
@@ -88,7 +103,8 @@ export class SubmitAudioPage implements OnInit {
         REQUEST_METHOD  : 'PUT' 
       }, (data:any)=>{
 
-        this.network.post('cases/report/audio', data).then((res:any)=>{
+        // processor
+        const processor = (res:any)=>{
 
           if (res.data.status == 'error')
           {
@@ -97,7 +113,17 @@ export class SubmitAudioPage implements OnInit {
           }
           else
           {
+            this.chatService.caseSubmitted('audio');
+
             this.alert.success(res.data.message, ()=>{
+
+              // report case service requested
+              this.chatService.serviceRequested('report-case-tag-audio');
+
+              // delete video locally
+              if (this.audioRecord) this.audio.deleteAudio(this.file);
+
+              // route view
               this.router.route('/send-an-audio');
               this.file = null;
               this.reportText = '';
@@ -105,7 +131,25 @@ export class SubmitAudioPage implements OnInit {
             });
           }
 
-        });
+        };
+
+        // process uploaded audio
+        if (this.audioRecord == false) return this.network.post('cases/report/audio', data).then(processor);
+
+        // create form data
+        const formData = new FormData();
+
+        // delete audio
+        delete data['audio'];
+
+        // add others
+        for (var key in data) formData.append(key, data[key]);
+
+        // add audio
+        formData.append('audio', this.file.blob, this.file.name);
+
+        // run post
+        this.network.post('cases/report/audio', formData, false).then(processor);
 
       });
     });
