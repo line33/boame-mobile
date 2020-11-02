@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 import { IonContent } from '@ionic/angular';
 
 @Component({
@@ -10,9 +11,16 @@ export class ReportCasePage implements OnInit {
 
   @ViewChild(IonContent) content: IonContent;
 
-  constructor() { }
+  constructor(private call : CallNumber) { }
 
   ngOnInit() {
+  }
+
+  phoneCall()
+  {
+    this.call.callNumber('+233551000900', false)
+    .then(res => console.log('Launched dialer!', res))
+    .catch(err => console.log('Error launching dialer', err));
   }
 
   scrollToTop() {

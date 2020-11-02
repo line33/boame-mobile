@@ -52,3 +52,17 @@ ion-slides .swiper-wrapper{
 #welcome-screen ion-slides .swiper-pagination-bullet-active{
     background: #FF9001 !important;
 }
+
+ionlab-device-frame .frame-container iframe{
+    background: #fff !important;
+}
+
+iframe{
+    background: #fff !important;
+}
+
+.actionSheetIcon{
+    ion-icon {
+        color: #FF9001 !important;
+    }
+}

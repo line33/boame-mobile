@@ -21,24 +21,27 @@
         </a>
 
         <div class="group">
-            <input type="text" class="form-input" [(ngModel)]="inputs.fullname" data-input="[\S\s]{4,}" data-message="Your fullname please. This cannot be empty" placeholder="First Name and Last Name"/>
+            <input type="text" class="form-input" [(ngModel)]="inputs.fullname" placeholder="First Name and Last Name"/>
             <div class="fullname label">
                 Full Name
             </div>
+            <div data-error="yes" [innerHTML]='validation.error.fullname'></div>
         </div>
 
         <div class="groupcopy2">
-            <input class="form-input" data-input="[\S]{10,}" [(ngModel)]="inputs.email" data-message="We would like to leave you a message" placeholder="Your email address" type="email"/>
+            <input class="form-input" data-input="[\S]{10,}" [(ngModel)]="inputs.email" placeholder="Your email address" type="email"/>
             <div class="emailaddress label">
                 Email Address
             </div>
+            <div data-error="yes" [innerHTML]='validation.error.email'></div>
         </div>
 
         <div class="groupcopy3">
-            <textarea class="form-input" data-input="[\S\s]{10,}" [(ngModel)]="inputs.message" data-message="A minimum of 10 characters" placeholder="Please enter your feedback message here,"></textarea>
+            <textarea class="form-input" data-input="[\S\s]{10,}" [(ngModel)]="inputs.message" placeholder="Please enter your feedback message here,"></textarea>
             <div class="message label">
                 Feedback
             </div>
+            <div data-error="yes" [innerHTML]='validation.error.message'></div>
         </div>
 
     </div>

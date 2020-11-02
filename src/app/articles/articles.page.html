@@ -22,7 +22,7 @@
 
   <ion-slides *ngIf="loaded === true" id="slides-container" (ionSlidesDidLoad)="slideLoaded($event)" (ionSlideDidChange)="slideChanged($event)" paginationType="fraction">
     
-    <ion-slide id="slide-container" *ngFor="let article of articles" style="background-image: url('{{loadImage(article.article_cover_image)}}');">
+    <ion-slide id="slide-container" *ngFor="let article of articles" style="background-image: url('{{loadImage(article.article_cover_image)}}');" (click)="load(article)">
       <div class="slide-content page-wrapper">
         <h1>{{article.article_title | titlecase}}</h1>
         <a href="javascript:void(0)" ion-button (click)="load(article)">

@@ -43,8 +43,11 @@
   <div class="footer-buttons">
     <div class="form-container">
       <form action="javascript:void(0)" method="POST" (ngSubmit)="sendMessage()">
-        <input type="text" placeholder="Type a message" autofocus="yes" autocorrect="yes" [(ngModel)]="message" (input)='ionInput()' [ngModelOptions]="{standalone: true}"/>
-        <div class="record-audio" ion-button (click)="recordAudio()">
+        <input type="text" placeholder="Type a message" autofocus="yes" autocorrect="yes" [(ngModel)]="message" (input)='ionInput()' [ngModelOptions]="{standalone: true}" [ngClass]="{'expand-input' : !controls.showAudio}"/>
+        <div class="record-audio" ion-button (click)="sendMessage()" *ngIf="controls.showSubmit" [ngClass]="{'active-button' : !controls.showAudio}">
+          <img src="../../assets/img/send-white.svg"/>
+        </div>
+        <div class="record-audio" ion-button (click)="recordAudio()" *ngIf="controls.showAudio">
           <img src="../../assets/img/microphone-bold.svg"/>
         </div>
       </form>

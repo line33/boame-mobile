@@ -27,6 +27,10 @@ export class SubmitAudioPage implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  ionViewDidEnter()
+  {
     this.router.getData((data:any)=>{
 
       // can we continue
@@ -56,7 +60,7 @@ export class SubmitAudioPage implements OnInit {
     this.audio.captureAudio((audio:any) => {
 
       // changed
-      this.alert.success('Audio file changed, please close this modal to continue.');
+      this.audio.presentToast('Audio record changed.');
 
       // update file
       this.file = audio;
@@ -64,26 +68,10 @@ export class SubmitAudioPage implements OnInit {
     });
   }
 
-
-  ionViewDidEnter()
+  pickAudio()
   {
-    // process audio
-    this.processAudio();
-  }
-
-  processAudio()
-  {
-    this.audio.getAudio('.submituploadedaudio #audio_file2').then((file:any)=>{
-      if (file.type == 'video/mp4') return this.alert.show('Invalid Audio file. Please close this modal and try again.');
-
-      // changed
-      this.alert.success('Audio file changed, please close this modal to continue.');
-
-      // update file
-      this.file = file;
-
-      // listen again
-      this.processAudio();
+    this.audio.getAudio((audio:any)=>{
+      this.file = audio;
     });
   }
 
@@ -108,8 +96,9 @@ export class SubmitAudioPage implements OnInit {
 
           if (res.data.status == 'error')
           {
-            this.alert.show(res.data.message);
-            this.loader.hide();
+            this.loader.hide(()=>{
+              this.audio.presentToast(res.data.message);
+            });
           }
           else
           {
@@ -121,7 +110,7 @@ export class SubmitAudioPage implements OnInit {
               this.chatService.serviceRequested('report-case-tag-audio');
 
               // delete video locally
-              if (this.audioRecord) this.audio.deleteAudio(this.file);
+              //if (this.audioRecord) this.audio.deleteAudio(this.file);
 
               // route view
               this.router.route('/send-an-audio');
@@ -132,9 +121,6 @@ export class SubmitAudioPage implements OnInit {
           }
 
         };
-
-        // process uploaded audio
-        if (this.audioRecord == false) return this.network.post('cases/report/audio', data).then(processor);
 
         // create form data
         const formData = new FormData();

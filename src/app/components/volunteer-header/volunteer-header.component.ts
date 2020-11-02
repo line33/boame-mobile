@@ -51,4 +51,24 @@ export class VolunteerHeaderComponent implements OnInit {
     }
   }
 
+  hideRoleContainer()
+  {
+    
+    if (this.roleContainer !== null && this.roleContainer.length > 0)
+    {
+        // get the first element
+        [].forEach.call(this.roleContainer, (element:any)=>{
+
+          element.classList.add('animate-modal-out');
+
+          // remove class now
+          setTimeout(()=>{
+            element.classList.remove('animate-modal-in');
+            element.classList.remove('animate-modal-out');
+          },1000);
+          
+        });
+    }
+  }
+
 }

@@ -17,6 +17,7 @@ export class CompleteResetPage implements OnInit {
   resetCode : any = '';
   data : any = {};
   canRetry : boolean = false;
+  error : string = '';
 
   constructor(
     private network : NetworkService, 
@@ -33,8 +34,10 @@ export class CompleteResetPage implements OnInit {
 
   submit()
   {
-    if (this.network.inputValid('.complete-resetyourpassword'))
+
+    if (this.resetCode.trim().length >= 4)
     {
+      this.error = '';
       this.loader.show(()=>{
         this.network.post('service/auth/complete-reset-password', {
           username : this.data.username,
@@ -66,6 +69,10 @@ export class CompleteResetPage implements OnInit {
         });
 
       });
+    }
+    else
+    {
+      this.error = 'You must provide the code sent to your mail';
     }
   }
 

@@ -21,10 +21,11 @@
         </a>
         
         <div class="groupcopy">
-            <input class="form-input" [(ngModel)]="resetCode" placeholder="Reset Verification Code" type="tel" data-input="[\S]{4,}" data-message="You must provide the code sent to your mail">
+            <input class="form-input" [(ngModel)]="resetCode" placeholder="Reset Verification Code" type="tel">
             <div class="username label">
                 Reset Code
             </div>
+            <div data-error="yes">{{error}}</div>
         </div>
 
         <a href="javascript:void(0)" ion-button (click)="resend()">

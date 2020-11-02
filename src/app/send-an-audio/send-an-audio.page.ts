@@ -15,9 +15,8 @@ export class SendAnAudioPage implements OnInit {
 
   formats : string = '';
 
-  constructor(private audio : AudioService, private alert : AlertComponent,
+  constructor(private audio : AudioService,
     private router : RouterService) {
-    this.formats = this.audio.formats;
   }
 
   ngOnInit() {
@@ -31,8 +30,6 @@ export class SendAnAudioPage implements OnInit {
 
     this.scrollToTop();
 
-    // process audio
-    this.processAudio(); 
   }
 
   captureAudio()
@@ -45,20 +42,13 @@ export class SendAnAudioPage implements OnInit {
     });
   }
 
-  processAudio()
+  getAudio()
   {
-    this.audio.getAudio('.sendanaudio #audio_file').then((file:any)=>{
-      if (file.type == 'video/mp4') return this.alert.show('Invalid Audio file. Please close this modal and try again.');
-
-      // make submission now
+    this.audio.getAudio((audio:any) => {
       this.router.route('/submit-audio', {
         type : 'upload',
-        file : file
+        file : audio
       });
-
-      // load method
-      this.processAudio();
-
     });
   }
 

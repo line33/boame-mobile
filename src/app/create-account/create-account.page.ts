@@ -18,6 +18,19 @@ export class CreateAccountPage implements OnInit {
     gender : ''
   };
 
+  validation : any = {
+    error : {},
+    rules : {
+      gender : ['2', 'You must select a gender'],
+      phone : ['6', 'Must be a valid telephone number'],
+      email : ['5', 'Must be a valid email address'],
+      lastname : ['2', 'Should be your last name'],
+      firstname : ['2', 'Should be your first name'],
+      password : ['4', 'Should be a password you can remember'],
+      password_again : ['4', 'Should match your password, and cannot be empty']
+    }
+  };
+
   constructor(private network : NetworkService,
     private loader : LoaderComponent,
     private alert : AlertComponent,
@@ -32,7 +45,9 @@ export class CreateAccountPage implements OnInit {
 
   register()
   {
-    if (this.network.inputValid('.createanaccount'))
+    const validate = this.network.inputValid(this.inputs, this.validation);
+
+    if (validate.ok === true)
     {
       // compare password
       if (this.inputs.password == this.inputs.password_again)
@@ -81,6 +96,10 @@ export class CreateAccountPage implements OnInit {
           this.inputs.password = this.inputs.password_again = '';
         });
       }
+    }
+    else
+    {
+      this.validation.error = validate.error;
     }
   }
 

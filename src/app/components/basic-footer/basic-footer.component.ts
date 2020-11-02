@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
+import { RouterService } from 'src/app/services/router.service';
 
 @Component({
   selector: 'app-basic-footer',
@@ -108,6 +109,39 @@ export class BasicFooterComponent implements OnInit {
     },
   ];
 
+  logged_in_screen_nav_other : any = [
+    {
+      route : '/homescreen',
+      tag   : 'home-tab',
+      state : '',
+      image : '../../assets/img/footer-imgs/home-1.svg'
+    },
+    {
+      route : '/knowledge-center',
+      tag   : 'nav-tab',
+      state : '',
+      image : '../../assets/img/footer-imgs/navigation.svg'
+    },
+    {
+      route : '/report-case',
+      tag   : 'alert-tab',
+      state : '',
+      image : '../../assets/img/footer-imgs/alarm-1.svg'
+    },
+    {
+      route : '/volunteers',
+      tag   : 'volunteer-tab',
+      state : '',
+      image : '../../assets/img/footer-imgs/users.svg'
+    },
+    {
+      route : '/online-counselors',
+      tag   : 'chat-tab',
+      state : '',
+      image : '../../assets/img/footer-imgs/chat-49.svg'
+    },
+  ];
+
   non_reporter_logged_in_screen_nav : any = [
     {
       route : '/homescreen',
@@ -141,9 +175,42 @@ export class BasicFooterComponent implements OnInit {
     },
   ];
 
+  non_reporter_logged_in_screen_nav_other : any = [
+    {
+      route : '/homescreen',
+      tag   : 'home-tab',
+      state : '',
+      image : '../../assets/img/footer-imgs/home-1.svg'
+    },
+    {
+      route : '/knowledge-center',
+      tag   : 'nav-tab',
+      state : '',
+      image : '../../assets/img/footer-imgs/navigation.svg'
+    },
+    {
+      route : '/report-case',
+      tag   : 'alert-tab',
+      state : '',
+      image : '../../assets/img/footer-imgs/alarm-1.svg'
+    },
+    {
+      route : '/cases-assigned',
+      tag   : 'cases-tab',
+      state : '',
+      image : '../../assets/img/windows.svg'
+    },
+    {
+      route : '/online-counselors',
+      tag   : 'chat-tab',
+      state : '',
+      image : '../../assets/img/footer-imgs/chat-49.svg'
+    },
+  ];
+
   activeNav : string = '';
 
-  constructor(public router : Router) {
+  constructor(public router : Router, private routerService : RouterService) {
 
     // set nav
     if (AppComponent.defaultNavigation.length == 0) AppComponent.defaultNavigation = this.navigations;
@@ -166,6 +233,7 @@ export class BasicFooterComponent implements OnInit {
         //      this.navigations = AppComponent.defaultNavigation;
         // }
 
+
         if (AppComponent.isLoggedIn === false)
         {
           this.navigations = AppComponent.defaultNavigation;
@@ -175,11 +243,28 @@ export class BasicFooterComponent implements OnInit {
           // check the account type
           if (AppComponent.accountInformation.account.accounttypeid == 4)
           {
-            this.navigations = this.logged_in_screen_nav;
+            switch(url)
+            {
+              case '/homescreen':
+                this.navigations = this.logged_in_screen_nav;
+              break;
+
+              default:
+                this.navigations = this.logged_in_screen_nav_other;
+            }
           }
           else
           {
-            this.navigations = this.non_reporter_logged_in_screen_nav;
+            
+            switch(url)
+            {
+              case '/homescreen':
+                this.navigations = this.non_reporter_logged_in_screen_nav;
+              break;
+
+              default:
+                this.navigations = this.non_reporter_logged_in_screen_nav_other;
+            }
           }
         }
 
@@ -202,7 +287,16 @@ export class BasicFooterComponent implements OnInit {
 
   routeTo(route:string)
   {
-    this.router.navigate([route]);
+    if (route == '/report-case')
+    { 
+      // use action sheet
+      this.routerService.showReportSheet();
+    }
+    else
+    {
+      this.router.navigate([route]);
+    }
+    
   }
 
 }

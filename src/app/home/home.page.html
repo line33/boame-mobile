@@ -16,16 +16,18 @@
             </div>
         </a>
         <div class="groupcopy">
-            <input class="form-input" placeholder="Email or Telephone" type="text" [(ngModel)]="username" data-input="[\S]{2,}" data-message="You must provide a valid username">
+            <input class="form-input" placeholder="Email or Telephone" type="text" [(ngModel)]="username">
             <div class="username">
                 Username
             </div>
+            <div data-error="yes" [innerHTML]="validation.error.username"></div>
         </div>
         <div class="groupcopy2">
-            <input class="form-input" placeholder="Your password" type="password" [(ngModel)]="password" data-input="[\S\s]{4,}" data-message="Your password must not be empty or less than 4 characters">
+            <input class="form-input" placeholder="Your password" type="password" [(ngModel)]="password">
             <div class="password">
                 Password
             </div>
+            <div data-error="yes" [innerHTML]="validation.error.password"></div>
         </div>
 
         <div class="">

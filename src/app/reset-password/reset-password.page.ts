@@ -16,6 +16,14 @@ export class ResetPasswordPage implements OnInit {
   @ViewChild(IonContent) content: IonContent;
 
   inputs : any = {};
+  validation : any = {
+    error : {},
+    rules : {
+      password : [4, 'Your password must not be empty or less than 4 characters'],
+      password_again : [4, 'Your password must not be empty or less than 4 characters'],
+      username : [4, 'You must provide a valid username'],
+    }
+  }
 
   constructor(
     private network : NetworkService, 
@@ -40,7 +48,9 @@ export class ResetPasswordPage implements OnInit {
 
   submit()
   {
-    if (this.network.inputValid('.resetyourpassword'))
+    const validate = this.network.inputValid(this.inputs, this.validation);
+
+    if (validate.ok === true)
     {
       // check password
       if (this.inputs.password == this.inputs.password_again)
@@ -85,6 +95,10 @@ export class ResetPasswordPage implements OnInit {
       {
          this.alert.show('Password provided does not match');
       }
+    }
+    else
+    {
+      this.validation.error = validate.error;
     }
   }
 

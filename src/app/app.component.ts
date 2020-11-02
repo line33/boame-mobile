@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
-import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { Component, QueryList, ViewChildren } from '@angular/core';
+import { Platform, IonRouterOutlet, AlertController } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { BackgroundMode } from '@ionic-native/background-mode/ngx';
+import { Socket } from 'ngx-socket-io';
+
+declare var cordova;
 
 @Component({
   selector: 'app-root',
@@ -45,19 +48,82 @@ export class AppComponent {
   static redirectTo : string = '';
   static currentChatId : any = 0;
 
+  @ViewChildren(IonRouterOutlet) routerOutlets: QueryList<IonRouterOutlet>;
+
   constructor(
     private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private backgroundMode : BackgroundMode,
+    private alertcrtl : AlertController,
+    private socket : Socket
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      this.statusBar.styleLightContent();
+      this.backButtonEvent();
+
+      this.socket.on('connect', () => {
+        this.socket.emit('');
+      });
+
+      this.backgroundMode.on('activate').subscribe(() => {
+        // this.backgroundMode.disableWebViewOptimizations();
+
+        // cordova.plugins.backgroundMode.on('activate', () => {
+        //   console.log('ACTIVATE background mode');
+        //   cordova.plugins.backgroundMode.disableWebViewOptimizations();
+        //   cordova.plugins.backgroundMode.disableBatteryOptimizations(); // <- HERE
+        // });
+
+      });
       
     });
+
+    this.platform.resume.subscribe(() => {
+      //this.socket.connect();
+      console.log('SOCKET SHOULD RESUME HERE');
+    });
+  }
+
+  // active hardware back button
+  backButtonEvent() {
+    this.platform.backButton.subscribeWithPriority(-1, () => {
+        this.routerOutlets.forEach((outlet: IonRouterOutlet) => {
+
+          if (outlet && outlet.canGoBack()) {
+            outlet.pop();
+          }
+          else
+          {
+            this.promptClose();
+          }
+        });
+    });
+  }
+
+  async promptClose()
+  {
+     const al = await this.alertcrtl.create({
+       header : 'Exit application',
+       message : 'Are you sure you want to exit application?',
+       buttons : [
+         {
+           role : 'yes',
+           text : 'Yes',
+           handler : () => {
+              navigator['app'].exitApp();
+           }
+         },
+         {
+           role : 'cancel',
+           text : 'No'
+         }
+       ]
+     });
+
+     al.present();
   }
 }

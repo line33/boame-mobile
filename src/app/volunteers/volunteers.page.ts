@@ -6,6 +6,7 @@ import { LoaderComponent } from '../components/loader/loader.component';
 import { AlertComponent } from '../components/alert/alert.component';
 import { RouterService } from '../services/router.service';
 import { AppComponent } from '../app.component';
+import { VolunteerHeaderComponent } from '../components/volunteer-header/volunteer-header.component';
 
 @Component({
   selector: 'app-volunteers',
@@ -20,10 +21,12 @@ export class VolunteersPage implements OnInit {
   volunteers : any = [];
   storageUrl : any = '';
   static fetchedVolunteers : any = [];
+  role : string = '';
+  volunteersCopy : any = [];
 
   constructor(private cache : CacheService, private network : NetworkService,
     private loader : LoaderComponent, private alert : AlertComponent,
-    private router : RouterService) {
+    private router : RouterService, private header : VolunteerHeaderComponent) {
     // load positions
     this.cache.getVolunteerPosition().then((positions : any) => {
       this.positions = positions;
@@ -61,6 +64,35 @@ export class VolunteersPage implements OnInit {
     {
       this.volunteers = VolunteersPage.fetchedVolunteers;
     }
+  }
+
+  selectRole()
+  {
+    if (this.role != '')
+    {
+      // copy original
+      if (this.volunteersCopy.length == 0) this.volunteersCopy = this.volunteers;
+
+      // ok check role
+      if (this.role == 'all')
+      {
+        this.volunteers = this.volunteersCopy;
+      }
+      else
+      {
+        const volunteers = [];
+
+        // ilterate
+        this.volunteersCopy.forEach((voln:any) => {
+          if (voln.information.volunteerpositionid == this.role) volunteers.push(voln);
+        });
+
+        // are we good ??
+        if (volunteers.length > 0) this.volunteers = volunteers;
+      }
+    }
+    // hide container
+    this.header.hideRoleContainer();
   }
 
   scrollToTop() {

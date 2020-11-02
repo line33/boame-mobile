@@ -73,6 +73,18 @@ ion-grid{
     align-items: center;
 }
 
+.record-audio:nth-child(2){
+    background: #3370A3;
+}
+
+.record-audio.active-button{
+    background: #FF9001 !important;
+}
+
+.record-audio:nth-child(2) img{
+    width: 20px;
+}
+
 .form-container{
     width: 90%;
     margin: auto;
@@ -86,13 +98,17 @@ ion-grid{
 .form-container form input{
     border-radius: 15px;
     background: #FDFCFC;
-    width: 85%;
+    width: 72%;
     border: 1px solid rgba(51,112,163,0.16);
     padding-left: 10px;
     padding-right: 10px;
     outline: none;
     box-shadow: none;
     font-size: 14px;
+}
+
+.expand-input{
+    width: 85% !important;
 }
 
 .chat-container{

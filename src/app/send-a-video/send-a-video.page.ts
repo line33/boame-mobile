@@ -13,11 +13,9 @@ export class SendAVideoPage implements OnInit {
 
   @ViewChild(IonContent) content: IonContent;
 
-  formats : string = '';
-
   constructor(private video : VideoService, private alert : AlertComponent,
     private router : RouterService) {
-    this.formats = this.video.formats;
+
   }
 
   ngOnInit() {
@@ -29,9 +27,6 @@ export class SendAVideoPage implements OnInit {
 
   ionViewDidEnter(){
     this.scrollToTop();
-
-    // process video
-    this.processVideo();
   }
 
   recordVideo()
@@ -41,20 +36,10 @@ export class SendAVideoPage implements OnInit {
     });
   }
 
-  processVideo()
+  pickVideo()
   {
-    this.video.getVideo('.sendavideo #video_file').then((file:any)=>{
-      if (file.type == 'audio/mp4') return this.alert.show('Invalid Video file. Please close this modal and try again.');
-
-      // make submission now
-      this.router.route('/submit-video', {
-        type : 'upload',
-        file : file
-      });
-
-      // load method
-      this.processVideo();
-
+    this.video.getVideo((video:any) => {
+      this.router.route('/submit-video', {type:'upload', file : video});
     });
   }
 

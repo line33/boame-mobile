@@ -55,7 +55,7 @@ export class SelectCounselorsPage implements OnInit {
     }).catch((error)=>{
 
       // start loader
-      this.loader.show();
+      // this.loader.show();
 
       // load counsellors
       this.chat.loadCounsellors();
@@ -81,9 +81,14 @@ export class SelectCounselorsPage implements OnInit {
         }
 
         // hide loader
-        this.loader.hide();
+        //this.loader.hide();
 
+      }, (err:any) => {
+        console.log('Socket Error : ', err);
+        //this.loader.hide();
       });
+    }).catch((err:any)=>{
+      
     });
 
   }

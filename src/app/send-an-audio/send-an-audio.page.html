@@ -11,7 +11,7 @@
         <div class="sendanaudio1">
             Send an<br />Audio
         </div>
-        <label ion-button for="audio_file">
+        <div ion-button (click)="getAudio()">
             <div class="group">
                 <div class="rectangle1">
                 </div>
@@ -26,9 +26,8 @@
                 <div class="arrowright">
                     <img alt="Image/" src="../../assets/img/mwr3-knowledge-center-path-1@2x.png" class="path" />
                 </div>
-                <input type="file" style="display: none;" accept="{{formats}}" name="audio_file" id="audio_file"/>
             </div>
-        </label>
+        </div>
         <a href="javascript:void(0)" (click)="captureAudio()" ion-button>
             <div class="groupcopy">
                 <div class="rectangle1">

@@ -4,6 +4,11 @@ import { AppComponent } from '../app.component';
 import { NetworkService } from '../services/network.service';
 import { LoaderComponent } from '../components/loader/loader.component';
 import { AlertComponent } from '../components/alert/alert.component';
+import { File } from '@ionic-native/File/ngx';
+import { Chooser, ChooserResult } from '@ionic-native/chooser/ngx';
+import { FilePath } from '@ionic-native/file-path/ngx';
+import { ToastController } from '@ionic/angular';
+import { RouterService } from '../services/router.service';
 
 @Component({
   selector: 'app-profile',
@@ -16,9 +21,12 @@ export class ProfilePage implements OnInit {
   display_image : string = '';
   account : any = {};
   attachment : any = {};
+  image : string = '';
 
   constructor(public historyComponent : GoBackComponent, private network : NetworkService,
-    private loader : LoaderComponent, private alert : AlertComponent) {
+    private loader : LoaderComponent, private alert : AlertComponent,
+    private chooser : Chooser, private filePath : FilePath, private file : File,
+    private toast : ToastController, private router : RouterService) {
 
     if (AppComponent.accountInformation != null)
     {
@@ -29,12 +37,65 @@ export class ProfilePage implements OnInit {
 
       // push account
       this.account = account.account;
+
+      // load image
+      this.image = this.loadImage();
+    }
+    else
+    {
+      this.router.route('/homescreen');
     }
 
   }
 
+  getImage()
+  {
+    this.canSave = false;
+
+    // load chooser
+    this.chooser.getFile("image/*").then((value : ChooserResult) => {
+      
+      if (value.mediaType.indexOf('image/') >= 0)
+      {
+        const fileType = value.mediaType;
+        
+        this.filePath.resolveNativePath(value.uri).then(async (path:any) => {
+          
+          // get the directory
+          const directory = path.substr(0, (path.lastIndexOf('/') + 1));
+
+          // get buffer
+          const buffer = await this.file.readAsArrayBuffer(directory, value.name);
+
+          // get the file blob
+          const fileBlob = new Blob([buffer], {type : fileType});
+
+          // ok we good
+          this.image = value.dataURI;
+          this.attachment = {
+              blob : fileBlob,
+              name : value.name,
+              extension : value.name.split('.').pop()
+          };
+
+          // show toast
+          this.presentToast();
+
+          // can show
+          this.canSave = true;
+
+        });
+
+      }
+      
+    }, err => {
+      console.log(err);
+      this.canSave = false;
+    });
+  }
+
   ngOnInit() {
-    this.watch();
+    
   }
 
   goback()
@@ -42,30 +103,13 @@ export class ProfilePage implements OnInit {
     this.historyComponent.goback();
   }
 
-  watch()
-  {
-      const image : any = document.querySelector('*[name="display_image"]');
-      const displayImage : any = document.querySelector('.display_image');
-
-      image.addEventListener('change', ()=>{
-         const file = image.files[0];
-         const type = file.type;
-
-         if (type.match(/^(image)/))
-         {
-            this.canSave = true;
-            var filereader = new FileReader();
-            filereader.onload = (e:any) => {
-               displayImage.src = e.target.result;
-               this.attachment = file;
-            };
-            filereader.readAsDataURL(file);
-         }
-         else
-         {
-            this.canSave = false;
-         }
-      });
+  async presentToast(msg : string = 'An image has been selected.') {
+    const toast = await this.toast.create({
+      message: msg,
+      duration: 2000,
+      animated : true
+    });
+    toast.present();
   }
 
   loadImage()
@@ -79,15 +123,20 @@ export class ProfilePage implements OnInit {
     if (this.canSave)
     {
       this.loader.show(()=>{
-        this.network.post('service/account/update/'+this.account.accountid, {
-          display_image : this.attachment,
-          firstname : this.account.firstname,
-          lastname : this.account.lastname
-        }).then((res:any)=>{
+
+        // build formdata
+        const formdata = new FormData();
+        formdata.append('firstname', this.account.firstname);
+        formdata.append('lastname', this.account.lastname);
+        formdata.append('display_image', this.attachment.blob, this.attachment.name);
+
+        // push
+        this.network.post('service/account/update/'+this.account.accountid, formdata, false).then((res:any)=>{
           if (res.data.status == 'error')
           {
-            this.alert.show(res.data.message);
-            this.loader.hide();
+            this.loader.hide(()=>{
+              this.presentToast(res.data.message);
+            });
           }
           else
           {

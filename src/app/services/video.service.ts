@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { MediaCapture, MediaFile, CaptureError, CaptureVideoOptions } from '@ionic-native/media-capture/ngx';
 import { File, FileEntry } from '@ionic-native/File/ngx';
 import { AlertComponent } from '../components/alert/alert.component';
+import { Chooser, ChooserResult } from '@ionic-native/chooser/ngx';
+import { ToastController } from '@ionic/angular';
+import { FilePath } from '@ionic-native/file-path/ngx';
 
 const MEDIA_FOLDER_NAME = 'boame_uploads';
 
@@ -12,26 +15,53 @@ export class VideoService {
 
   formats : string = '.3gp,.ogg,.mp4,.m4v,.f4v,.f4a,.m4b,.m4r,.f4b,.mov,.wmv,.webm,.flv,.avi';
 
-  constructor(private mediaCapture: MediaCapture, private file : File, private alert : AlertComponent) { }
+  constructor(private mediaCapture: MediaCapture, private file : File, private alert : AlertComponent,
+    private chooser : Chooser, private toast : ToastController,
+    private filePath: FilePath) { }
 
-  getVideo(target : string)
+  getVideo(callback:any)
   {
-    return new Promise((resolve, rejected)=>{
-      // get element
-      const element : any = document.querySelector(target);
+    this.chooser.getFile("video/*").then(async (value : ChooserResult) => {
+      
+      if (value.mediaType.indexOf('video/') >= 0)
+      {
+        const fileType = value.mediaType;
+        
+        this.filePath.resolveNativePath(value.uri).then(async (path:any) => {
+          
+          // get the directory
+          const directory = path.substr(0, (path.lastIndexOf('/') + 1));
 
-      // are we good ??
-      if (element === null) return rejected('Target : #'+target+' was not found');
+          // get buffer
+          const buffer = await this.file.readAsArrayBuffer(directory, value.name);
 
-      // resolve element
-      element.addEventListener('change', ()=>{
+          // get the file blob
+          const fileBlob = new Blob([buffer], {type : fileType});
 
-        // check files
-        if (element.files.length > 0) return resolve(element.files[0]);
+          // ok we good
+          // load callback
+          callback.call(this, {
+            blob : fileBlob,
+            name : value.name,
+            extension : value.name.split('.').pop()
+          });
 
-      });
+          // show toast
+          this.presentToast();
 
+        });
+      }
+      
+    }, err => console.log(err));
+  }
+
+  async presentToast(msg:string = 'A video file has been selected.') {
+    const toast = await this.toast.create({
+      message: msg,
+      duration: 2000,
+      animated : true
     });
+    toast.present();
   }
 
   async captureVideo(callback:any)
@@ -45,7 +75,7 @@ export class VideoService {
             
           },
           (err: CaptureError) => {
-            this.alert.show('No Activity found to handle Video Capture.');
+            //this.alert.show('No Activity found to handle Video Capture.');
           }
       );
   }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="448px" height="416px" viewBox="0 0 448 416" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>send-white</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="send-white" fill="#FFFFFF">
+            <path d="M438.731,193.463 L22.731,1.463 C16.107,-1.545 8.203,0.247 3.595,5.943 C-1.045,11.639 -1.205,19.735 3.211,25.591 L140.011,207.991 L3.211,390.391 C-1.205,396.247 -1.045,404.375 3.563,410.039 C6.667,413.911 11.307,415.991 16.011,415.991 C18.283,415.991 20.555,415.511 22.699,414.519 L438.699,222.519 C444.395,219.895 448.011,214.231 448.011,207.991 C448.011,201.751 444.395,196.087 438.731,193.463 Z" id="Path"></path>
+        </g>
+    </g>
+</svg>

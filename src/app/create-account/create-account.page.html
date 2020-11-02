@@ -25,12 +25,14 @@
             <div class="emailaddress label">
                 Email Address
             </div>
+            <div data-error="yes" [innerHTML]="validation.error.email"></div>
         </div>
         <div class="groupcopy2">
             <input class="form-input" placeholder="Your phone number" type="tel" [(ngModel)]="inputs.phone" data-input="[\d]{5,}" data-message="Should be a valid telephone number">
             <div class="telephone label">
                 Telephone
             </div>
+            <div data-error="yes" [innerHTML]="validation.error.phone"></div>
         </div>
         <div class="groupcopy7">
             <select [(ngModel)]="inputs.gender" class="form-input" data-input="[\S]{2,}" data-message="Please select a gender">
@@ -41,25 +43,31 @@
             <div class="gender label">
                 Gender
             </div>
+            <div data-error="yes" [innerHTML]="validation.error.gender"></div>
         </div>
         <div class="groupcopy4">
             <input class="form-input" placeholder="Your password" type="password" [(ngModel)]="inputs.password" data-input="[\S\s]{4,}" data-message="Should be a password you can remember of 4 characters or more.">
             <div class="password label">
                 Password
             </div>
+            <div data-error="yes" [innerHTML]="validation.error.password"></div>
         </div>
         <div class="groupcopy5">
             <input class="form-input" placeholder="Your password again" type="password" [(ngModel)]="inputs.password_again" data-input="[\S\s]{4,}" data-message="Should match your password and cannot be empty.">
             <div class="passwordagain label">
                 Password Again
             </div>
+            <div data-error="yes" [innerHTML]="validation.error.password_again"></div>
         </div>
         <div class="groupcopy3">
             <div class="input-group">
                 <input class="form-input" placeholder="First Name" type="text" [(ngModel)]="inputs.firstname" data-input="[\S\s]{2,}" data-parent=".groupcopy3 > .error-wrapper" data-message="Should be your first name">
                 <input class="form-input" placeholder="last Name" type="text" [(ngModel)]="inputs.lastname" data-input="[\S\s]{2,}" data-parent=".groupcopy3 > .error-wrapper" data-message="Should be your last name">
             </div>
-            <div class="error-wrapper"></div>
+            <div class="error-wrapper">
+                <div data-error="yes" [innerHTML]="validation.error.firstname"></div>
+                <div data-error="yes" [innerHTML]="validation.error.lastname"></div>
+            </div>
             <div class="fullname label">
                 Fullname
             </div>

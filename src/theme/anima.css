@@ -219,13 +219,13 @@ a {
     left: 0;
   }
 
-  .error-wrapper span[data-error="4"], .error-wrapper span[data-error="1"]{
+  .error-wrapper *[data-error="4"], .error-wrapper *[data-error="1"]{
     position: absolute;
     left: 0;
     top: 0;
   }
 
-  .error-wrapper span[data-error="5"], .error-wrapper span[data-error="2"]{
+  .error-wrapper *[data-error="5"], .error-wrapper *[data-error="2"]{
     position: absolute;
     right: 0;
     top: 0;
@@ -235,13 +235,13 @@ a {
     margin-right: 0px;
   }
 
-  .input-group span{
+  .input-group *[data-error]{
     flex: 1;
     position: absolute;
     bottom: -24px;
   }
 
-  span[data-error]{
+  *[data-error]{
     font-size: 12px;
     hyphens: auto;
     color: rgba(255, 144, 1, 1.0);

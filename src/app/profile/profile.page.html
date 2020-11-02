@@ -1,5 +1,5 @@
-<ion-header class="ion-no-border" translucent="true">
-  <ion-toolbar color="translucent">
+<ion-header class="ion-no-border">
+  <ion-toolbar>
     <div class="page-wrapper-no-height header-btn-wrapper">
       <a href="javascript:void(0)" ion-button (click)="goback()" class="arrow1">
         <img alt="Image/" src="../../assets/img/sVeO-online-conversation-arrow1@2x.png"/>
@@ -11,17 +11,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="yes">
+<ion-content [fullscreen]="true">
 
   <!-- image container -->
   <div class="image-wrapper">
-    <label for="display_image" class="image-container" ion-button>
-      <img src="{{loadImage()}}" class="display_image"/>
+    <div (click)="getImage()" class="image-container" ion-button>
+      <img src="{{image}}" class="display_image"/>
       <button ion-button class="edit-button">
         <img src="../../assets/img/edit2.svg"/>
       </button>
-      <input id="display_image" type="file" name="display_image" style="display: none;"/>
-    </label>
+    </div>
   </div>
 
   <div class="page-wrapper-no-height">

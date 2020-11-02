@@ -56,13 +56,14 @@
           </div>
 
           <div class="select-dropdown">
-            <select class="form-input">
+            <select class="form-input" [(ngModel)]="role">
               <option value="">Please select a role</option>
+              <option value="all">All</option>
               <option *ngFor="let position of positions" value="{{position.volunteerpositionid}}">{{position.volunteerposition | titlecase}}</option>
             </select>
           </div>
 
-          <a href="javascript:void(0)" ion-button>
+          <a href="javascript:void(0)" ion-button (click)="selectRole()">
             <div class="rectangle1">
               Submit
             </div>

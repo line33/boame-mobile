@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import { Socket } from 'ngx-socket-io';
 import { CacheService } from '../services/cache.service';
 import { ChatService } from '../services/chat.service';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 @Component({
   selector: 'app-welcome',
@@ -13,10 +14,13 @@ import { ChatService } from '../services/chat.service';
 export class WelcomePage implements OnInit {
 
   static recordedUsuage : boolean = false;
+  static splashScreenHidden : boolean = false;
 
   constructor(private socket : Socket, private cacheService : CacheService,
     private uniqueDeviceID: UniqueDeviceID, private storage : Storage,
-    private chatService : ChatService) {
+    private chatService : ChatService,
+    private splash : SplashScreen) {
+
     // record usage
     if (WelcomePage.recordedUsuage === false)
     {
@@ -30,8 +34,6 @@ export class WelcomePage implements OnInit {
     // generate device hash for the first time if not generated
     this.storage.get('boame_device_hash').then((hash:any)=>{
 
-      console.log(hash);
-      
       if (hash == null)
       {
         // generate one
@@ -66,6 +68,15 @@ export class WelcomePage implements OnInit {
         this.chatService.nowOnline();
       }
     });
+  }
+
+  ionViewDidEnter()
+  {
+    if (WelcomePage.splashScreenHidden === false)
+    {
+      this.splash.hide();
+      WelcomePage.splashScreenHidden = true;
+    }
   }
 
   ngOnInit() {

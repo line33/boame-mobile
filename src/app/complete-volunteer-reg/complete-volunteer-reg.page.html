@@ -24,10 +24,11 @@
         </a>
 
         <div class="groupcopy">
-            <textarea class="form-input" placeholder="Tell us a little about you" [(ngModel)]="inputs.bio" data-input="[\S\s]{10,}" data-message="We need to know a little bit more about you."></textarea>
+            <textarea class="form-input" placeholder="Tell us a little about you" [(ngModel)]="inputs.bio"></textarea>
             <div class="aboutyou">
                 About you
             </div>
+            <div data-error="yes" [innerHTML]="validation.error.bio"></div>
         </div>
         <div class="rectangle3" *ngIf="loaded">
         </div>
@@ -41,7 +42,7 @@
 
         <img alt="Image/" src="../../assets/img/become-a-volunteer-complete-oval@2x.png" class="oval" *ngIf="loaded"/>
 
-        <label ion-button for="display_image">
+        <div ion-button (click)="pickDisplayImage()">
             
             <div class="rectangle4">
             </div>
@@ -53,17 +54,17 @@
                 <img alt="Image/" src="../../assets/img/PpSK-send-a-message-path-5@2x.png" class="path image"/>
                 <span class="path number"></span>
             </div>
-            <input type="file" accept=".png,.jpg,.jpeg,.gif" id="display_image" data-single-file=".add .count" style="display: none;"/>
-        </label>
 
-        <label class="rectangle5" ion-button for="cv">
+        </div>
+
+        <div class="rectangle5" ion-button (click)="pickCv()">
             <input type="file" accept=".png,.jpg,.jpeg,.doc,.docx,.pdf" id="cv" data-single-file=".rectangle5 .count" style="display: none;"/>
         
             <div class="selectfromyourlib">
                 Click here to select from your library <span class="count"></span>
             </div>
 
-        </label>
+        </div>
         <div class="attachyourcv">
             Attach your CV
         </div>

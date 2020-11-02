@@ -16,11 +16,20 @@ export class ChatService {
 
     // load token
     //this.token = AppComponent.webSocketToken();
+    this.socket.on('connect', ()=>{
+      this.socket.emit('');
+      console.log('SOCKET Connected');
+    });
+
+    this.socket.on('disconnect', ()=>{
+      console.log('SOCKET Disconnected');
+    });
   }
 
   // get id
   loadId(callback:any)
   {
+
     if (AppComponent.accountInformation == null)
     {
       // use device hash
@@ -148,6 +157,7 @@ export class ChatService {
         accountid : this.accountid,
         receiver : receiver
       }));
+
     });
   }
 

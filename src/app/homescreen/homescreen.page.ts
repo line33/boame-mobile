@@ -35,6 +35,11 @@ export class HomescreenPage implements OnInit {
     this.canShow();
   }
 
+  reportCaseFunction()
+  {
+    this.router.showReportSheet();
+  }
+
   canShow()
   {
     // check account information

@@ -6,6 +6,10 @@ import { NetworkService } from '../services/network.service';
 import { AlertComponent } from '../components/alert/alert.component';
 import { Storage } from '@ionic/storage';
 import { BecomeAVolunteerPage } from '../become-a-volunteer/become-a-volunteer.page';
+import { AudioService } from '../services/audio.service';
+import { Chooser, ChooserResult } from '@ionic-native/chooser/ngx';
+import { FilePath } from '@ionic-native/file-path/ngx';
+import { File } from '@ionic-native/File/ngx';
 
 @Component({
   selector: 'app-complete-volunteer-reg',
@@ -25,9 +29,17 @@ export class CompleteVolunteerRegPage implements OnInit {
   lastname : string = '';
   position : string = '';
   loaded : boolean = false;
+  validation : any = {
+    error : {},
+    rules : {
+      bio : ['10', 'We need to know a little bit more about you.']
+    }
+  };
 
   constructor(private router : RouterService, private loader : LoaderComponent,
-    private network : NetworkService, private alert : AlertComponent, private storage : Storage) {
+    private network : NetworkService, private alert : AlertComponent, private storage : Storage,
+    private audio : AudioService, private chooser : Chooser, private filePath : FilePath,
+    private file : File) {
 
     this.inputs = this.router.getData();
 
@@ -66,36 +78,43 @@ export class CompleteVolunteerRegPage implements OnInit {
 
   submit()
   {
-    if (this.network.inputValid('.becomeavolunteercomplete'))
+    const validate = this.network.inputValid(this.inputs, this.validation);
+
+    if (validate.ok === true)
     {
       // check for cv upload
-      if (this.files.cv == '') return this.alert.show('You need to attach your CV to continue.');
+      if (this.files.cv == '') return this.audio.presentToast('You need to attach your CV to continue.');
 
       // check for display image  
-      if (this.files.display == '') return this.alert.show('You need to attach a profile/display image to continue.');
+      if (this.files.display == '') return this.audio.presentToast('You need to attach a profile/display image to continue.');
 
       // start submission
       this.loader.show(()=>{
 
-        this.network.post('service/auth/register/volunteer', {
-          firstname           : this.inputs.firstname,
-          lastname            : this.inputs.lastname,
-          bio                 : this.inputs.bio,
-          telephone           : this.inputs.phone,
-          email               : this.inputs.email,
-          password            : this.inputs.password,
-          password_again      : this.inputs.password_again,
-          cv                  : this.files.cv,
-          display_image       : this.files.display,
-          volunteerpositionid : this.inputs.positionid,
-          residential_address : this.inputs.address,
-          gender              : this.inputs.gender,
-        }).then((res:any)=>{
+        // build form data
+        var formdata = new FormData();
+        formdata.append('display_image', this.files.display.blob, this.files.display.name);
+        formdata.append('cv', this.files.cv.blob, this.files.cv.name);
+
+        // add others
+        formdata.append('firstname', this.inputs.firstname);
+        formdata.append('lastname', this.inputs.lastname);
+        formdata.append('bio', this.inputs.bio);
+        formdata.append('telephone', this.inputs.phone);
+        formdata.append('email', this.inputs.email);
+        formdata.append('password', this.inputs.password);
+        formdata.append('password_again', this.inputs.password_again);
+        formdata.append('volunteerpositionid', this.inputs.positionid);
+        formdata.append('residential_address', this.inputs.address);
+        formdata.append('gender', this.inputs.gender);
+
+        this.network.post('service/auth/register/volunteer', formdata, false).then((res:any)=>{
 
           if (res.data.status == 'error')
           {
-            this.alert.show(res.data.message);
-            this.loader.hide();
+            this.loader.hide(()=>{
+              this.audio.presentToast(res.data.message);
+            });
           }
           else
           {
@@ -106,101 +125,95 @@ export class CompleteVolunteerRegPage implements OnInit {
               this.router.route('/homescreen');
               this.loader.hide();
               this.loaded = false;
-              this.resetFileUpload();
             });
           }
 
         });
       });
     }
+    else
+    { 
+      this.validation.error = validate.error;
+      this.audio.presentToast('You have an input error');
+    }
+  }
+
+  pickDisplayImage()
+  {
+    // load chooser
+    this.chooser.getFile("image/*").then((value : ChooserResult) => {
+      
+      if (value.mediaType.indexOf('image/') >= 0)
+      {
+        const fileType = value.mediaType;
+        
+        this.filePath.resolveNativePath(value.uri).then(async (path:any) => {
+          
+          // get the directory
+          const directory = path.substr(0, (path.lastIndexOf('/') + 1));
+
+          // get buffer
+          const buffer = await this.file.readAsArrayBuffer(directory, value.name);
+
+          // get the file blob
+          const fileBlob = new Blob([buffer], {type : fileType});
+
+          // ok we good
+          this.files.display = {
+              blob : fileBlob,
+              name : value.name,
+              extension : value.name.split('.').pop()
+          };
+
+          // show toast
+          this.audio.presentToast('Display image selected successfully');
+
+        });
+
+      }
+      
+    }, err => {
+      console.log(err);
+    });
+  }
+
+  pickCv()
+  {
+    // load chooser
+    this.chooser.getFile("image/*,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document").then((value : ChooserResult) => {
+      
+      const fileType = value.mediaType;
+      
+      this.filePath.resolveNativePath(value.uri).then(async (path:any) => {
+        
+        // get the directory
+        const directory = path.substr(0, (path.lastIndexOf('/') + 1));
+
+        // get buffer
+        const buffer = await this.file.readAsArrayBuffer(directory, value.name);
+
+        // get the file blob
+        const fileBlob = new Blob([buffer], {type : fileType});
+
+        // ok we good
+        this.files.cv = {
+            blob : fileBlob,
+            name : value.name,
+            extension : value.name.split('.').pop()
+        };
+
+        // show toast
+        this.audio.presentToast('CV selected successfully');
+
+      });
+      
+    }, err => {
+      console.log(err);
+    });
   }
 
   ionViewDidEnter(){
     this.scrollToTop();
-    this.listenForFileUpload();
-  }
-
-  listenForFileUpload()
-  {
-    const file : any = document.querySelector('.becomeavolunteercomplete #cv');
-
-    // listen for change event
-    file.addEventListener('change', ()=>{
-
-      // get the counter
-      const counter = document.querySelector('.becomeavolunteercomplete ' + file.getAttribute('data-single-file'));
-      
-      // reset counter
-      counter.innerHTML = '';
-
-      // what do we have
-      if (file.files.length > 0)
-      {
-        counter.innerHTML = '(1)';
-
-        // push global
-        this.files.cv = file.files[0];
-      }
-    });
-
-    // display image
-    const displayFile : any = document.querySelector('.becomeavolunteercomplete #display_image');
-
-    if (displayFile !== null)
-    {
-      // get the display_image
-      const displayImage = document.querySelector('.becomeavolunteercomplete label[for="display_image"]');
-
-      let image : any = displayImage.querySelector('.path.image'), number : any = displayImage.querySelector('.path.number');
-
-      // changed
-      displayImage.addEventListener('change', ()=>{
-
-        // reset
-        number.style.display = 'none';
-
-        // show image
-        image.style.display = 'block';
-
-        // are we cool ??
-        if (displayFile.files.length > 0)
-        {
-          number.innerHTML = '1';
-          // hide image
-          image.style.display = 'none';
-          number.style.display = 'block';
-
-          // add now
-          this.files.display = displayFile.files[0];
-        }
-        
-      });
-    }
-  }
-
-  resetFileUpload()
-  {
-    const file : any = document.querySelector('.becomeavolunteercomplete #cv');
-
-    if (file != null)
-    {
-      // get the counter
-      const counter = document.querySelector('.becomeavolunteercomplete ' + file.getAttribute('data-single-file'));
-      
-      // reset counter
-      counter.innerHTML = '';
-    }
-
-    // manage display image
-    const displayImage = document.querySelector('.becomeavolunteercomplete label[for="display_image"]');
-
-    if (displayImage !== null)
-    {
-      let image : any = displayImage.querySelector('.path.image'), number : any = displayImage.querySelector('.path.number');
-
-      number.style.display = 'none';
-      image.style.display = 'block';
-    }
   }
 
 }

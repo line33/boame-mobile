@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonContent } from '@ionic/angular';
+import { RouterService } from '../services/router.service';
 
 @Component({
   selector: 'app-about',
@@ -11,8 +12,13 @@ export class AboutPage implements OnInit {
   @ViewChild(IonContent) content: IonContent;
 
   // load constructor
-  constructor() {
+  constructor(private router : RouterService) {
 
+  }
+
+  reportCase()
+  {
+    this.router.showReportSheet();
   }
 
   ngOnInit() {

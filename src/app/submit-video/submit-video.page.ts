@@ -14,17 +14,21 @@ import { ChatService } from '../services/chat.service';
 export class SubmitVideoPage implements OnInit {
 
   videoRecord : boolean = false;
-  formats : string = '';
   file : any = null;
   reportText : string = '';
 
   constructor(private video : VideoService, private network : NetworkService,
     private router : RouterService, private loader : LoaderComponent,
     private alert : AlertComponent, private chatService : ChatService) {
-    this.formats = this.video.formats;
+    
   }
 
   ngOnInit() {
+    
+  }
+
+  ionViewDidEnter()
+  {
     this.router.getData((data:any)=>{
 
       // can we continue
@@ -48,36 +52,22 @@ export class SubmitVideoPage implements OnInit {
     });
   }
 
-  ionViewDidEnter()
-  {
-    // process video
-    this.processVideo();
-  }
-
   recordVideo()
   {
     this.video.captureVideo((video:any) => {
+
       // changed
-      this.alert.success('Video file changed, please close this modal to continue.');
+      this.video.presentToast('Video record changed.');
 
       // update file
       this.file = video;
     });
   }
 
-  processVideo()
+  pickVideo()
   {
-    this.video.getVideo('.submituploadedvideo #video_file2').then((file:any)=>{
-      if (file.type == 'audio/mp4') return this.alert.show('Invalid Video file. Please close this modal and try again.');
-
-      // changed
-      this.alert.success('Video file changed, please close this modal to continue.');
-
-      // update file
-      this.file = file;
-
-      // listen again
-      this.processVideo();
+    this.video.getVideo((video:any) => {
+      this.file = video;
     });
   }
 
@@ -102,8 +92,9 @@ export class SubmitVideoPage implements OnInit {
 
           if (res.data.status == 'error')
           {
-            this.alert.show(res.data.message);
-            this.loader.hide();
+            this.loader.hide(()=>{
+              this.video.presentToast(res.data.message);
+            });
           }
           else
           {
@@ -125,8 +116,6 @@ export class SubmitVideoPage implements OnInit {
           }
 
         };
-
-        if (this.videoRecord == false) return this.network.post('cases/report/video', data).then(processor);
 
         // create form data
         const formData = new FormData();

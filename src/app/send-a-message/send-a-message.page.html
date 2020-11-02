@@ -14,7 +14,7 @@
           <textarea class="form-input" [(ngModel)]="inputs.report" data-input="[\S\s]{10,}" data-message="Help us understand your report better." placeholder="Your report here"></textarea>
         </div>
         
-        <label ion-button for="multipleImages">
+        <div ion-button (click)="loadImages()">
           <div class="rectangle2">
           </div>
           <img alt="Image/" src="../../assets/img/N6nc-video-submitted-successfully-oval@2x.png" class="oval" />
@@ -25,8 +25,7 @@
               <img alt="Image/" src="../../assets/img/PpSK-send-a-message-path-5@2x.png" class="path image" />
               <span class="path number"></span>
           </div>
-          <input type="file" accept=".png,.jpg,.jpeg,.gif" name="reportImages[]" multiple id="multipleImages" data-single-file=".add .count" style="display: none;"/>
-        </label>
+        </div>
 
         <a href="javascript:void(0)" ion-button (click)="submit()">
           <div class="rectangle3">

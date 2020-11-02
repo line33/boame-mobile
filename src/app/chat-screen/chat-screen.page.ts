@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, NgZone } from '@angular/core';
-import { IonContent } from '@ionic/angular';
+import { IonContent, NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { AppComponent } from '../app.component';
 import { AlertComponent } from '../components/alert/alert.component';
@@ -26,11 +26,15 @@ export class ChatScreenPage implements OnInit {
   chat : any = {};
   domLoaded : string = 'hidden';
   typing : any = null;
+  controls : any = {
+    showSubmit : true,
+    showAudio : true
+  };
 
   constructor(private back : GoBackComponent, private audio : AudioService, private alert : AlertComponent,
     private chatService : ChatService, public _zone: NgZone,
     private router : RouterService, private cache : CacheService,
-    private storage : Storage) {
+    private storage : Storage, private navCtrl : NavController) {
 
       // get chat
     this.router.getData((data:any) => {
@@ -127,6 +131,8 @@ export class ChatScreenPage implements OnInit {
   {
     // user typing
     this.chatService.nowTyping(this.chat.accountid);
+    
+    this.controls.showAudio = (this.message == '') ? true : false;
 
      // clear timeout
      clearTimeout(this.typing);
@@ -140,12 +146,14 @@ export class ChatScreenPage implements OnInit {
 
   goback()
   {
-    this.back.goback();
+    this.navCtrl.setDirection("back", true, "back");
+    this.router.route('/chat-list');
   }
 
   sendMessage()
   {
      this.chatService.sendChat(this.message, this.chat.accountid);
+     this.controls.showAudio = true;
 
      // append
      this.chats.push({

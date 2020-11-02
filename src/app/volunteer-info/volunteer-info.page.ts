@@ -51,17 +51,34 @@ export class VolunteerInfoPage implements OnInit {
     return AppComponent.storageUrl + '/' + imageName;
   }
 
+  userIsUnique()
+  {
+    // @var bool unique
+    let unique = true;
+
+    // check if is loggedin
+    if (AppComponent.accountInformation != null)
+    {
+      unique = (AppComponent.accountInformation.account.accountid == this.accountid) ? false : unique;
+    }
+
+    // return bool
+    return unique;
+  }
+
   startChat()
   {
-    if (this.accountid != AppComponent.accountInformation.account.accountid)
+    if (this.userIsUnique())
     {
       this.loader.show();
 
       setTimeout(()=>{
+        
         this.chat.requestChat(this.accountid);
 
         // wait for a response
-        this.chat.getRequestChat().subscribe((res)=>{
+        this.chat.getRequestChat().subscribe(()=>{
+
           this.router.route('/chat-screen', {
             chat : {
               firstname     : this.firstname,

@@ -22,6 +22,13 @@ export class HomePage {
   username : string = '';
   password : string = '';
   static cacheLoaded : boolean = false;
+  validation : any = {
+    error : {},
+    rules : {
+      username : [2,'You must provide a valid username'],
+      password : [4, 'Your password must not be empty or less than 4 characters'],
+    }
+  };
 
   constructor(
     private router : Router, 
@@ -59,8 +66,13 @@ export class HomePage {
 
   login()
   {
+    const validate = this.network.inputValid({
+      username : this.username,
+      password : this.password
+    }, this.validation);
+
     // check username and password
-    if (this.network.inputValid('.loginaftersplash'))
+    if (validate.ok === true)
     {
       this.loader.show(()=>{
         // make query
@@ -118,6 +130,10 @@ export class HomePage {
           this.loader.hide();
         });
       }); 
+    }
+    else
+    {
+      this.validation.error = validate.error;
     }
   }
 

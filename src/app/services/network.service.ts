@@ -3,13 +3,14 @@ import { Router } from '@angular/router';
 import { HTTP } from 'src/assets/http/http';
 import { AppComponent } from '../app.component';
 import { Storage } from '@ionic/storage';
+import { type } from 'os';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NetworkService {
+export class NetworkService { 
 
-  endpoint : string = 'http://localhost:8888/boame_gateway/';
+  endpoint : string = 'http://beta.wekiwork.com/boame/gateway/';
   apiToken  : string = 'xQUvREqEXPFhP4LwR3ZVUP3ki8moJen9iTFrfPKQXVLDlaJgGiMS';
   imagedir : string = 'public/assets/images/';
   expired : string = '/home';
@@ -291,126 +292,58 @@ export class NetworkService {
   }
 
   // validate input
-  inputValid(target:any = '')
+  inputValid(input:any = {}, validation:any = {})
   {
-    // @var bool allGood
-    var allGood = false;
+    // @var object allGood
+    var status = {ok : false, error : {}};
 
-    // get parent
-    target = (target !== '') ? document.querySelector(target) : document;
+    // build span element
+    const spanElement = (message : string, id : any) => {
+      return '<span>'+message+'</span>';
+    };
 
-    // not null
-    target = (target === null) ? document : target;
+    // get index 
+    var index = 0;
+    var passed = 0;
 
-    // look for all data-input
-    const dataInput =  target.querySelectorAll('*[data-input]');
-
-    // are we good ?
-    if (dataInput.length > 0)
+    // apply validation rules
+    for (var name in validation.rules)
     {
-      // @var int passed
-      let passed = 0;
+      // do we have something
+      if (typeof input[name] == 'undefined')
+      {
+        validation.error[name] = spanElement(validation.rules[name][1], index);
+      }
+      else
+      {
+        // create string object
+        var str = new String(input[name]);
 
-      [].forEach.call(dataInput, (element:any, index:number)=>{
+        // trim off white spaces
+        str = str.valueOf().trim();
 
-        // get the value
-        const val = element.value;
-
-        // match
-        const regXp = new RegExp(element.getAttribute('data-input'), 'g');
-
-        // we good ?
-        if (val.match(regXp)) passed++;
-
-        // can we get the message
-        if (val.match(regXp) == null)
+        // try apply
+        if (str.length >= Number(validation.rules[name][0]))
         {
-          if (element.hasAttribute('data-message'))
-          {
-            // add error
-            let parentNode = this.getParentNode(element, target);
-            const message = element.getAttribute('data-message');
-
-            let spanError : any = parentNode.querySelector('span[data-error="'+index+'"]');
-
-            // try find span error
-            if (spanError !== null)
-            {
-              spanError.innerHTML = message;
-            }
-            else
-            {
-              // create element
-              spanError = document.createElement('span');
-              spanError.setAttribute('data-error', index);
-
-              // add message
-              spanError.innerHTML = message;
-              parentNode.appendChild(spanError);
-            }
-          }
-
-          // match element
-          const matchElement = () => {
-            // match val
-            if (element.value.match(regXp))
-            {
-              // get parent node
-              const parentNode = this.getParentNode(element, target);
-              const spanError : any = parentNode.querySelector('span[data-error="'+index+'"]');
-              // remove error
-              if (spanError !== null) spanError.innerHTML = '';
-            }
-          };
-
-          // apply keyup event
-          element.addEventListener('keyup', matchElement);
-          element.addEventListener('change', matchElement);
-
+          if (typeof validation.error[name] != 'undefined') delete validation.error[name];
+          passed++;
         }
         else
         {
-          // get parent node
-          const parentNode = this.getParentNode(element, target);
-          const spanError : any = parentNode.querySelector('span[data-error="'+index+'"]');
-          // remove error
-          if (spanError !== null) spanError.innerHTML = '';
+          validation.error[name] = spanElement(validation.rules[name][1], name);
         }
-
-      });
-
-      // update bool
-      allGood = (passed == dataInput.length) ? true : false;
-    }
-
-    // remove all error spans
-    if (allGood)
-    {
-      const errorSpan = target.querySelectorAll('span[data-error]');
-
-      // can we remove em ?
-      if (errorSpan.length > 0)
-      {
-        [].forEach.call(errorSpan, (element:any)=>{
-
-          // get the parent 
-          const parentElement = this.getParentNode(element, target);
-
-          // can we go?
-          if (parentElement !== null)
-          {
-            parentElement.removeChild(element);
-          }
-          else
-          {
-            element.innerHTML = '';
-          }
-        });
       }
+
+      // increment index
+      index++;
     }
 
-    // return bool
-    return allGood;
+    // set the errorrs
+    status.ok = (passed == index) ? true : false;
+    status.error = validation.error;
+
+    // return status
+    return status;
   }
 
   // get the parent node

@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { GoBackComponent } from './components/go-back/go-back.component';
@@ -23,9 +22,18 @@ import { MediaCapture } from '@ionic-native/media-capture/ngx';
 import { File } from '@ionic-native/File/ngx';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { NotificationService } from './services/notification.service';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { CallNumber } from '@ionic-native/call-number/ngx';
+import { ActionSheetController } from '@ionic/angular';
+import { Chooser } from '@ionic-native/chooser/ngx';
+import { ToastController } from '@ionic/angular';
+import { Media } from '@ionic-native/media/ngx';
+import { FilePath } from '@ionic-native/file-path/ngx';
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
+import { VolunteerHeaderComponent } from './components/volunteer-header/volunteer-header.component';
 
-const config : SocketIoConfig = {url : 'ws://0.0.0.0:8083', options : { 
-  secure: true, transports: ['websocket'], port: 8083
+const config : SocketIoConfig = {url : 'ws://beta.wekiwork.com/', options : { 
+  secure: true, transports: ['websocket'], port: 8083, timeout : 2000
 }};
 
 @NgModule({
@@ -52,8 +60,18 @@ const config : SocketIoConfig = {url : 'ws://0.0.0.0:8083', options : {
     AudioService,
     VideoService,
     NotificationService,
+    LocalNotifications,
     MediaCapture,
     File,
+    CallNumber,
+    BackgroundMode,
+    ActionSheetController,
+    ToastController,
+    Chooser,
+    Media,
+    FilePath,
+    ImagePicker,
+    VolunteerHeaderComponent,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

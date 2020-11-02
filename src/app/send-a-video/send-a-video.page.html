@@ -11,7 +11,7 @@
         <div class="sendavideo1">
             Send a<br />Video
         </div>
-        <label for="video_file" ion-button id="isButton">
+        <div ion-button id="isButton" (click)="pickVideo()">
             <div class="group">
                 <div class="rectangle1">
                 </div>
@@ -27,9 +27,7 @@
                     <img alt="Image/" src="../../assets/img/mwr3-knowledge-center-path-1@2x.png" class="path"/>
                 </div>
             </div>
-
-            <input type="file" style="display: none;" accept="{{formats}}" name="video_file" id="video_file"/>
-        </label>
+        </div>
         <a href="javascript:void(0)" ion-button (click)="recordVideo()">
             <div class="groupcopy">
                 <div class="rectangle1">

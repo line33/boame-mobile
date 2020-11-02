@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <label for="video_file2" ion-button *ngIf="videoRecord == false">
+        <div for="video_file2" (click)="pickVideo()" ion-button *ngIf="videoRecord == false">
           <div class="rectangle2">
           </div>
           <div class="wishtouploadanoth">
@@ -39,8 +39,7 @@
           <div class="microphone">
             <img alt="Image/" src="../../assets/img/video-player.svg" class="shape" style="width:24px; height:20px; left:0px; top: 4px;" />
           </div>
-          <input type="file" style="display: none;" accept="{{formats}}" name="video_file" id="video_file2"/>
-        </label>
+        </div>
 
         <a href="javascript:void(0)" ion-button (click)="recordVideo()" *ngIf="videoRecord == true">
           <div class="rectangle2">
