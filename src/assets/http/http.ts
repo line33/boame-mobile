@@ -101,6 +101,10 @@ class HTTP
 			this.header = {};
 		}
 
+		for (var value of post.keys()) {
+			console.log("FORM DATA = " + value);
+		}
+
 		xhr.onreadystatechange = function()
 		{
 			if(xhr.readyState == 4)
@@ -133,6 +137,10 @@ class HTTP
 					this.callback.call(Object.create(null), __data, id);
 
 					_data = null; __data = null;
+				}
+				else
+				{
+					
 				}
 			}
 

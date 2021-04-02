@@ -31,6 +31,11 @@ import { Media } from '@ionic-native/media/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { VolunteerHeaderComponent } from './components/volunteer-header/volunteer-header.component';
+import { Facebook } from '@ionic-native/facebook/ngx';
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { Diagnostic } from '@ionic-native/diagnostic/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
+
 
 const config : SocketIoConfig = {url : 'ws://beta.wekiwork.com/', options : { 
   secure: true, transports: ['websocket'], port: 8083, timeout : 2000
@@ -63,6 +68,7 @@ const config : SocketIoConfig = {url : 'ws://beta.wekiwork.com/', options : {
     LocalNotifications,
     MediaCapture,
     File,
+    FileTransfer,
     CallNumber,
     BackgroundMode,
     ActionSheetController,
@@ -71,7 +77,10 @@ const config : SocketIoConfig = {url : 'ws://beta.wekiwork.com/', options : {
     Media,
     FilePath,
     ImagePicker,
+    Facebook,
     VolunteerHeaderComponent,
+    Diagnostic,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

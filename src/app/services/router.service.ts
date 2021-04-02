@@ -62,7 +62,7 @@ export class RouterService {
         cssClass : 'actionSheetIcon',
         handler: () => {
 
-          this.call.callNumber('+233551000900', false)
+          this.call.callNumber('+233800111222', false)
           .then(res => console.log('Launched dialer!', res))
           .catch(err => console.log('Error launching dialer', err));
 

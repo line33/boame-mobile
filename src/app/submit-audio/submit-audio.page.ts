@@ -5,6 +5,8 @@ import { AlertComponent } from '../components/alert/alert.component';
 import { LoaderComponent } from '../components/loader/loader.component';
 import { NetworkService } from '../services/network.service';
 import { ChatService } from '../services/chat.service';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
+import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
 @Component({
   selector: 'app-submit-audio',
@@ -20,7 +22,8 @@ export class SubmitAudioPage implements OnInit {
 
   constructor(private audio : AudioService, private router : RouterService,
     private alert : AlertComponent, private loader : LoaderComponent,
-    private network : NetworkService, private chatService : ChatService)
+    private network : NetworkService, private chatService : ChatService,
+    private transfer : FileTransfer, private diagnostic : Diagnostic)
   {
     this.formats = this.audio.formats;
   }
@@ -57,13 +60,17 @@ export class SubmitAudioPage implements OnInit {
 
   recordAudio()
   {
-    this.audio.captureAudio((audio:any) => {
+    this.diagnostic.requestMicrophoneAuthorization().then(()=>{
+      this.audio.captureAudio((audio:any) => {
 
-      // changed
-      this.audio.presentToast('Audio record changed.');
-
-      // update file
-      this.file = audio;
+        // changed
+        this.audio.presentToast('Audio record changed.');
+  
+        // update file
+        this.file = audio;
+  
+      });
+    }).catch(error=>{
 
     });
   }
@@ -131,11 +138,39 @@ export class SubmitAudioPage implements OnInit {
         // add others
         for (var key in data) formData.append(key, data[key]);
 
-        // add audio
-        formData.append('audio', this.file.blob, this.file.name);
+        // create transfer object
+        const fileTransfer: FileTransferObject = this.transfer.create();
 
-        // run post
-        this.network.post('cases/report/audio', formData, false).then(processor);
+        // create file upload option
+        let options: FileUploadOptions = {
+          fileKey: 'file',
+          fileName: this.file.name,
+          chunkedMode: false,
+          headers: {
+            'REQUEST_METHOD' : 'PUT',
+            'x-authorization-token' : this.network.apiToken
+          }
+        };
+
+        fileTransfer.upload(this.file.fullPath, this.network.endpoint + 'cases/caseFile', options)
+        .then((data) => {
+
+          // add audio
+          formData.append('audio', JSON.parse(data.response).name);
+
+          // run post
+          this.network.post('cases/report/audio', formData, false).then(processor);
+
+        }, () => {
+          
+          // error
+          this.loader.hide(()=>{
+            this.audio.presentToast('Could not upload your audio file at this time.');
+          });
+
+        });
+
+        
 
       });
     });

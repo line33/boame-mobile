@@ -126,4 +126,14 @@ export class AppComponent {
 
      al.present();
   }
+
+  // get image
+  static getImage(image:string)
+  {
+    // image has http
+    if (image.match(/^(http)/)) return image;
+
+    // return default
+    return AppComponent.storageUrl + '/' + image;
+  }
 }

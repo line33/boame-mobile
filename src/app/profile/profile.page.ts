@@ -115,7 +115,7 @@ export class ProfilePage implements OnInit {
   loadImage()
   {
     // render image
-    return AppComponent.storageUrl + '/' + this.display_image;
+    return AppComponent.getImage(this.display_image);
   }
 
   saveProfile()

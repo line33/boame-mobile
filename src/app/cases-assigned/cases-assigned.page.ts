@@ -48,7 +48,7 @@ export class CasesAssignedPage implements OnInit {
   loadImage(account:any)
   {
     // load display image
-    if (typeof account.account == 'object') return AppComponent.storageUrl + '/' + account.account.display_image;
+    if (typeof account.account == 'object') return AppComponent.getImage(account.account.display_image);
 
     // load dummy image
     return AppComponent.storageUrl + '/generic_avatar.png';

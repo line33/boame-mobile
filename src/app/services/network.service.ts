@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { HTTP } from 'src/assets/http/http';
 import { AppComponent } from '../app.component';
 import { Storage } from '@ionic/storage';
-import { type } from 'os';
 
 @Injectable({
   providedIn: 'root'
@@ -151,6 +150,7 @@ export class NetworkService {
     const promise = new Promise((resolve, rejected)=>{
 
       http.post(this.endpoint + path, data, (res:any) => {
+
         if (res.status > 0)
         {
           resolve(res);

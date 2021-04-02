@@ -7,6 +7,9 @@ import { AlertComponent } from '../components/alert/alert.component';
 import { ChatService } from '../services/chat.service';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { File } from '@ionic-native/File/ngx';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
+import { FilePath } from '@ionic-native/file-path/ngx';
+import { Chooser, ChooserResult } from '@ionic-native/chooser/ngx';
 
 @Component({
   selector: 'app-send-a-message',
@@ -22,11 +25,13 @@ export class SendAMessagePage implements OnInit {
   }
   inputs : any = {};
   images : any = [];
+  formData : any;
 
   constructor(private router : RouterService, private loader : LoaderComponent,
     private network : NetworkService, private alert : AlertComponent, private chatService : ChatService,
     private imagePicker : ImagePicker, private toast : ToastController,
-    private file : File) { }
+    private file : File, private transfer: FileTransfer, private filePath : FilePath,
+    private chooser : Chooser) { }
 
   ngOnInit() {
   }
@@ -36,7 +41,7 @@ export class SendAMessagePage implements OnInit {
     if (this.network.inputValid())
     {
       // check images
-      if (this.images.length == 0) return this.alert.show('You need to attach one or more images');
+      // if (this.images.length == 0) return this.alert.show('You need to attach one or more images');
 
       // start loader
       this.loader.show(()=>{
@@ -46,60 +51,136 @@ export class SendAMessagePage implements OnInit {
         }, (data:any)=>{
 
           // generate form data
-          const formData = new FormData();
+          this.formData = new FormData();
           
           // append data
           for (var key in data)
           {
-            formData.append(key, data[key]);
+            this.formData.append(key, data[key]);
           }
 
           // add images
           const len = this.images.length;
 
-          // add images
-          for (var x = 0; x < len; x++)
+          if (len > 0)
           {
-            formData.append('case_images[]', this.images[x].blob, this.images[x].name);
+            const fileTransfer: FileTransferObject = this.transfer.create();
+
+            // log uploaded
+            const uploaded = [];
+
+            // counter
+            let counter = 1;
+
+            // add images
+            for (var x = 0; x < len; x++)
+            {
+              let options: FileUploadOptions = {
+                fileKey: 'file',
+                fileName: this.images[x].name,
+                chunkedMode: false,
+                headers: {
+                  'REQUEST_METHOD' : 'PUT',
+                  'x-authorization-token' : this.network.apiToken
+                }
+              };
+
+              fileTransfer.upload(this.images[x].path, this.network.endpoint + 'cases/caseFile', options)
+              .then((data) => {
+
+                // success
+                uploaded.push(JSON.parse(data.response).name);
+
+                // can we process
+                if (counter == len) this.sendMessage(uploaded);
+
+                // send message
+                if (counter < len) counter++;
+
+              }, (err) => {
+                
+                // error
+                this.loader.hide(()=>{
+                  this.presentToast('File upload unsuccessful.');
+                });
+
+                // can we process
+                if (counter == len) this.sendMessage(uploaded);
+
+                // send message
+                if (counter < len) counter++;
+
+              });
+            }
+
+          }
+          else
+          {
+            // just report the case
+            this.reportCase();
           }
 
-          // make request
-          this.network.post('cases/report/text', formData, false).then((res:any)=>{
-            if (res.data.status == 'error')
-            {
-              this.loader.hide(()=>{
-                this.presentToast(res.data.message);
-              });
-            }
-            else
-            {
-              this.chatService.caseSubmitted('text');
-
-              this.alert.success(res.data.message, ()=>{
-                
-                // report case service requested
-                this.chatService.serviceRequested('report-case-tag');
-
-                // route
-                this.router.route('/homescreen');
-                this.inputs = {};
-                this.images = [];
-                this.loader.hide();
-              });
-            }
-          });
         });
       })
     }
   }
 
+  // send message
+  sendMessage(uploaded:any)
+  {
+    if (uploaded.length > 0)
+    {
+      this.formData.append('case_images', uploaded.join(','));
+    }
+
+    // report case
+    this.reportCase();
+
+  }
+
+  reportCase()
+  {
+    // make request
+    this.network.post('cases/report/text', this.formData, false).then((res:any)=>{
+      
+      if (res.data.status == 'error')
+      {
+        this.loader.hide(()=>{
+          this.presentToast(res.data.message);
+        });
+      }
+      else
+      {
+        this.chatService.caseSubmitted('text');
+
+        this.alert.success(res.data.message, ()=>{
+          
+          // report case service requested
+          this.chatService.serviceRequested('report-case-tag');
+
+          // route
+          this.router.route('/homescreen');
+          this.inputs = {};
+          this.images = [];
+          this.loader.hide();
+        });
+      }
+    });
+  }
+
   loadImages()
   {
-    this.loader.show();
+    // this.chooser.getFile("img/*").then((value : ChooserResult) => {
+      
+    //   if (value.mediaType.indexOf('img/') >= 0)
+    //   { 
+
+    //   }
+
+    // });
+
     this.imagePicker.getPictures({
       maximumImagesCount: 15,
-      width: 500,
-      height: 500,
       quality: 75
     }).then((pictures:string) => {
 
@@ -115,32 +196,36 @@ export class SendAMessagePage implements OnInit {
       // preset toast
       this.presentToast(pictureCount + ' image'+(pictureCount > 1 ? 's' : '')+' selected successfully');
 
-      // hide loader
-      this.loader.hide();
-
       // look through
       picturesArray.forEach(async (pic:string) => {
 
-        // get the directory
-        const directory = pic.substr(0, (pic.lastIndexOf('/') + 1));
+        this.filePath.resolveNativePath(pic).then(async (picture) => {
 
-        // get file name
-        const fileName = pic.substr((pic.lastIndexOf('/') + 1));
+          // get the directory
+          //const directory = picture.substr(0, (picture.lastIndexOf('/') + 1));
 
-        // get buffer
-        const buffer = await this.file.readAsArrayBuffer(directory, fileName);
+          // get file name
+          const fileName = picture.substr((picture.lastIndexOf('/') + 1));
 
-        // get mime
-        const mime = this.getMimeType(fileName);
+          // get buffer
+          // this.file.readAsArrayBuffer(directory, fileName).then(buffer => {
 
-        // get the file blob
-        const fileBlob = new Blob([buffer], mime);
-      
-        // push to array
-        this.images.push({
-          name : fileName,
-          blob : fileBlob,
-          type : mime
+          //   // get mime
+            
+          // }); 
+
+          const mime = this.getMimeType(fileName);
+
+            // get the file blob
+            //const fileBlob = new Blob([buffer], mime);
+          
+          // push to array
+          this.images.push({
+              name : fileName,
+              blob : '',
+              type : mime,
+              path : pic
+          });
         });
 
       });

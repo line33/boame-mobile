@@ -48,7 +48,7 @@ export class ChatScreenPage implements OnInit {
       this.fullname = fullname.substr(0, 15);
 
       // set the display image
-      this.image = AppComponent.storageUrl + '/' + data.chat.display_image;
+      this.image = AppComponent.getImage(data.chat.display_image);
 
       // load conversation
       this.loadConversation();

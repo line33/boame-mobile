@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonContent } from '@ionic/angular';
 import { AudioService } from '../services/audio.service';
-import { AlertComponent } from '../components/alert/alert.component';
 import { RouterService } from '../services/router.service';
 
 @Component({

@@ -101,7 +101,7 @@ export class ChatListPage implements OnInit {
   // load image
   loadImage(image:string)
   {
-    return AppComponent.storageUrl + '/' + image;
+    return AppComponent.getImage(image);
   }
 
   // update dom every 5 seconds

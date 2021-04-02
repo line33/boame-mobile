@@ -5,6 +5,8 @@ import { RouterService } from '../services/router.service';
 import { LoaderComponent } from '../components/loader/loader.component';
 import { AlertComponent } from '../components/alert/alert.component';
 import { ChatService } from '../services/chat.service';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
+import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
 @Component({
   selector: 'app-submit-video',
@@ -19,7 +21,8 @@ export class SubmitVideoPage implements OnInit {
 
   constructor(private video : VideoService, private network : NetworkService,
     private router : RouterService, private loader : LoaderComponent,
-    private alert : AlertComponent, private chatService : ChatService) {
+    private alert : AlertComponent, private chatService : ChatService,
+    private transfer : FileTransfer, private diagnostic : Diagnostic) {
     
   }
 
@@ -61,7 +64,9 @@ export class SubmitVideoPage implements OnInit {
 
       // update file
       this.file = video;
+      
     });
+
   }
 
   pickVideo()
@@ -126,11 +131,43 @@ export class SubmitVideoPage implements OnInit {
         // add others
         for (var key in data) formData.append(key, data[key]);
 
-        // add video
-        formData.append('video', this.file.blob, this.file.name);
+        // create transfer object
+        const fileTransfer: FileTransferObject = this.transfer.create();
 
-        // run post
-        this.network.post('cases/report/video', formData, false).then(processor);
+        // create file upload option
+        let options: FileUploadOptions = {
+          fileKey: 'video',
+          fileName: this.file.name,
+          chunkedMode: false,
+          headers: {
+            'REQUEST_METHOD' : 'PUT',
+            'x-authorization-token' : this.network.apiToken
+          }
+        };
+
+        fileTransfer.upload(this.file.fullPath, this.network.endpoint + 'cases/caseFile', options)
+        .then((data) => {
+
+          // get response
+          let response = JSON.parse(data.response);
+
+          // add video
+          formData.append('video', response.name);
+
+          // add video poster
+          formData.append('poster', response.poster);
+
+          // run post
+          this.network.post('cases/report/video', formData, false).then(processor);
+
+        }, () => {
+          
+          // error
+          this.loader.hide(()=>{
+            this.video.presentToast('Could not upload your video file at this time.');
+          });
+
+        });
 
       });
     });

@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { CaptureAudioOptions, MediaCapture, MediaFile, CaptureError } from '@ionic-native/media-capture/ngx';
 import { File, FileEntry } from '@ionic-native/File/ngx';
 import { AlertComponent } from '../components/alert/alert.component';
-import { ActionSheetController, ToastController } from '@ionic/angular';
+import { ActionSheetController, Platform, ToastController } from '@ionic/angular';
 import { Chooser, ChooserResult } from '@ionic-native/chooser/ngx';
-import { Media, MediaObject } from '@ionic-native/media/ngx';
+import { Media, MediaObject, MEDIA_STATUS } from '@ionic-native/media/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 
 @Injectable({
@@ -14,37 +14,39 @@ export class AudioService {
 
   // allowed formats
   formats : string = '.mp3,.wav,.aac,.ogg,.wma,.wma,.m4a,.mp4';
+  fileName : string;
+  fullPath : string;
+  audio : MediaObject;
 
   constructor(private mediaCapture : MediaCapture, private file : File, private alert : AlertComponent,
     private toast : ToastController, private chooser : Chooser,
     private media : Media, private actionSheet : ActionSheetController,
-    private filePath : FilePath) { }
+    private filePath : FilePath, private platform : Platform) { }
 
   getAudio(callback:any)
   {
     this.chooser.getFile("audio/*").then((value : ChooserResult) => {
       
       if (value.mediaType.indexOf('audio/') >= 0)
-      {
-        const fileType = value.mediaType;
-        
+      { 
         this.filePath.resolveNativePath(value.uri).then(async (path:any) => {
           
           // get the directory
-          const directory = path.substr(0, (path.lastIndexOf('/') + 1));
+          //const directory = path.substr(0, (path.lastIndexOf('/') + 1));
 
           // get buffer
-          const buffer = await this.file.readAsArrayBuffer(directory, value.name);
+          //const buffer = await this.file.readAsArrayBuffer(directory, value.name);
 
           // get the file blob
-          const fileBlob = new Blob([buffer], {type : fileType});
+          //const fileBlob = new Blob([buffer], {type : fileType});
 
           // ok we good
           // load callback
           callback.call(this, {
-            blob : fileBlob,
+            blob : '',
             name : value.name,
-            extension : value.name.split('.').pop()
+            extension : value.name.split('.').pop(),
+            fullPath : value.uri 
           });
 
           // show toast
@@ -68,18 +70,21 @@ export class AudioService {
 
   async captureAudio(callback:any)
   {
-    // let options: CaptureAudioOptions = { limit: 1 };
-    //   this.mediaCapture.captureAudio(options)
-    //     .then(
-    //       async (data: MediaFile[]) => {
-    //         // copy file and finilize upload
-    //         this.finilizeUpload(callback, data[0].fullPath);
+    let options: CaptureAudioOptions = { limit: 1 };
+      this.mediaCapture.captureAudio(options)
+        .then(
+          async (data: MediaFile[]) => {
+
+            // copy file and finilize upload
+            this.finilizeUpload(callback, data[0].fullPath);
             
-    //       },
-    //       (err: CaptureError) => {
-    //         this.alert.show('No Activity found to handle Audio Capture.');
-    //       }
-    //   );
+          },
+          (err: CaptureError) => {
+            this.alert.show('No Activity found to handle Audio Capture. You can use any sound recorder installed on your device and upload to BOAME using the option above.');
+          }
+      );
+
+    /*
     const options = {
       playing : false,
       paused : false,
@@ -89,340 +94,364 @@ export class AudioService {
       sheet : null
     };
 
-    // directory
-    const directory = this.file.tempDirectory == null ? this.file.externalRootDirectory : this.file.tempDirectory.replace(/^file:\/\//, '');
+    // sheet
+    const sheet = async () => {
 
-    // create file
-    this.file.createFile(directory, 'boame_audio_file.m4a', true).then((e) => {
+      // dismiss sheet
+      if (options.sheet !== null) options.sheet.dismiss();
 
-      // audio file
-      let audioFile : MediaObject = this.media.create(directory + 'boame_audio_file.m4a');
+      // action sheet
+      const actionSheet = await this.actionSheet.create({
+        header: options.header,
+        cssClass: 'my-custom-class',
+        backdropDismiss : false,
+        buttons: buttons[options.default]
+      });
 
-      audioFile.onStatusUpdate.subscribe(status => console.log("STATUS: ", status)); // fires when file status changes
+      await actionSheet.present();
 
-      audioFile.onSuccess.subscribe(() => console.log('Action is successful'));
+      // push
+      options.sheet = actionSheet;
+    };
 
-      // get the native url
-      const nativeUrl = e.nativeURL;
+    // build handlers
+    const handlers = {
+      play : () => {
+        options.default = 'play';
+        options.header = 'Playing Audio..';
+        sheet();
 
-      // sheet
-      const sheet = async () => {
+        // if (this.platform.is('ios')) {
+        //   this.fullPath = this.file.documentsDirectory.replace(/file:\/\//g, '') + this.fileName;
+        //   this.audio = this.media.create(this.fullPath);
+        // } else if (this.platform.is('android')) {
+        //   this.fullPath = this.file.dataDirectory.replace(/file:\/\//g, '') + this.fileName;
+        //   this.audio = this.media.create(this.fullPath);
+        // }
 
-        // dismiss sheet
-        if (options.sheet !== null) options.sheet.dismiss();
+        // play audio file
+        this.audio.play();
 
-        // action sheet
-        const actionSheet = await this.actionSheet.create({
-          header: options.header,
-          cssClass: 'my-custom-class',
-          backdropDismiss : false,
-          buttons: buttons[options.default]
-        });
+        // set the audio volume
+        this.audio.setVolume(1.0);
 
-        await actionSheet.present();
+        // prevent dismiss
+        return false;
+      },
 
-        // push
-        options.sheet = actionSheet;
-      };
+      pause : () => {
+        options.default = 'pause';
+        options.header = 'Audio Paused.';
+        sheet();
 
-      // build handlers
-      const handlers = {
-        play : () => {
-          options.default = 'play';
-          options.header = 'Playing Audio..';
-          sheet();
+        // pause audio file
+        this.audio.pause();
 
-          // release resource
-          audioFile.release();
+        // prevent dismiss
+        return false;
+      },
 
-          // set the audio volume
-          audioFile.setVolume(1.0);
+      stop : () => {
+        options.default = 'stop';
+        options.header = 'Recording Complete.';
+        sheet();
 
-          // play audio file
-          audioFile.play();
+        // stop recording
+        this.audio.stopRecord();
 
-          // prevent dismiss
-          return false;
-        },
+        // release resource
+        this.audio.release();
 
-        pause : () => {
-          options.default = 'pause';
-          options.header = 'Audio Paused.';
-          sheet();
+        // prevent dismiss
+        return false;
+      },
 
-          // pause audio file
-          audioFile.pause();
+      ok : async () => {
 
-          // prevent dismiss
-          return false;
-        },
+        // release resource
+        this.audio.release();
 
-        stop : () => {
-          options.default = 'stop';
-          options.header = 'Recording Complete.';
-          sheet();
+        // resolve path
+        // this.filePath.resolveNativePath(directory + 'boame_audio_file.m4a').then(async (path)=>{
 
-          // stop recording
-          audioFile.stopRecord();
+        //   // get buffer
+        //   //const buffer = await this.file.readAsArrayBuffer(directory, 'boame_audio_file.m4a');
 
-          // release resource
-          audioFile.release();
-
-          // prevent dismiss
-          return false;
-        },
-
-        ok : async () => {
-
-          // release resource
-          audioFile.release();
-
-          // get buffer
-          const buffer = await this.file.readAsArrayBuffer(directory, 'boame_audio_file.m4a');
-
-          // get the file blob
-          const fileBlob = new Blob([buffer], {type : 'audio/m4a'});
+        //   // get the file blob
+        //   //const fileBlob = new Blob([buffer], {type : 'audio/m4a'});
 
           // load callback
           callback.call(this, {
-            blob : fileBlob,
-            name : 'boame_audio_file.m4a',
+            blob : '',
+            name : this.fileName,
             extension : 'm4a',
-            directory : directory
+            directory : '',
+            fullPath : this.fullPath
           });
 
-          options.sheet.dismiss();
+        // });
 
-          // prevent default
-          return false;
-        },  
+        options.sheet.dismiss();
 
-        pauseRecord : () => {
-          options.default = 'resume';
-          options.header = 'Recording Paused';
-          sheet();
+        // prevent default
+        return false;
+      },  
 
-          // record audio
-          audioFile.pauseRecord();
+      pauseRecord : () => {
+        options.default = 'resume';
+        options.header = 'Recording Paused';
+        sheet();
 
-          // prevent dismiss
-          return false;
-        },
+        // record audio
+        this.audio.pauseRecord();
 
-        resumeRecord : () => {
-          options.default = 'record';
-          options.header = 'Recording Voice..';
-          sheet();
+        // prevent dismiss
+        return false;
+      },
 
-          // record audio
-          audioFile.resumeRecord();
+      resumeRecord : () => {
+        options.default = 'record';
+        options.header = 'Recording Voice..';
+        sheet();
 
-          // prevent dismiss
-          return false;
-        },
+        // record audio
+        this.audio.resumeRecord();
 
-        record : () => {
-          options.default = 'record';
-          options.header = 'Recording Voice..';
-          sheet();
+        // prevent dismiss
+        return false;
+      },
 
-          // stop playing the file
-          audioFile.stop(); 
+      record : () => {
+        options.default = 'record';
+        options.header = 'Recording Voice..';
+        sheet();
 
-          // record audio
-          audioFile.startRecord();
+        // stop playing the file
+        // this.audio.stop(); 
 
-          // prevent dismiss
-          return false;
-        },
-
-        cancel : () => {
-          // release resource
-          audioFile.release();
+        if (this.platform.is('ios')) {
+          this.fileName = 'record'+new Date().getDate()+new Date().getMonth()+new Date().getFullYear()+new Date().getHours()+new Date().getMinutes()+new Date().getSeconds()+'.m4a';
+          this.fullPath = this.file.documentsDirectory.replace(/file:\/\//g, '') + this.fileName;
+          this.audio = this.media.create(this.fullPath);
+        } else if (this.platform.is('android')) {
+          this.fileName = 'record'+new Date().getDate()+new Date().getMonth()+new Date().getFullYear()+new Date().getHours()+new Date().getMinutes()+new Date().getSeconds()+'.m4a';
+          this.fullPath = this.file.externalApplicationStorageDirectory.replace(/file:\/\//g, '') + this.fileName;
+          this.audio = this.media.create(this.fullPath);
         }
-      };
 
-      // build buttons 
-      const buttons = {
-        default : [
-          {
-            text: 'Record',
-            role: 'button',
-            icon: 'mic',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.record
-          },
-          {
-            text: 'Cancel',
-            icon: 'close',
-            role: 'cancel',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.cancel
-          }
-        ],
+        // record audio
+        this.audio.startRecord();
 
-        record : [
-          {
-            text: 'Stop',
-            role: 'button',
-            icon: 'stop',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.stop
-          },
-          {
-            text: 'Pause Record',
-            role: 'button',
-            icon: 'pause',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.pauseRecord
-          },
-        ],
+        this.audio.onError.subscribe(error => {
+          console.log('Recorder error : ', error);
+          this.audio.release();
+        });
 
-        stop : [
-          {
-            text: 'Play',
-            role: 'button',
-            icon: 'play',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.play
-          },
-          {
-            text: 'Record Again',
-            role: 'button',
-            icon: 'mic',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.record
-          },
-          {
-            text: 'Submit',
-            role: 'button',
-            icon: 'navigate',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.ok
-          },
-          {
-            text: 'Cancel',
-            icon: 'close',
-            role: 'cancel',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.cancel
-          }
-        ],
+        this.audio.onStatusUpdate.subscribe(status => {
+          console.log('recording media status : ', MEDIA_STATUS[status]);
 
-        play : [
-          {
-            text: 'Pause',
-            role: 'button',
-            icon: 'pause',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.pause
-          },
-          {
-            text: 'Record',
-            role: 'button',
-            icon: 'mic',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.record
-          },
-          {
-            text: 'Submit',
-            role: 'button',
-            icon: 'navigate',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.ok
-          },
-          {
-            text: 'Cancel',
-            icon: 'close',
-            role: 'cancel',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.cancel
-          }
-        ],
+          if (status == MEDIA_STATUS.STOPPED) this.audio.release();
+          if (status == MEDIA_STATUS.RUNNING) console.log('Recorder running..');
+        })
 
-        pause : [
-          {
-            text: 'Play',
-            role: 'button',
-            icon: 'play',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.pause
-          },
-          {
-            text: 'Record',
-            role: 'button',
-            icon: 'mic',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.record
-          },
-          {
-            text: 'Submit',
-            role: 'button',
-            icon: 'navigate',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.ok
-          },
-          {
-            text: 'Cancel',
-            icon: 'close',
-            role: 'cancel',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.cancel
-          }
-        ],
+        // prevent dismiss
+        return false;
+      },
 
-        resume : [
-          {
-            text: 'Stop',
-            role: 'button',
-            icon: 'stop',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.stop
-          },
-          {
-            text: 'Resume Record',
-            role: 'button',
-            icon: 'play',
-            cssClass : 'actionSheetIcon',
-            handler: handlers.resumeRecord
-          },
-        ]
-      };
+      cancel : () => {
+        // release resource
+        this.audio.release();
+      }
+    };
 
-      // show sheet
-      sheet();
+    // build buttons 
+    const buttons = {
+      default : [
+        {
+          text: 'Record',
+          role: 'button',
+          icon: 'mic',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.record
+        },
+        {
+          text: 'Cancel',
+          icon: 'close',
+          role: 'cancel',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.cancel
+        }
+      ],
 
-    }, err => console.log(err));
+      record : [
+        {
+          text: 'Stop',
+          role: 'button',
+          icon: 'stop',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.stop
+        },
+        {
+          text: 'Pause Record',
+          role: 'button',
+          icon: 'pause',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.pauseRecord
+        },
+      ],
 
+      stop : [
+        {
+          text: 'Play',
+          role: 'button',
+          icon: 'play',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.play
+        },
+        {
+          text: 'Record Again',
+          role: 'button',
+          icon: 'mic',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.record
+        },
+        {
+          text: 'Submit',
+          role: 'button',
+          icon: 'navigate',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.ok
+        },
+        {
+          text: 'Cancel',
+          icon: 'close',
+          role: 'cancel',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.cancel
+        }
+      ],
+
+      play : [
+        {
+          text: 'Pause',
+          role: 'button',
+          icon: 'pause',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.pause
+        },
+        {
+          text: 'Record',
+          role: 'button',
+          icon: 'mic',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.record
+        },
+        {
+          text: 'Submit',
+          role: 'button',
+          icon: 'navigate',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.ok
+        },
+        {
+          text: 'Cancel',
+          icon: 'close',
+          role: 'cancel',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.cancel
+        }
+      ],
+
+      pause : [
+        {
+          text: 'Play',
+          role: 'button',
+          icon: 'play',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.pause
+        },
+        {
+          text: 'Record',
+          role: 'button',
+          icon: 'mic',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.record
+        },
+        {
+          text: 'Submit',
+          role: 'button',
+          icon: 'navigate',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.ok
+        },
+        {
+          text: 'Cancel',
+          icon: 'close',
+          role: 'cancel',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.cancel
+        }
+      ],
+
+      resume : [
+        {
+          text: 'Stop',
+          role: 'button',
+          icon: 'stop',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.stop
+        },
+        {
+          text: 'Resume Record',
+          role: 'button',
+          icon: 'play',
+          cssClass : 'actionSheetIcon',
+          handler: handlers.resumeRecord
+        },
+      ]
+    };
+
+    // show sheet
+    sheet();
+    */
   }
 
-  async finilizeUpload(callback:any, fullPath : string)
+  finilizeUpload(callback:any, path : string)
   {
-    // get the directory
-    const directory = fullPath.substr(0, (fullPath.lastIndexOf('/') + 1));
-
-    // get the file name
-    const fileName = fullPath.split('/').pop();
-
-    // get the extension
-    const extension = fileName.split('.').pop();
-
-    // get file type
-    const fileType = this.getMimeType(extension);
-
-    // get buffer
-    const buffer = await this.file.readAsArrayBuffer(directory, fileName);
-
-    // get the file blob
-    const fileBlob = new Blob([buffer], fileType);
-
-    // load callback
     callback.call(this, {
-      blob : fileBlob,
-      name : fileName,
-      extension : extension,
-      directory : directory
+      blob : '',
+      name : '',
+      extension : '',
+      directory : '',
+      fullPath : path
     });
+
+    /*
+    this.filePath.resolveNativePath(fullPath).then(async (path)=>{
+
+      // get the directory
+      // const directory = path.substr(0, (path.lastIndexOf('/') + 1));
+
+      // // get the file name
+      // const fileName = path.split('/').pop();
+
+      // // get the extension
+      // const extension = fileName.split('.').pop();
+
+      // // get file type
+      // const fileType = this.getMimeType(extension);
+
+      // // get buffer
+      // const buffer = await this.file.readAsArrayBuffer(directory, fileName);
+
+      // // get the file blob
+      // const fileBlob = new Blob([buffer], fileType);
+
+      // load callback
+      
+
+    });
+    */
   }
 
   getMimeType(fileExt:string) {
